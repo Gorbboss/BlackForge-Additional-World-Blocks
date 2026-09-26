@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "evenbetternether:block/polished_nether_brick_slab"
+    },
+    "type=top": {
+      "model": "evenbetternether:block/polished_nether_brick_slab_top"
+    },
+    "type=double": {
+      "model": "evenbetternether:block/polished_nether_brick_slab_full"
+    }
+  }
+}

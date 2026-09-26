@@ -1,0 +1,19 @@
+/*
+ * Decompiled with CFR 0.153-local.
+ * 
+ * Could not load the following classes:
+ *  net.minecraft.core.BlockPos
+ *  net.minecraft.world.level.LevelAccessor
+ */
+package net.mcreator.evenbetternether.procedures;
+
+import net.mcreator.evenbetternether.init.EvenbetternetherModBlocks;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.LevelAccessor;
+
+public class SpeltBlockValidPlacementConditionProcedure {
+    public static boolean execute(LevelAccessor world, double x, double y, double z) {
+        return world.m_8055_(BlockPos.m_274561_((double)x, (double)(y - 1.0), (double)z)).m_60734_() == EvenbetternetherModBlocks.SOUL_FARMLAND.get();
+    }
+}
+

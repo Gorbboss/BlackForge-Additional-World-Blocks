@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "evenbetternether:smooth_netherrack_wall",
+    "evenbetternether:polished_nether_brick_wall",
+    "evenbetternether:carved_pyrite_wall",
+    "evenbetternether:pyrite_wall",
+    "evenbetternether:smooth_bone_wall"
+  ]
+}

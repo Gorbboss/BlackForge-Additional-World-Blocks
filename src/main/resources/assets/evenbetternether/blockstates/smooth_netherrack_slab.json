@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "evenbetternether:block/smooth_netherrack_slab"
+    },
+    "type=top": {
+      "model": "evenbetternether:block/smooth_netherrack_slab_top"
+    },
+    "type=double": {
+      "model": "evenbetternether:block/smooth_netherrack_slab_full"
+    }
+  }
+}

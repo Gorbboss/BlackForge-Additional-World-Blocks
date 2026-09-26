@@ -1,0 +1,10 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "particle": "evenbetternether:block/polished_nether_brick",
+    "bottom": "evenbetternether:block/polished_nether_brick",
+    "top": "evenbetternether:block/polished_nether_brick",
+    "side": "evenbetternether:block/polished_nether_brick"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "evenbetternether:smooth_netherrack"
+    }
+  },
+  "result": {
+    "item": "evenbetternether:smooth_netherrack_slab",
+    "count": 6
+  }
+}

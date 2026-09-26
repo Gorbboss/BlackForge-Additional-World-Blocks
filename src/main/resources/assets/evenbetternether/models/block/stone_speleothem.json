@@ -1,0 +1,9 @@
+{
+  "parent": "evenbetternether:custom/speleothem_cross",
+  "textures": {
+    "all": "minecraft:block/stone",
+    "particle": "minecraft:block/stone",
+    "1": "evenbetternether:block/stone_speleothem"
+  },
+  "render_type": "cutout"
+}

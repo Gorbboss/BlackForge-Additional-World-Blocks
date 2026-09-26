@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "evenbetternether:sparse_lava_floe",
+    "evenbetternether:dense_lava_floe",
+    "evenbetternether:bulbous_hanging_mycelium",
+    "evenbetternether:long_hanging_mycelium",
+    "evenbetternether:hanging_mycelium",
+    "evenbetternether:fungal_sprouts",
+    "evenbetternether:fungal_roots",
+    "evenbetternether:charred_sprouts",
+    "evenbetternether:burning_sprouts",
+    "evenbetternether:burning_roots",
+    "evenbetternether:soul_sprouts",
+    "evenbetternether:soul_roots",
+    "evenbetternether:verdant_sprouts",
+    "evenbetternether:verdant_roots"
+  ]
+}
