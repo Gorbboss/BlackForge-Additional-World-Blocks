@@ -9,13 +9,13 @@ permissions:
 
 jobs:
   import:
-    if: hashFiles('.bootstrap/READY') != ''
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Reassemble and verify source archive
         shell: bash
         run: |
+          test -f .bootstrap/READY
           cat .bootstrap/chunk-* > reconstructed-source.tar.gz
           echo "785e5cab4a509eeef6d375f01351b986f65e2ade472d12613efd1ca7d1cac7d1  reconstructed-source.tar.gz" | sha256sum -c -
           tar -xzf reconstructed-source.tar.gz
