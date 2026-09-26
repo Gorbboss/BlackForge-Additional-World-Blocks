@@ -62,9 +62,9 @@ public class ShearNetherGrassesProcedure {
             LivingEntity _livEnt2;
             if (EvenbetternetherModBlocks.VERDANT_ROOTS.get() == world.getBlockState(BlockPos.containing((double)x, (double)y, (double)z)).getBlock()) {
                 ItemStack itemStack = entity instanceof LivingEntity && null != (_livEnt2 = (LivingEntity)entity) ? _livEnt2.getMainHandItem() : (_ist = ItemStack.EMPTY);
-                if (_ist.hurt(1, RandomSource.create(), null)) {
-                    _ist.shrink(1);
-                    _ist.setDamageValue(0);
+                if (itemStack.hurt(1, RandomSource.create(), null)) {
+                    itemStack.shrink(1);
+                    itemStack.setDamageValue(0);
                 }
                 if (world instanceof ServerLevel) {
                     _level = (ServerLevel)world;
@@ -75,9 +75,9 @@ public class ShearNetherGrassesProcedure {
             }
             if (EvenbetternetherModBlocks.VERDANT_SPROUTS.get() == world.getBlockState(BlockPos.containing((double)x, (double)y, (double)z)).getBlock()) {
                 ItemStack itemStack = entity instanceof LivingEntity && null != (_livEnt2 = (LivingEntity)entity) ? _livEnt2.getMainHandItem() : (_ist = ItemStack.EMPTY);
-                if (_ist.hurt(1, RandomSource.create(), null)) {
-                    _ist.shrink(1);
-                    _ist.setDamageValue(0);
+                if (itemStack.hurt(1, RandomSource.create(), null)) {
+                    itemStack.shrink(1);
+                    itemStack.setDamageValue(0);
                 }
                 if (world instanceof ServerLevel) {
                     _level = (ServerLevel)world;
@@ -88,9 +88,9 @@ public class ShearNetherGrassesProcedure {
             }
             if (EvenbetternetherModBlocks.NETHER_AGAVE.get() == world.getBlockState(BlockPos.containing((double)x, (double)y, (double)z)).getBlock()) {
                 ItemStack itemStack = entity instanceof LivingEntity && null != (_livEnt2 = (LivingEntity)entity) ? _livEnt2.getMainHandItem() : (_ist = ItemStack.EMPTY);
-                if (_ist.hurt(1, RandomSource.create(), null)) {
-                    _ist.shrink(1);
-                    _ist.setDamageValue(0);
+                if (itemStack.hurt(1, RandomSource.create(), null)) {
+                    itemStack.shrink(1);
+                    itemStack.setDamageValue(0);
                 }
                 if (world instanceof ServerLevel) {
                     _level = (ServerLevel)world;
@@ -101,9 +101,9 @@ public class ShearNetherGrassesProcedure {
             }
             if (EvenbetternetherModBlocks.SOUL_ROOTS.get() == world.getBlockState(BlockPos.containing((double)x, (double)y, (double)z)).getBlock()) {
                 ItemStack itemStack = entity instanceof LivingEntity && null != (_livEnt2 = (LivingEntity)entity) ? _livEnt2.getMainHandItem() : (_ist = ItemStack.EMPTY);
-                if (_ist.hurt(1, RandomSource.create(), null)) {
-                    _ist.shrink(1);
-                    _ist.setDamageValue(0);
+                if (itemStack.hurt(1, RandomSource.create(), null)) {
+                    itemStack.shrink(1);
+                    itemStack.setDamageValue(0);
                 }
                 if (world instanceof ServerLevel) {
                     _level = (ServerLevel)world;
@@ -114,9 +114,9 @@ public class ShearNetherGrassesProcedure {
             }
             if (EvenbetternetherModBlocks.SOUL_SPROUTS.get() == world.getBlockState(BlockPos.containing((double)x, (double)y, (double)z)).getBlock()) {
                 ItemStack itemStack = entity instanceof LivingEntity && null != (_livEnt2 = (LivingEntity)entity) ? _livEnt2.getMainHandItem() : (_ist = ItemStack.EMPTY);
-                if (_ist.hurt(1, RandomSource.create(), null)) {
-                    _ist.shrink(1);
-                    _ist.setDamageValue(0);
+                if (itemStack.hurt(1, RandomSource.create(), null)) {
+                    itemStack.shrink(1);
+                    itemStack.setDamageValue(0);
                 }
                 if (world instanceof ServerLevel) {
                     _level = (ServerLevel)world;
@@ -127,9 +127,9 @@ public class ShearNetherGrassesProcedure {
             }
             if (EvenbetternetherModBlocks.BURNING_ROOTS.get() == world.getBlockState(BlockPos.containing((double)x, (double)y, (double)z)).getBlock()) {
                 ItemStack itemStack = entity instanceof LivingEntity && null != (_livEnt2 = (LivingEntity)entity) ? _livEnt2.getMainHandItem() : (_ist = ItemStack.EMPTY);
-                if (_ist.hurt(1, RandomSource.create(), null)) {
-                    _ist.shrink(1);
-                    _ist.setDamageValue(0);
+                if (itemStack.hurt(1, RandomSource.create(), null)) {
+                    itemStack.shrink(1);
+                    itemStack.setDamageValue(0);
                 }
                 if (world instanceof ServerLevel) {
                     _level = (ServerLevel)world;
@@ -140,9 +140,9 @@ public class ShearNetherGrassesProcedure {
             }
             if (EvenbetternetherModBlocks.BURNING_SPROUTS.get() == world.getBlockState(BlockPos.containing((double)x, (double)y, (double)z)).getBlock()) {
                 ItemStack itemStack = entity instanceof LivingEntity && null != (_livEnt2 = (LivingEntity)entity) ? _livEnt2.getMainHandItem() : (_ist = ItemStack.EMPTY);
-                if (_ist.hurt(1, RandomSource.create(), null)) {
-                    _ist.shrink(1);
-                    _ist.setDamageValue(0);
+                if (itemStack.hurt(1, RandomSource.create(), null)) {
+                    itemStack.shrink(1);
+                    itemStack.setDamageValue(0);
                 }
                 if (world instanceof ServerLevel) {
                     _level = (ServerLevel)world;
@@ -153,9 +153,9 @@ public class ShearNetherGrassesProcedure {
             }
             if (EvenbetternetherModBlocks.CHARRED_SPROUTS.get() == world.getBlockState(BlockPos.containing((double)x, (double)y, (double)z)).getBlock()) {
                 ItemStack itemStack = entity instanceof LivingEntity && null != (_livEnt2 = (LivingEntity)entity) ? _livEnt2.getMainHandItem() : (_ist = ItemStack.EMPTY);
-                if (_ist.hurt(1, RandomSource.create(), null)) {
-                    _ist.shrink(1);
-                    _ist.setDamageValue(0);
+                if (itemStack.hurt(1, RandomSource.create(), null)) {
+                    itemStack.shrink(1);
+                    itemStack.setDamageValue(0);
                 }
                 if (world instanceof ServerLevel) {
                     _level = (ServerLevel)world;
@@ -166,9 +166,9 @@ public class ShearNetherGrassesProcedure {
             }
             if (EvenbetternetherModBlocks.FUNGAL_ROOTS.get() == world.getBlockState(BlockPos.containing((double)x, (double)y, (double)z)).getBlock()) {
                 ItemStack itemStack = entity instanceof LivingEntity && null != (_livEnt2 = (LivingEntity)entity) ? _livEnt2.getMainHandItem() : (_ist = ItemStack.EMPTY);
-                if (_ist.hurt(1, RandomSource.create(), null)) {
-                    _ist.shrink(1);
-                    _ist.setDamageValue(0);
+                if (itemStack.hurt(1, RandomSource.create(), null)) {
+                    itemStack.shrink(1);
+                    itemStack.setDamageValue(0);
                 }
                 if (world instanceof ServerLevel) {
                     _level = (ServerLevel)world;
@@ -179,9 +179,9 @@ public class ShearNetherGrassesProcedure {
             }
             if (EvenbetternetherModBlocks.FUNGAL_SPROUTS.get() == world.getBlockState(BlockPos.containing((double)x, (double)y, (double)z)).getBlock()) {
                 ItemStack itemStack = entity instanceof LivingEntity && null != (_livEnt2 = (LivingEntity)entity) ? _livEnt2.getMainHandItem() : (_ist = ItemStack.EMPTY);
-                if (_ist.hurt(1, RandomSource.create(), null)) {
-                    _ist.shrink(1);
-                    _ist.setDamageValue(0);
+                if (itemStack.hurt(1, RandomSource.create(), null)) {
+                    itemStack.shrink(1);
+                    itemStack.setDamageValue(0);
                 }
                 if (world instanceof ServerLevel) {
                     _level = (ServerLevel)world;
@@ -193,4 +193,3 @@ public class ShearNetherGrassesProcedure {
         }
     }
 }
-
