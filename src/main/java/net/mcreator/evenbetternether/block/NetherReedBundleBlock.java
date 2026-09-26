@@ -40,7 +40,7 @@ extends Block {
 
     public NetherReedBundleBlock() {
         super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).sound(SoundType.BAMBOO_WOOD).strength(2.0f, 1.0f));
-        this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(AXIS, (Comparable)Direction.Axis.Y));
+        this.registerDefaultState(this.stateDefinition.any().setValue(AXIS, Direction.Axis.Y));
     }
 
     public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
@@ -49,23 +49,22 @@ extends Block {
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
-        builder.add(new Property[]{AXIS});
+        builder.add(AXIS);
     }
 
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return (BlockState)super.getStateForPlacement(context).setValue(AXIS, (Comparable)context.getClickedFace().getAxis());
+        return super.getStateForPlacement(context).setValue(AXIS, context.getClickedFace().getAxis());
     }
 
     public BlockState rotate(BlockState state, Rotation rot) {
         if (rot == Rotation.CLOCKWISE_90 || rot == Rotation.COUNTERCLOCKWISE_90) {
             if (state.getValue(AXIS) == Direction.Axis.X) {
-                return (BlockState)state.setValue(AXIS, (Comparable)Direction.Axis.Z);
+                return state.setValue(AXIS, Direction.Axis.Z);
             }
             if (state.getValue(AXIS) == Direction.Axis.Z) {
-                return (BlockState)state.setValue(AXIS, (Comparable)Direction.Axis.X);
+                return state.setValue(AXIS, Direction.Axis.X);
             }
         }
         return state;
     }
 }
-
