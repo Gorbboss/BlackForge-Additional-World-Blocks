@@ -24,7 +24,7 @@ public class SpeltStage2OnTickUpdateProcedure {
             BlockPos _bp = BlockPos.containing((double)x, (double)y, (double)z);
             BlockState _bs = ((Block)EvenbetternetherModBlocks.SPELT_STAGE_3.get()).defaultBlockState();
             BlockState _bso = world.getBlockState(_bp);
-            for (Map.Entry entry : _bso.C().entrySet()) {
+            for (Map.Entry entry : _bso.getValues().entrySet()) {
                 Property _property = _bs.getBlock().getStateDefinition().getProperty(((Property)entry.getKey()).getName());
                 if (_property == null || _bs.getValue(_property) == null) continue;
                 try {

@@ -28,7 +28,7 @@ public class SpeltStage0OnBoneMealSuccessProcedure {
         double SpeltStage = 0.0;
         String TempText = "";
         if (world.getBlockState(BlockPos.containing((double)x, (double)y, (double)z)).getBlock() != EvenbetternetherModBlocks.SPELT_STAGE_6.get()) {
-            TempText = ForgeRegistries.BLOCKS.getKey((Object)world.getBlockState(BlockPos.containing((double)x, (double)y, (double)z)).getBlock()).toString();
+            TempText = ForgeRegistries.BLOCKS.getKey(world.getBlockState(BlockPos.containing((double)x, (double)y, (double)z)).getBlock()).toString();
             TempText = TempText.substring(TempText.indexOf(":") + 1, TempText.length());
             TempText = TempText.substring(12);
             SpeltStage = new Object(){
@@ -48,4 +48,3 @@ public class SpeltStage0OnBoneMealSuccessProcedure {
         }
     }
 }
-

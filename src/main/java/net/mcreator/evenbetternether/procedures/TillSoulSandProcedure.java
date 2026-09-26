@@ -75,17 +75,15 @@ public class TillSoulSandProcedure {
             return;
         }
         if ((entity instanceof LivingEntity _livEnt && null != _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() instanceof HoeItem && Blocks.SOUL_SAND == world.getBlockState(BlockPos.containing((double)x, (double)y, (double)z)).getBlock()) {
-            ItemStack _ist;
-            LivingEntity _livEnt;
-            ItemStack itemStack = entity instanceof LivingEntity && null != (_livEnt = (LivingEntity)entity) ? _livEnt.getMainHandItem() : (_ist = ItemStack.EMPTY);
-            if (_ist.hurt(1, RandomSource.create(), null)) {
-                _ist.shrink(1);
-                _ist.setDamageValue(0);
+            ItemStack itemStack = entity instanceof LivingEntity livingEntity ? livingEntity.getMainHandItem() : ItemStack.EMPTY;
+            if (itemStack.hurt(1, RandomSource.create(), null)) {
+                itemStack.shrink(1);
+                itemStack.setDamageValue(0);
             }
             BlockPos _bp = BlockPos.containing((double)x, (double)y, (double)z);
             BlockState _bs = ((Block)EvenbetternetherModBlocks.SOUL_FARMLAND.get()).defaultBlockState();
             BlockState _bso = world.getBlockState(_bp);
-            for (Map.Entry entry : _bso.C().entrySet()) {
+            for (Map.Entry entry : _bso.getValues().entrySet()) {
                 Property _property = _bs.getBlock().getStateDefinition().getProperty(((Property)entry.getKey()).getName());
                 if (_property == null || _bs.getValue(_property) == null) continue;
                 try {
@@ -120,4 +118,3 @@ public class TillSoulSandProcedure {
         }
     }
 }
-

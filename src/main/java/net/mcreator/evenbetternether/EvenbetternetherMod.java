@@ -78,7 +78,7 @@ public class EvenbetternetherMod {
     @SubscribeEvent
     public void tick(TickEvent.ServerTickEvent event) {
         if (event.phase == TickEvent.Phase.END) {
-            ArrayList actions = new ArrayList();
+            ArrayList<AbstractMap.SimpleEntry<Runnable, Integer>> actions = new ArrayList<>();
             workQueue.forEach(work -> {
                 work.setValue((Integer)work.getValue() - 1);
                 if ((Integer)work.getValue() == 0) {
@@ -90,4 +90,3 @@ public class EvenbetternetherMod {
         }
     }
 }
-

@@ -76,9 +76,9 @@ public class EvenbetternetherModBiomes {
     @SubscribeEvent
     public static void onServerAboutToStart(ServerAboutToStartEvent event) {
         MinecraftServer server = event.getServer();
-        Registry dimensionTypeRegistry = server.registryAccess().registryOrThrow(Registries.DIMENSION_TYPE);
-        Registry levelStemTypeRegistry = server.registryAccess().registryOrThrow(Registries.LEVEL_STEM);
-        Registry biomeRegistry = server.registryAccess().registryOrThrow(Registries.BIOME);
+        Registry<DimensionType> dimensionTypeRegistry = server.registryAccess().registryOrThrow(Registries.DIMENSION_TYPE);
+        Registry<LevelStem> levelStemTypeRegistry = server.registryAccess().registryOrThrow(Registries.LEVEL_STEM);
+        Registry<Biome> biomeRegistry = server.registryAccess().registryOrThrow(Registries.BIOME);
         for (LevelStem levelStem : levelStemTypeRegistry.stream().toList()) {
             NoiseGeneratorSettings noiseGeneratorSettings;
             SurfaceRules.RuleSource currentRuleSource;
@@ -129,4 +129,3 @@ public class EvenbetternetherModBiomes {
         }
     }
 }
-

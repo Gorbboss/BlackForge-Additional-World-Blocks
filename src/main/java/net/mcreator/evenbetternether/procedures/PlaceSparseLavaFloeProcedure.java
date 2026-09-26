@@ -114,8 +114,8 @@ public class PlaceSparseLavaFloeProcedure {
                     LivingEntity _livEnt3;
                     (entity instanceof LivingEntity && null != (_livEnt3 = (LivingEntity)entity) ? _livEnt3.getMainHandItem() : ItemStack.EMPTY).shrink(1);
                 }
-                if (entity instanceof LivingEntity _entity) {
-                    _entity.swing(InteractionHand.MAIN_HAND, true);
+                if (entity instanceof LivingEntity mainHandEntity) {
+                    mainHandEntity.swing(InteractionHand.MAIN_HAND, true);
                 }
             } else if ((entity instanceof LivingEntity && null != (_livEnt = (LivingEntity)entity) ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == ((Block)EvenbetternetherModBlocks.SPARSE_LAVA_FLOE.get()).asItem()) {
                 if (!new Object(){
@@ -134,8 +134,8 @@ public class PlaceSparseLavaFloeProcedure {
                     LivingEntity _livEnt4;
                     (entity instanceof LivingEntity && null != (_livEnt4 = (LivingEntity)entity) ? _livEnt4.getOffhandItem() : ItemStack.EMPTY).shrink(1);
                 }
-                if (entity instanceof LivingEntity _entity) {
-                    _entity.swing(InteractionHand.OFF_HAND, true);
+                if (entity instanceof LivingEntity offHandEntity) {
+                    offHandEntity.swing(InteractionHand.OFF_HAND, true);
                 }
             }
             if (world instanceof Level) {
