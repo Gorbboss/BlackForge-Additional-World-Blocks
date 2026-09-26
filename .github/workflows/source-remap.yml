@@ -1,0 +1,30 @@
+name: Apply remapped Java sources
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply verified source archive
+        shell: bash
+        run: |
+          cat .transfer-remap/chunk-* > remapped-java.tar.gz
+          echo "e12127e9477c75209158b31cfd09341288e119fd5a0a5af095d1bd6ca1dc6f76  remapped-java.tar.gz" | sha256sum -c -
+          tar -xzf remapped-java.tar.gz
+          rm remapped-java.tar.gz
+      - name: Commit remapped source
+        shell: bash
+        run: |
+          git rm -r .transfer-remap
+          git add src/main/java
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Remap reconstructed sources to official 1.20.1 names"
+          git push
