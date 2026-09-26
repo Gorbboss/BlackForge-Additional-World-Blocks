@@ -17,14 +17,13 @@ jobs:
         run: |
           test -f .bootstrap/READY
           cat .bootstrap/chunk-* > reconstructed-source.tar.gz
-          echo "785e5cab4a509eeef6d375f01351b986f65e2ade472d12613efd1ca7d1cac7d1  reconstructed-source.tar.gz" | sha256sum -c -
+          echo "283e3fb211fbea3ba48a85c60774068d95dc9c02acfaf930449c0883e5eb2a02  reconstructed-source.tar.gz" | sha256sum -c -
           tar -xzf reconstructed-source.tar.gz
           rm reconstructed-source.tar.gz
       - name: Commit normal source tree
         shell: bash
         run: |
           git rm -r .bootstrap
-          git rm .github/workflows/bootstrap.yml
           git add -A
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
