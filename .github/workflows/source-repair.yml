@@ -1,0 +1,30 @@
+name: Apply reconstructed source repairs
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply verified repair archive
+        shell: bash
+        run: |
+          cp .transfer-repair/chunk-000 repaired-java.tar.gz
+          echo "48aa1ae79068670373c5e3d229a96fb200fb4b0199e859ffe2b114168f7c863e  repaired-java.tar.gz" | sha256sum -c -
+          tar -xzf repaired-java.tar.gz
+          rm repaired-java.tar.gz
+      - name: Commit repaired source
+        shell: bash
+        run: |
+          git rm -r .transfer-repair
+          git add src/main/java
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Repair reconstructed 1.3.1 Java sources"
+          git push
