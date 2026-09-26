@@ -13,7 +13,7 @@ import net.minecraft.world.level.LevelAccessor;
 
 public class SpeltBlockValidPlacementConditionProcedure {
     public static boolean execute(LevelAccessor world, double x, double y, double z) {
-        return world.m_8055_(BlockPos.m_274561_((double)x, (double)(y - 1.0), (double)z)).m_60734_() == EvenbetternetherModBlocks.SOUL_FARMLAND.get();
+        return world.getBlockState(BlockPos.containing((double)x, (double)(y - 1.0), (double)z)).getBlock() == EvenbetternetherModBlocks.SOUL_FARMLAND.get();
     }
 }
 

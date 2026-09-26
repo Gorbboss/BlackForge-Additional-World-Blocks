@@ -23,17 +23,17 @@ import net.minecraft.world.level.Level;
 public class DiamondPyriteUpgradeSmithingTemplateItem
 extends Item {
     public DiamondPyriteUpgradeSmithingTemplateItem() {
-        super(new Item.Properties().m_41487_(64).m_41497_(Rarity.COMMON));
+        super(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON));
     }
 
-    public void m_7373_(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
-        super.m_7373_(itemstack, level, list, flag);
-        list.add((Component)Component.m_237113_((String)"\u00a77Diamond Pyrite Upgrade"));
-        list.add((Component)Component.m_237113_((String)""));
-        list.add((Component)Component.m_237113_((String)"\u00a77Applies to:"));
-        list.add((Component)Component.m_237113_((String)" \u00a79Pyrite Equipment"));
-        list.add((Component)Component.m_237113_((String)"\u00a77Ingredients:"));
-        list.add((Component)Component.m_237113_((String)" \u00a79Diamond"));
+    public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
+        super.appendHoverText(itemstack, level, list, flag);
+        list.add((Component)Component.literal((String)"\u00a77Diamond Pyrite Upgrade"));
+        list.add((Component)Component.literal((String)""));
+        list.add((Component)Component.literal((String)"\u00a77Applies to:"));
+        list.add((Component)Component.literal((String)" \u00a79Pyrite Equipment"));
+        list.add((Component)Component.literal((String)"\u00a77Ingredients:"));
+        list.add((Component)Component.literal((String)" \u00a79Diamond"));
     }
 }
 

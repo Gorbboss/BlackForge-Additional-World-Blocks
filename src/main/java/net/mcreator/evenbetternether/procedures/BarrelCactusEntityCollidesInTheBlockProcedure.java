@@ -23,8 +23,8 @@ public class BarrelCactusEntityCollidesInTheBlockProcedure {
         if (entity == null) {
             return;
         }
-        if (world.m_6106_().m_6793_() % 10L == 0L) {
-            entity.m_6469_(new DamageSource((Holder)world.m_9598_().m_175515_(Registries.f_268580_).m_246971_(DamageTypes.f_268585_)), 1.0f);
+        if (world.getLevelData().getGameTime() % 10L == 0L) {
+            entity.hurt(new DamageSource((Holder)world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.CACTUS)), 1.0f);
         }
     }
 }

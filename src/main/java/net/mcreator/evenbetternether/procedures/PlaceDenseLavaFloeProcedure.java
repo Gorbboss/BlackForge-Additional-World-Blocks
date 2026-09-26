@@ -61,7 +61,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class PlaceDenseLavaFloeProcedure {
     @SubscribeEvent
     public static void onRightClickItem(PlayerInteractEvent.RightClickItem event) {
-        if (event.getHand() != event.getEntity().m_7655_()) {
+        if (event.getHand() != event.getEntity().getUsedItemHand()) {
             return;
         }
         PlaceDenseLavaFloeProcedure.execute((Event)event, (LevelAccessor)event.getLevel(), (Entity)event.getEntity());
@@ -81,69 +81,69 @@ public class PlaceDenseLavaFloeProcedure {
         double raytrace_y = 0.0;
         double raytrace_x = 0.0;
         double raytrace_z = 0.0;
-        if (entity instanceof LivingEntity _entity && _entity.m_21055_(((Block)EvenbetternetherModBlocks.DENSE_LAVA_FLOE.get()).m_5456_()) && entity.m_9236_().m_45547_(new ClipContext(entity.m_20299_(1.0f), entity.m_20299_(1.0f).m_82549_(entity.m_20252_(1.0f).m_82490_(5.0)), ClipContext.Block.OUTLINE, ClipContext.Fluid.SOURCE_ONLY, entity)).m_6662_() == HitResult.Type.BLOCK && !new Object(){
+        if (entity instanceof LivingEntity _entity && _entity.isHolding(((Block)EvenbetternetherModBlocks.DENSE_LAVA_FLOE.get()).asItem()) && entity.level().clip(new ClipContext(entity.getEyePosition(1.0f), entity.getEyePosition(1.0f).add(entity.getViewVector(1.0f).scale(5.0)), ClipContext.Block.OUTLINE, ClipContext.Fluid.SOURCE_ONLY, entity)).getType() == HitResult.Type.BLOCK && !new Object(){
 
             public boolean checkGamemode(Entity _ent) {
                 if (_ent instanceof ServerPlayer _serverPlayer) {
-                    return _serverPlayer.f_8941_.m_9290_() == GameType.ADVENTURE;
+                    return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.ADVENTURE;
                 }
-                if (_ent.m_9236_().m_5776_() && _ent instanceof Player) {
+                if (_ent.level().isClientSide() && _ent instanceof Player) {
                     Player _player = (Player)_ent;
-                    return Minecraft.m_91087_().m_91403_().m_104949_(_player.m_36316_().getId()) != null && Minecraft.m_91087_().m_91403_().m_104949_(_player.m_36316_().getId()).m_105325_() == GameType.ADVENTURE;
+                    return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null && Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.ADVENTURE;
                 }
                 return false;
             }
-        }.checkGamemode(entity) && world.m_6425_(BlockPos.m_274561_((double)(raytrace_x = (double)entity.m_9236_().m_45547_(new ClipContext(entity.m_20299_(1.0f), entity.m_20299_(1.0f).m_82549_(entity.m_20252_(1.0f).m_82490_(5.0)), ClipContext.Block.OUTLINE, ClipContext.Fluid.SOURCE_ONLY, entity)).m_82425_().m_123341_()), (double)(raytrace_y = (double)entity.m_9236_().m_45547_(new ClipContext(entity.m_20299_(1.0f), entity.m_20299_(1.0f).m_82549_(entity.m_20252_(1.0f).m_82490_(5.0)), ClipContext.Block.OUTLINE, ClipContext.Fluid.SOURCE_ONLY, entity)).m_82425_().m_123342_()), (double)(raytrace_z = (double)entity.m_9236_().m_45547_(new ClipContext(entity.m_20299_(1.0f), entity.m_20299_(1.0f).m_82549_(entity.m_20252_(1.0f).m_82490_(5.0)), ClipContext.Block.OUTLINE, ClipContext.Fluid.SOURCE_ONLY, entity)).m_82425_().m_123343_()))).m_76188_().m_60734_() == Blocks.f_49991_ && world.m_46859_(BlockPos.m_274561_((double)raytrace_x, (double)(raytrace_y + 1.0), (double)raytrace_z))) {
+        }.checkGamemode(entity) && world.getFluidState(BlockPos.containing((double)(raytrace_x = (double)entity.level().clip(new ClipContext(entity.getEyePosition(1.0f), entity.getEyePosition(1.0f).add(entity.getViewVector(1.0f).scale(5.0)), ClipContext.Block.OUTLINE, ClipContext.Fluid.SOURCE_ONLY, entity)).getBlockPos().getX()), (double)(raytrace_y = (double)entity.level().clip(new ClipContext(entity.getEyePosition(1.0f), entity.getEyePosition(1.0f).add(entity.getViewVector(1.0f).scale(5.0)), ClipContext.Block.OUTLINE, ClipContext.Fluid.SOURCE_ONLY, entity)).getBlockPos().getY()), (double)(raytrace_z = (double)entity.level().clip(new ClipContext(entity.getEyePosition(1.0f), entity.getEyePosition(1.0f).add(entity.getViewVector(1.0f).scale(5.0)), ClipContext.Block.OUTLINE, ClipContext.Fluid.SOURCE_ONLY, entity)).getBlockPos().getZ()))).createLegacyBlock().getBlock() == Blocks.LAVA && world.isEmptyBlock(BlockPos.containing((double)raytrace_x, (double)(raytrace_y + 1.0), (double)raytrace_z))) {
             LivingEntity _livEnt;
             LivingEntity _livEnt2;
-            world.m_7731_(BlockPos.m_274561_((double)raytrace_x, (double)(raytrace_y + 1.0), (double)raytrace_z), ((Block)EvenbetternetherModBlocks.DENSE_LAVA_FLOE.get()).m_49966_(), 3);
-            if ((entity instanceof LivingEntity && null != (_livEnt2 = (LivingEntity)entity) ? _livEnt2.m_21205_() : ItemStack.f_41583_).m_41720_() == ((Block)EvenbetternetherModBlocks.DENSE_LAVA_FLOE.get()).m_5456_()) {
+            world.setBlock(BlockPos.containing((double)raytrace_x, (double)(raytrace_y + 1.0), (double)raytrace_z), ((Block)EvenbetternetherModBlocks.DENSE_LAVA_FLOE.get()).defaultBlockState(), 3);
+            if ((entity instanceof LivingEntity && null != (_livEnt2 = (LivingEntity)entity) ? _livEnt2.getMainHandItem() : ItemStack.EMPTY).getItem() == ((Block)EvenbetternetherModBlocks.DENSE_LAVA_FLOE.get()).asItem()) {
                 if (!new Object(){
 
                     public boolean checkGamemode(Entity _ent) {
                         if (_ent instanceof ServerPlayer _serverPlayer) {
-                            return _serverPlayer.f_8941_.m_9290_() == GameType.CREATIVE;
+                            return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
                         }
-                        if (_ent.m_9236_().m_5776_() && _ent instanceof Player) {
+                        if (_ent.level().isClientSide() && _ent instanceof Player) {
                             Player _player = (Player)_ent;
-                            return Minecraft.m_91087_().m_91403_().m_104949_(_player.m_36316_().getId()) != null && Minecraft.m_91087_().m_91403_().m_104949_(_player.m_36316_().getId()).m_105325_() == GameType.CREATIVE;
+                            return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null && Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
                         }
                         return false;
                     }
                 }.checkGamemode(entity)) {
                     LivingEntity _livEnt3;
-                    (entity instanceof LivingEntity && null != (_livEnt3 = (LivingEntity)entity) ? _livEnt3.m_21205_() : ItemStack.f_41583_).m_41774_(1);
+                    (entity instanceof LivingEntity && null != (_livEnt3 = (LivingEntity)entity) ? _livEnt3.getMainHandItem() : ItemStack.EMPTY).shrink(1);
                 }
                 if (entity instanceof LivingEntity _entity) {
-                    _entity.m_21011_(InteractionHand.MAIN_HAND, true);
+                    _entity.swing(InteractionHand.MAIN_HAND, true);
                 }
-            } else if ((entity instanceof LivingEntity && null != (_livEnt = (LivingEntity)entity) ? _livEnt.m_21206_() : ItemStack.f_41583_).m_41720_() == ((Block)EvenbetternetherModBlocks.DENSE_LAVA_FLOE.get()).m_5456_()) {
+            } else if ((entity instanceof LivingEntity && null != (_livEnt = (LivingEntity)entity) ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == ((Block)EvenbetternetherModBlocks.DENSE_LAVA_FLOE.get()).asItem()) {
                 if (!new Object(){
 
                     public boolean checkGamemode(Entity _ent) {
                         if (_ent instanceof ServerPlayer _serverPlayer) {
-                            return _serverPlayer.f_8941_.m_9290_() == GameType.CREATIVE;
+                            return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
                         }
-                        if (_ent.m_9236_().m_5776_() && _ent instanceof Player) {
+                        if (_ent.level().isClientSide() && _ent instanceof Player) {
                             Player _player = (Player)_ent;
-                            return Minecraft.m_91087_().m_91403_().m_104949_(_player.m_36316_().getId()) != null && Minecraft.m_91087_().m_91403_().m_104949_(_player.m_36316_().getId()).m_105325_() == GameType.CREATIVE;
+                            return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null && Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
                         }
                         return false;
                     }
                 }.checkGamemode(entity)) {
                     LivingEntity _livEnt4;
-                    (entity instanceof LivingEntity && null != (_livEnt4 = (LivingEntity)entity) ? _livEnt4.m_21206_() : ItemStack.f_41583_).m_41774_(1);
+                    (entity instanceof LivingEntity && null != (_livEnt4 = (LivingEntity)entity) ? _livEnt4.getOffhandItem() : ItemStack.EMPTY).shrink(1);
                 }
                 if (entity instanceof LivingEntity _entity) {
-                    _entity.m_21011_(InteractionHand.OFF_HAND, true);
+                    _entity.swing(InteractionHand.OFF_HAND, true);
                 }
             }
             if (world instanceof Level) {
                 Level _level = (Level)world;
-                if (!_level.m_5776_()) {
-                    _level.m_5594_(null, BlockPos.m_274561_((double)raytrace_x, (double)(raytrace_y + 1.0), (double)raytrace_z), (SoundEvent)ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.basalt.place")), SoundSource.BLOCKS, 1.0f, 1.0f);
+                if (!_level.isClientSide()) {
+                    _level.playSound(null, BlockPos.containing((double)raytrace_x, (double)(raytrace_y + 1.0), (double)raytrace_z), (SoundEvent)ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.basalt.place")), SoundSource.BLOCKS, 1.0f, 1.0f);
                 } else {
-                    _level.m_7785_(raytrace_x, raytrace_y + 1.0, raytrace_z, (SoundEvent)ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.basalt.place")), SoundSource.BLOCKS, 1.0f, 1.0f, false);
+                    _level.playLocalSound(raytrace_x, raytrace_y + 1.0, raytrace_z, (SoundEvent)ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.basalt.place")), SoundSource.BLOCKS, 1.0f, 1.0f, false);
                 }
             }
         }

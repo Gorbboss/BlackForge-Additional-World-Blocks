@@ -25,10 +25,10 @@ import net.minecraft.world.level.material.MapColor;
 public class SmoothNetherrackBlock
 extends Block {
     public SmoothNetherrackBlock() {
-        super(BlockBehaviour.Properties.m_284310_().m_280658_(NoteBlockInstrument.BASEDRUM).m_284180_(MapColor.f_283820_).m_60918_(SoundType.f_56720_).m_60913_(1.0f, 10.0f).m_60999_());
+        super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.NETHER).sound(SoundType.NETHERRACK).strength(1.0f, 10.0f).requiresCorrectToolForDrops());
     }
 
-    public int m_7753_(BlockState state, BlockGetter worldIn, BlockPos pos) {
+    public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
         return 15;
     }
 }

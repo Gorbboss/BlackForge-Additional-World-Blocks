@@ -27,18 +27,18 @@ import net.minecraft.world.level.material.MapColor;
 public class MushroomStairsBlock
 extends StairBlock {
     public MushroomStairsBlock() {
-        super(() -> Blocks.f_50016_.m_49966_(), BlockBehaviour.Properties.m_284310_().m_278183_().m_280658_(NoteBlockInstrument.BASS).m_284180_(MapColor.f_283832_).m_60918_(SoundType.f_244244_).m_60913_(3.0f, 2.0f).m_60988_());
+        super(() -> Blocks.AIR.defaultBlockState(), BlockBehaviour.Properties.of().ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.COLOR_YELLOW).sound(SoundType.NETHER_WOOD).strength(3.0f, 2.0f).dynamicShape());
     }
 
-    public float m_7325_() {
+    public float getExplosionResistance() {
         return 2.0f;
     }
 
-    public boolean m_6724_(BlockState state) {
+    public boolean isRandomlyTicking(BlockState state) {
         return false;
     }
 
-    public int m_7753_(BlockState state, BlockGetter worldIn, BlockPos pos) {
+    public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
         return 0;
     }
 }

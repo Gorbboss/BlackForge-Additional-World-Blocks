@@ -24,28 +24,28 @@ extends SwordItem {
     public PyriteSwordItem() {
         super(new Tier(){
 
-            public int m_6609_() {
+            public int getUses() {
                 return 512;
             }
 
-            public float m_6624_() {
+            public float getSpeed() {
                 return 7.0f;
             }
 
-            public float m_6631_() {
+            public float getAttackDamageBonus() {
                 return 2.5f;
             }
 
-            public int m_6604_() {
+            public int getLevel() {
                 return 2;
             }
 
-            public int m_6601_() {
+            public int getEnchantmentValue() {
                 return 17;
             }
 
-            public Ingredient m_6282_() {
-                return Ingredient.m_43927_((ItemStack[])new ItemStack[]{new ItemStack((ItemLike)EvenbetternetherModItems.PYRITE_INGOT.get())});
+            public Ingredient getRepairIngredient() {
+                return Ingredient.of((ItemStack[])new ItemStack[]{new ItemStack((ItemLike)EvenbetternetherModItems.PYRITE_INGOT.get())});
             }
         }, 3, -2.4f, new Item.Properties());
     }

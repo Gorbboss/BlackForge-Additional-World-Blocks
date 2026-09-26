@@ -19,7 +19,7 @@ import net.minecraft.world.level.material.MapColor;
 public class PyriteBrickSlabBlock
 extends SlabBlock {
     public PyriteBrickSlabBlock() {
-        super(BlockBehaviour.Properties.m_284310_().m_280658_(NoteBlockInstrument.BASEDRUM).m_284180_(MapColor.f_283832_).m_60918_(SoundType.f_56721_).m_60913_(2.0f, 10.0f).m_60999_().m_60988_());
+        super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.COLOR_YELLOW).sound(SoundType.NETHER_BRICKS).strength(2.0f, 10.0f).requiresCorrectToolForDrops().dynamicShape());
     }
 }
 

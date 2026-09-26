@@ -25,28 +25,28 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 public class EvenbetternetherModCompostableItems {
     @SubscribeEvent
     public static void addComposterItems(FMLCommonSetupEvent event) {
-        ComposterBlock.f_51914_.put((Object)((Block)EvenbetternetherModBlocks.VERDANT_ROOTS.get()).m_5456_(), 0.3f);
-        ComposterBlock.f_51914_.put((Object)((Block)EvenbetternetherModBlocks.FEATHER_FERN.get()).m_5456_(), 0.3f);
-        ComposterBlock.f_51914_.put((Object)((Block)EvenbetternetherModBlocks.NETHER_AGAVE.get()).m_5456_(), 0.3f);
-        ComposterBlock.f_51914_.put((Object)((Block)EvenbetternetherModBlocks.VERDANT_SPROUTS.get()).m_5456_(), 0.3f);
-        ComposterBlock.f_51914_.put((Object)((Block)EvenbetternetherModBlocks.NETHER_SAGUARO.get()).m_5456_(), 0.5f);
-        ComposterBlock.f_51914_.put((Object)((Block)EvenbetternetherModBlocks.BARREL_CACTUS.get()).m_5456_(), 0.5f);
-        ComposterBlock.f_51914_.put((Object)((Block)EvenbetternetherModBlocks.SOUL_ROOTS.get()).m_5456_(), 0.3f);
-        ComposterBlock.f_51914_.put((Object)((Block)EvenbetternetherModBlocks.SOUL_SPROUTS.get()).m_5456_(), 0.3f);
-        ComposterBlock.f_51914_.put((Object)((Block)EvenbetternetherModBlocks.BURNING_ROOTS.get()).m_5456_(), 0.3f);
-        ComposterBlock.f_51914_.put((Object)((Block)EvenbetternetherModBlocks.BURNING_SPROUTS.get()).m_5456_(), 0.3f);
-        ComposterBlock.f_51914_.put((Object)((Block)EvenbetternetherModBlocks.CHARRED_SPROUTS.get()).m_5456_(), 0.3f);
-        ComposterBlock.f_51914_.put((Object)((Block)EvenbetternetherModBlocks.TALL_NETHERSHROOM.get()).m_5456_(), 0.3f);
-        ComposterBlock.f_51914_.put((Object)((Block)EvenbetternetherModBlocks.NETHERSHROOM.get()).m_5456_(), 0.3f);
-        ComposterBlock.f_51914_.put((Object)((Block)EvenbetternetherModBlocks.FUNGAL_ROOTS.get()).m_5456_(), 0.3f);
-        ComposterBlock.f_51914_.put((Object)((Block)EvenbetternetherModBlocks.FUNGAL_SPROUTS.get()).m_5456_(), 0.3f);
-        ComposterBlock.f_51914_.put((Object)((Block)EvenbetternetherModBlocks.HANGING_MYCELIUM.get()).m_5456_(), 0.3f);
-        ComposterBlock.f_51914_.put((Object)((Block)EvenbetternetherModBlocks.LONG_HANGING_MYCELIUM.get()).m_5456_(), 0.3f);
-        ComposterBlock.f_51914_.put((Object)((Block)EvenbetternetherModBlocks.BULBOUS_HANGING_MYCELIUM.get()).m_5456_(), 0.5f);
-        ComposterBlock.f_51914_.put((Object)((ItemLike)EvenbetternetherModItems.SPELT_SEEDS.get()), 0.25f);
-        ComposterBlock.f_51914_.put((Object)((ItemLike)EvenbetternetherModItems.SPELT_ITEM.get()), 0.65f);
-        ComposterBlock.f_51914_.put((Object)((Block)EvenbetternetherModBlocks.TALL_BROWN_NETHERSHROOM.get()).m_5456_(), 0.3f);
-        ComposterBlock.f_51914_.put((Object)((Block)EvenbetternetherModBlocks.BROWN_NETHERSHROOM.get()).m_5456_(), 0.3f);
+        ComposterBlock.COMPOSTABLES.put((Object)((Block)EvenbetternetherModBlocks.VERDANT_ROOTS.get()).asItem(), 0.3f);
+        ComposterBlock.COMPOSTABLES.put((Object)((Block)EvenbetternetherModBlocks.FEATHER_FERN.get()).asItem(), 0.3f);
+        ComposterBlock.COMPOSTABLES.put((Object)((Block)EvenbetternetherModBlocks.NETHER_AGAVE.get()).asItem(), 0.3f);
+        ComposterBlock.COMPOSTABLES.put((Object)((Block)EvenbetternetherModBlocks.VERDANT_SPROUTS.get()).asItem(), 0.3f);
+        ComposterBlock.COMPOSTABLES.put((Object)((Block)EvenbetternetherModBlocks.NETHER_SAGUARO.get()).asItem(), 0.5f);
+        ComposterBlock.COMPOSTABLES.put((Object)((Block)EvenbetternetherModBlocks.BARREL_CACTUS.get()).asItem(), 0.5f);
+        ComposterBlock.COMPOSTABLES.put((Object)((Block)EvenbetternetherModBlocks.SOUL_ROOTS.get()).asItem(), 0.3f);
+        ComposterBlock.COMPOSTABLES.put((Object)((Block)EvenbetternetherModBlocks.SOUL_SPROUTS.get()).asItem(), 0.3f);
+        ComposterBlock.COMPOSTABLES.put((Object)((Block)EvenbetternetherModBlocks.BURNING_ROOTS.get()).asItem(), 0.3f);
+        ComposterBlock.COMPOSTABLES.put((Object)((Block)EvenbetternetherModBlocks.BURNING_SPROUTS.get()).asItem(), 0.3f);
+        ComposterBlock.COMPOSTABLES.put((Object)((Block)EvenbetternetherModBlocks.CHARRED_SPROUTS.get()).asItem(), 0.3f);
+        ComposterBlock.COMPOSTABLES.put((Object)((Block)EvenbetternetherModBlocks.TALL_NETHERSHROOM.get()).asItem(), 0.3f);
+        ComposterBlock.COMPOSTABLES.put((Object)((Block)EvenbetternetherModBlocks.NETHERSHROOM.get()).asItem(), 0.3f);
+        ComposterBlock.COMPOSTABLES.put((Object)((Block)EvenbetternetherModBlocks.FUNGAL_ROOTS.get()).asItem(), 0.3f);
+        ComposterBlock.COMPOSTABLES.put((Object)((Block)EvenbetternetherModBlocks.FUNGAL_SPROUTS.get()).asItem(), 0.3f);
+        ComposterBlock.COMPOSTABLES.put((Object)((Block)EvenbetternetherModBlocks.HANGING_MYCELIUM.get()).asItem(), 0.3f);
+        ComposterBlock.COMPOSTABLES.put((Object)((Block)EvenbetternetherModBlocks.LONG_HANGING_MYCELIUM.get()).asItem(), 0.3f);
+        ComposterBlock.COMPOSTABLES.put((Object)((Block)EvenbetternetherModBlocks.BULBOUS_HANGING_MYCELIUM.get()).asItem(), 0.5f);
+        ComposterBlock.COMPOSTABLES.put((Object)((ItemLike)EvenbetternetherModItems.SPELT_SEEDS.get()), 0.25f);
+        ComposterBlock.COMPOSTABLES.put((Object)((ItemLike)EvenbetternetherModItems.SPELT_ITEM.get()), 0.65f);
+        ComposterBlock.COMPOSTABLES.put((Object)((Block)EvenbetternetherModBlocks.TALL_BROWN_NETHERSHROOM.get()).asItem(), 0.3f);
+        ComposterBlock.COMPOSTABLES.put((Object)((Block)EvenbetternetherModBlocks.BROWN_NETHERSHROOM.get()).asItem(), 0.3f);
     }
 }
 

@@ -27,8 +27,8 @@ public class SpeltStage0OnBoneMealSuccessProcedure {
     public static void execute(LevelAccessor world, double x, double y, double z) {
         double SpeltStage = 0.0;
         String TempText = "";
-        if (world.m_8055_(BlockPos.m_274561_((double)x, (double)y, (double)z)).m_60734_() != EvenbetternetherModBlocks.SPELT_STAGE_6.get()) {
-            TempText = ForgeRegistries.BLOCKS.getKey((Object)world.m_8055_(BlockPos.m_274561_((double)x, (double)y, (double)z)).m_60734_()).toString();
+        if (world.getBlockState(BlockPos.containing((double)x, (double)y, (double)z)).getBlock() != EvenbetternetherModBlocks.SPELT_STAGE_6.get()) {
+            TempText = ForgeRegistries.BLOCKS.getKey((Object)world.getBlockState(BlockPos.containing((double)x, (double)y, (double)z)).getBlock()).toString();
             TempText = TempText.substring(TempText.indexOf(":") + 1, TempText.length());
             TempText = TempText.substring(12);
             SpeltStage = new Object(){
@@ -41,10 +41,10 @@ public class SpeltStage0OnBoneMealSuccessProcedure {
                     }
                 }
             }.convert(TempText);
-            if ((SpeltStage += (double)Mth.m_216271_((RandomSource)RandomSource.m_216327_(), (int)2, (int)5)) > 6.0) {
+            if ((SpeltStage += (double)Mth.nextInt((RandomSource)RandomSource.create(), (int)2, (int)5)) > 6.0) {
                 SpeltStage = 6.0;
             }
-            world.m_7731_(BlockPos.m_274561_((double)x, (double)y, (double)z), ((Block)ForgeRegistries.BLOCKS.getValue(new ResourceLocation(("evenbetternether:spelt_stage_" + new DecimalFormat("##").format(SpeltStage)).toLowerCase(Locale.ENGLISH)))).m_49966_(), 3);
+            world.setBlock(BlockPos.containing((double)x, (double)y, (double)z), ((Block)ForgeRegistries.BLOCKS.getValue(new ResourceLocation(("evenbetternether:spelt_stage_" + new DecimalFormat("##").format(SpeltStage)).toLowerCase(Locale.ENGLISH)))).defaultBlockState(), 3);
         }
     }
 }

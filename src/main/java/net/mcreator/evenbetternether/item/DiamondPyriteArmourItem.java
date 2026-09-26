@@ -36,35 +36,35 @@ extends ArmorItem {
     public DiamondPyriteArmourItem(ArmorItem.Type type, Item.Properties properties) {
         super(new ArmorMaterial(){
 
-            public int m_266425_(ArmorItem.Type type) {
-                return (new int[]{13, 15, 16, 11})[type.m_266308_().m_20749_()] * 22;
+            public int getDurabilityForType(ArmorItem.Type type) {
+                return (new int[]{13, 15, 16, 11})[type.getSlot().getIndex()] * 22;
             }
 
-            public int m_7366_(ArmorItem.Type type) {
-                return (new int[]{3, 7, 8, 3})[type.m_266308_().m_20749_()];
+            public int getDefenseForType(ArmorItem.Type type) {
+                return (new int[]{3, 7, 8, 3})[type.getSlot().getIndex()];
             }
 
-            public int m_6646_() {
+            public int getEnchantmentValue() {
                 return 11;
             }
 
-            public SoundEvent m_7344_() {
+            public SoundEvent getEquipSound() {
                 return (SoundEvent)ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_gold"));
             }
 
-            public Ingredient m_6230_() {
-                return Ingredient.m_43927_((ItemStack[])new ItemStack[]{new ItemStack((ItemLike)Items.f_42415_)});
+            public Ingredient getRepairIngredient() {
+                return Ingredient.of((ItemStack[])new ItemStack[]{new ItemStack((ItemLike)Items.DIAMOND)});
             }
 
-            public String m_6082_() {
+            public String getName() {
                 return "diamond_pyrite_armour";
             }
 
-            public float m_6651_() {
+            public float getToughness() {
                 return 1.5f;
             }
 
-            public float m_6649_() {
+            public float getKnockbackResistance() {
                 return 0.0f;
             }
         }, type, properties);

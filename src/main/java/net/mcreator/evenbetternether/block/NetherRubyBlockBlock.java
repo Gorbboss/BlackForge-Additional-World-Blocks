@@ -25,10 +25,10 @@ import net.minecraft.world.level.material.MapColor;
 public class NetherRubyBlockBlock
 extends Block {
     public NetherRubyBlockBlock() {
-        super(BlockBehaviour.Properties.m_284310_().m_280658_(NoteBlockInstrument.BASEDRUM).m_284180_(MapColor.f_283913_).m_60918_(SoundType.f_154654_).m_60913_(2.0f, 10.0f).m_60999_());
+        super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.COLOR_RED).sound(SoundType.AMETHYST).strength(2.0f, 10.0f).requiresCorrectToolForDrops());
     }
 
-    public int m_7753_(BlockState state, BlockGetter worldIn, BlockPos pos) {
+    public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
         return 15;
     }
 }

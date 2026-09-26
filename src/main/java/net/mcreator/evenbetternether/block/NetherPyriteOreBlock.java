@@ -25,10 +25,10 @@ import net.minecraft.world.level.material.MapColor;
 public class NetherPyriteOreBlock
 extends Block {
     public NetherPyriteOreBlock() {
-        super(BlockBehaviour.Properties.m_284310_().m_280658_(NoteBlockInstrument.BASEDRUM).m_284180_(MapColor.f_283832_).m_60918_(SoundType.f_56723_).m_60913_(1.5f, 3.0f));
+        super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.COLOR_YELLOW).sound(SoundType.NETHER_ORE).strength(1.5f, 3.0f));
     }
 
-    public int m_7753_(BlockState state, BlockGetter worldIn, BlockPos pos) {
+    public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
         return 15;
     }
 }

@@ -58,61 +58,61 @@ public class SpeltStage1Block
 extends Block
 implements BonemealableBlock {
     public SpeltStage1Block() {
-        super(BlockBehaviour.Properties.m_284310_().m_284180_(MapColor.f_283913_).m_60918_(SoundType.f_56758_).m_60966_().m_60910_().m_60955_().m_60977_().m_60924_((bs, br, bp) -> false));
+        super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).sound(SoundType.CROP).instabreak().noCollission().noOcclusion().randomTicks().isRedstoneConductor((bs, br, bp) -> false));
     }
 
-    public boolean m_7420_(BlockState state, BlockGetter reader, BlockPos pos) {
+    public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
         return true;
     }
 
-    public int m_7753_(BlockState state, BlockGetter worldIn, BlockPos pos) {
+    public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
         return 0;
     }
 
-    public VoxelShape m_5909_(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        return Shapes.m_83040_();
+    public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        return Shapes.empty();
     }
 
-    public VoxelShape m_5940_(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        return SpeltStage1Block.m_49796_((double)0.0, (double)0.0, (double)0.0, (double)16.0, (double)6.0, (double)16.0);
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        return SpeltStage1Block.box((double)0.0, (double)0.0, (double)0.0, (double)16.0, (double)6.0, (double)16.0);
     }
 
-    public boolean m_7898_(BlockState blockstate, LevelReader worldIn, BlockPos pos) {
+    public boolean canSurvive(BlockState blockstate, LevelReader worldIn, BlockPos pos) {
         if (worldIn instanceof LevelAccessor world) {
-            int x = pos.m_123341_();
-            int y = pos.m_123342_();
-            int z = pos.m_123343_();
+            int x = pos.getX();
+            int y = pos.getY();
+            int z = pos.getZ();
             return SpeltBlockValidPlacementConditionProcedure.execute(world, x, y, z);
         }
-        return super.m_7898_(blockstate, worldIn, pos);
+        return super.canSurvive(blockstate, worldIn, pos);
     }
 
-    public BlockState m_7417_(BlockState state, Direction facing, BlockState facingState, LevelAccessor world, BlockPos currentPos, BlockPos facingPos) {
-        return !state.m_60710_((LevelReader)world, currentPos) ? Blocks.f_50016_.m_49966_() : super.m_7417_(state, facing, facingState, world, currentPos, facingPos);
+    public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor world, BlockPos currentPos, BlockPos facingPos) {
+        return !state.canSurvive((LevelReader)world, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, facing, facingState, world, currentPos, facingPos);
     }
 
     public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter world, BlockPos pos, Player player) {
         return new ItemStack((ItemLike)EvenbetternetherModItems.SPELT_SEEDS.get());
     }
 
-    public void m_213897_(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
-        super.m_213897_(blockstate, world, pos, random);
-        int x = pos.m_123341_();
-        int y = pos.m_123342_();
-        int z = pos.m_123343_();
+    public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
+        super.tick(blockstate, world, pos, random);
+        int x = pos.getX();
+        int y = pos.getY();
+        int z = pos.getZ();
         SpeltStage1OnTickUpdateProcedure.execute((LevelAccessor)world, x, y, z);
     }
 
-    public boolean m_7370_(LevelReader worldIn, BlockPos pos, BlockState blockstate, boolean clientSide) {
+    public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState blockstate, boolean clientSide) {
         return true;
     }
 
-    public boolean m_214167_(Level world, RandomSource random, BlockPos pos, BlockState blockstate) {
+    public boolean isBonemealSuccess(Level world, RandomSource random, BlockPos pos, BlockState blockstate) {
         return true;
     }
 
-    public void m_214148_(ServerLevel world, RandomSource random, BlockPos pos, BlockState blockstate) {
-        SpeltStage0OnBoneMealSuccessProcedure.execute((LevelAccessor)world, pos.m_123341_(), pos.m_123342_(), pos.m_123343_());
+    public void performBonemeal(ServerLevel world, RandomSource random, BlockPos pos, BlockState blockstate) {
+        SpeltStage0OnBoneMealSuccessProcedure.execute((LevelAccessor)world, pos.getX(), pos.getY(), pos.getZ());
     }
 }
 

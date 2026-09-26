@@ -55,37 +55,37 @@ import net.minecraftforge.common.PlantType;
 public class NetherSaguaroBlock
 extends DoublePlantBlock {
     public NetherSaguaroBlock() {
-        super(BlockBehaviour.Properties.m_284310_().m_284180_(MapColor.f_283915_).m_60918_(SoundType.f_56761_).m_60913_(0.1f, 0.0f).m_60910_().m_222979_(BlockBehaviour.OffsetType.XZ).m_278166_(PushReaction.DESTROY));
+        super(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).sound(SoundType.NETHER_WART).strength(0.1f, 0.0f).noCollission().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
     }
 
-    public VoxelShape m_5940_(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        Vec3 offset = state.m_60824_(world, pos);
-        return NetherSaguaroBlock.m_49796_((double)4.0, (double)0.0, (double)4.0, (double)12.0, (double)16.0, (double)12.0).m_83216_(offset.f_82479_, offset.f_82480_, offset.f_82481_);
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        Vec3 offset = state.getOffset(world, pos);
+        return NetherSaguaroBlock.box((double)4.0, (double)0.0, (double)4.0, (double)12.0, (double)16.0, (double)12.0).move(offset.x, offset.y, offset.z);
     }
 
     public BlockPathTypes getBlockPathType(BlockState state, BlockGetter world, BlockPos pos, Mob entity) {
         return BlockPathTypes.DAMAGE_OTHER;
     }
 
-    public boolean m_6266_(BlockState groundState, BlockGetter worldIn, BlockPos pos) {
-        return groundState.m_60713_(Blocks.f_49994_);
+    public boolean mayPlaceOn(BlockState groundState, BlockGetter worldIn, BlockPos pos) {
+        return groundState.is(Blocks.GRAVEL);
     }
 
-    public boolean m_7898_(BlockState blockstate, LevelReader worldIn, BlockPos pos) {
-        BlockPos blockpos = pos.m_7495_();
-        BlockState groundState = worldIn.m_8055_(blockpos);
-        if (blockstate.m_61143_((Property)f_52858_) == DoubleBlockHalf.UPPER) {
-            return groundState.m_60713_((Block)this) && groundState.m_61143_((Property)f_52858_) == DoubleBlockHalf.LOWER;
+    public boolean canSurvive(BlockState blockstate, LevelReader worldIn, BlockPos pos) {
+        BlockPos blockpos = pos.below();
+        BlockState groundState = worldIn.getBlockState(blockpos);
+        if (blockstate.getValue((Property)HALF) == DoubleBlockHalf.UPPER) {
+            return groundState.is((Block)this) && groundState.getValue((Property)HALF) == DoubleBlockHalf.LOWER;
         }
-        return this.m_6266_(groundState, (BlockGetter)worldIn, blockpos);
+        return this.mayPlaceOn(groundState, (BlockGetter)worldIn, blockpos);
     }
 
     public PlantType getPlantType(BlockGetter world, BlockPos pos) {
         return PlantType.NETHER;
     }
 
-    public void m_7892_(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
-        super.m_7892_(blockstate, world, pos, entity);
+    public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
+        super.entityInside(blockstate, world, pos, entity);
         BarrelCactusEntityCollidesInTheBlockProcedure.execute((LevelAccessor)world, entity);
     }
 }

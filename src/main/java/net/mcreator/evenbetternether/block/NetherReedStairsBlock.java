@@ -21,14 +21,14 @@ import net.minecraft.world.level.material.MapColor;
 public class NetherReedStairsBlock
 extends StairBlock {
     public NetherReedStairsBlock() {
-        super(() -> Blocks.f_50016_.m_49966_(), BlockBehaviour.Properties.m_284310_().m_284180_(MapColor.f_283743_).m_60918_(SoundType.f_243772_).m_60913_(2.0f, 1.0f).m_60988_());
+        super(() -> Blocks.AIR.defaultBlockState(), BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).sound(SoundType.BAMBOO_WOOD).strength(2.0f, 1.0f).dynamicShape());
     }
 
-    public float m_7325_() {
+    public float getExplosionResistance() {
         return 1.0f;
     }
 
-    public boolean m_6724_(BlockState state) {
+    public boolean isRandomlyTicking(BlockState state) {
         return false;
     }
 }

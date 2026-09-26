@@ -41,18 +41,18 @@ implements IBrewingRecipe {
     }
 
     public boolean isInput(ItemStack input) {
-        return Ingredient.m_43927_((ItemStack[])new ItemStack[]{new ItemStack((ItemLike)Items.f_42590_)}).test(input);
+        return Ingredient.of((ItemStack[])new ItemStack[]{new ItemStack((ItemLike)Items.GLASS_BOTTLE)}).test(input);
     }
 
     public boolean isIngredient(ItemStack ingredient) {
-        return Ingredient.m_43927_((ItemStack[])new ItemStack[]{new ItemStack((ItemLike)EvenbetternetherModBlocks.BARREL_CACTUS.get())}).test(ingredient);
+        return Ingredient.of((ItemStack[])new ItemStack[]{new ItemStack((ItemLike)EvenbetternetherModBlocks.BARREL_CACTUS.get())}).test(ingredient);
     }
 
     public ItemStack getOutput(ItemStack input, ItemStack ingredient) {
         if (this.isInput(input) && this.isIngredient(ingredient)) {
-            return PotionUtils.m_43549_((ItemStack)new ItemStack((ItemLike)Items.f_42589_), (Potion)Potions.f_43599_);
+            return PotionUtils.setPotion((ItemStack)new ItemStack((ItemLike)Items.POTION), (Potion)Potions.WATER);
         }
-        return ItemStack.f_41583_;
+        return ItemStack.EMPTY;
     }
 }
 

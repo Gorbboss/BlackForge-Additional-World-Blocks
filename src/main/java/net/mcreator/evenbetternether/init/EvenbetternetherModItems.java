@@ -196,11 +196,11 @@ public class EvenbetternetherModItems {
     public static final RegistryObject<Item> SMOOTH_NETHERRACK_WALL = EvenbetternetherModItems.block(EvenbetternetherModBlocks.SMOOTH_NETHERRACK_WALL);
 
     private static RegistryObject<Item> block(RegistryObject<Block> block) {
-        return REGISTRY.register(block.getId().m_135815_(), () -> new BlockItem((Block)block.get(), new Item.Properties()));
+        return REGISTRY.register(block.getId().getPath(), () -> new BlockItem((Block)block.get(), new Item.Properties()));
     }
 
     private static RegistryObject<Item> doubleBlock(RegistryObject<Block> block) {
-        return REGISTRY.register(block.getId().m_135815_(), () -> new DoubleHighBlockItem((Block)block.get(), new Item.Properties()));
+        return REGISTRY.register(block.getId().getPath(), () -> new DoubleHighBlockItem((Block)block.get(), new Item.Properties()));
     }
 }
 

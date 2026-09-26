@@ -73,127 +73,127 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 public class DeepslateSpeleothemBlock
 extends Block
 implements SimpleWaterloggedBlock {
-    public static final DirectionProperty FACING = HorizontalDirectionalBlock.f_54117_;
-    public static final EnumProperty<AttachFace> FACE = FaceAttachedHorizontalDirectionalBlock.f_53179_;
-    public static final BooleanProperty WATERLOGGED = BlockStateProperties.f_61362_;
+    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    public static final EnumProperty<AttachFace> FACE = FaceAttachedHorizontalDirectionalBlock.FACE;
+    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     public DeepslateSpeleothemBlock() {
-        super(BlockBehaviour.Properties.m_284310_().m_280658_(NoteBlockInstrument.BASEDRUM).m_284180_(MapColor.f_283875_).m_60918_(SoundType.f_154677_).m_60913_(2.0f, 10.0f).m_60999_().m_60955_().m_60924_((bs, br, bp) -> false).m_60988_().m_222979_(BlockBehaviour.OffsetType.XZ));
-        this.m_49959_((BlockState)((BlockState)((BlockState)((BlockState)this.f_49792_.m_61090_()).m_61124_((Property)FACING, (Comparable)Direction.NORTH)).m_61124_(FACE, (Comparable)AttachFace.WALL)).m_61124_((Property)WATERLOGGED, (Comparable)Boolean.valueOf(false)));
+        super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.DEEPSLATE).sound(SoundType.DEEPSLATE).strength(2.0f, 10.0f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false).dynamicShape().offsetType(BlockBehaviour.OffsetType.XZ));
+        this.registerDefaultState((BlockState)((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue((Property)FACING, (Comparable)Direction.NORTH)).setValue(FACE, (Comparable)AttachFace.WALL)).setValue((Property)WATERLOGGED, (Comparable)Boolean.valueOf(false)));
     }
 
-    public boolean m_7420_(BlockState state, BlockGetter reader, BlockPos pos) {
-        return state.m_60819_().m_76178_();
+    public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
+        return state.getFluidState().isEmpty();
     }
 
-    public int m_7753_(BlockState state, BlockGetter worldIn, BlockPos pos) {
+    public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
         return 0;
     }
 
-    public VoxelShape m_5909_(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        return Shapes.m_83040_();
+    public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        return Shapes.empty();
     }
 
-    public VoxelShape m_5940_(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        Vec3 offset = state.m_60824_(world, pos);
-        return (switch ((Direction)state.m_61143_((Property)FACING)) {
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        Vec3 offset = state.getOffset(world, pos);
+        return (switch ((Direction)state.getValue((Property)FACING)) {
             default -> {
-                switch ((AttachFace)state.m_61143_(FACE)) {
+                switch ((AttachFace)state.getValue(FACE)) {
                     default: {
                         throw new IncompatibleClassChangeError();
                     }
                     case FLOOR: {
-                        yield Shapes.m_83124_((VoxelShape)DeepslateSpeleothemBlock.m_49796_((double)3.0, (double)0.0, (double)3.0, (double)13.0, (double)7.0, (double)13.0), (VoxelShape[])new VoxelShape[]{DeepslateSpeleothemBlock.m_49796_((double)4.0, (double)7.0, (double)4.0, (double)12.0, (double)13.0, (double)12.0), DeepslateSpeleothemBlock.m_49796_((double)5.0, (double)13.0, (double)5.0, (double)11.0, (double)19.0, (double)11.0), DeepslateSpeleothemBlock.m_49796_((double)7.0, (double)25.0, (double)7.0, (double)9.0, (double)32.0, (double)9.0), DeepslateSpeleothemBlock.m_49796_((double)6.0, (double)19.0, (double)6.0, (double)10.0, (double)25.0, (double)10.0)});
+                        yield Shapes.or((VoxelShape)DeepslateSpeleothemBlock.box((double)3.0, (double)0.0, (double)3.0, (double)13.0, (double)7.0, (double)13.0), (VoxelShape[])new VoxelShape[]{DeepslateSpeleothemBlock.box((double)4.0, (double)7.0, (double)4.0, (double)12.0, (double)13.0, (double)12.0), DeepslateSpeleothemBlock.box((double)5.0, (double)13.0, (double)5.0, (double)11.0, (double)19.0, (double)11.0), DeepslateSpeleothemBlock.box((double)7.0, (double)25.0, (double)7.0, (double)9.0, (double)32.0, (double)9.0), DeepslateSpeleothemBlock.box((double)6.0, (double)19.0, (double)6.0, (double)10.0, (double)25.0, (double)10.0)});
                     }
                     case WALL: {
-                        yield Shapes.m_83124_((VoxelShape)DeepslateSpeleothemBlock.m_49796_((double)3.0, (double)3.0, (double)0.0, (double)13.0, (double)13.0, (double)7.0), (VoxelShape[])new VoxelShape[]{DeepslateSpeleothemBlock.m_49796_((double)4.0, (double)4.0, (double)7.0, (double)12.0, (double)12.0, (double)13.0), DeepslateSpeleothemBlock.m_49796_((double)5.0, (double)5.0, (double)13.0, (double)11.0, (double)11.0, (double)19.0), DeepslateSpeleothemBlock.m_49796_((double)7.0, (double)7.0, (double)25.0, (double)9.0, (double)9.0, (double)32.0), DeepslateSpeleothemBlock.m_49796_((double)6.0, (double)6.0, (double)19.0, (double)10.0, (double)10.0, (double)25.0)});
+                        yield Shapes.or((VoxelShape)DeepslateSpeleothemBlock.box((double)3.0, (double)3.0, (double)0.0, (double)13.0, (double)13.0, (double)7.0), (VoxelShape[])new VoxelShape[]{DeepslateSpeleothemBlock.box((double)4.0, (double)4.0, (double)7.0, (double)12.0, (double)12.0, (double)13.0), DeepslateSpeleothemBlock.box((double)5.0, (double)5.0, (double)13.0, (double)11.0, (double)11.0, (double)19.0), DeepslateSpeleothemBlock.box((double)7.0, (double)7.0, (double)25.0, (double)9.0, (double)9.0, (double)32.0), DeepslateSpeleothemBlock.box((double)6.0, (double)6.0, (double)19.0, (double)10.0, (double)10.0, (double)25.0)});
                     }
                     case CEILING: 
                 }
-                yield Shapes.m_83124_((VoxelShape)DeepslateSpeleothemBlock.m_49796_((double)3.0, (double)9.0, (double)3.0, (double)13.0, (double)16.0, (double)13.0), (VoxelShape[])new VoxelShape[]{DeepslateSpeleothemBlock.m_49796_((double)4.0, (double)3.0, (double)4.0, (double)12.0, (double)9.0, (double)12.0), DeepslateSpeleothemBlock.m_49796_((double)5.0, (double)-3.0, (double)5.0, (double)11.0, (double)3.0, (double)11.0), DeepslateSpeleothemBlock.m_49796_((double)7.0, (double)-16.0, (double)7.0, (double)9.0, (double)-9.0, (double)9.0), DeepslateSpeleothemBlock.m_49796_((double)6.0, (double)-9.0, (double)6.0, (double)10.0, (double)-3.0, (double)10.0)});
+                yield Shapes.or((VoxelShape)DeepslateSpeleothemBlock.box((double)3.0, (double)9.0, (double)3.0, (double)13.0, (double)16.0, (double)13.0), (VoxelShape[])new VoxelShape[]{DeepslateSpeleothemBlock.box((double)4.0, (double)3.0, (double)4.0, (double)12.0, (double)9.0, (double)12.0), DeepslateSpeleothemBlock.box((double)5.0, (double)-3.0, (double)5.0, (double)11.0, (double)3.0, (double)11.0), DeepslateSpeleothemBlock.box((double)7.0, (double)-16.0, (double)7.0, (double)9.0, (double)-9.0, (double)9.0), DeepslateSpeleothemBlock.box((double)6.0, (double)-9.0, (double)6.0, (double)10.0, (double)-3.0, (double)10.0)});
             }
             case Direction.NORTH -> {
-                switch ((AttachFace)state.m_61143_(FACE)) {
+                switch ((AttachFace)state.getValue(FACE)) {
                     default: {
                         throw new IncompatibleClassChangeError();
                     }
                     case FLOOR: {
-                        yield Shapes.m_83124_((VoxelShape)DeepslateSpeleothemBlock.m_49796_((double)3.0, (double)0.0, (double)3.0, (double)13.0, (double)7.0, (double)13.0), (VoxelShape[])new VoxelShape[]{DeepslateSpeleothemBlock.m_49796_((double)4.0, (double)7.0, (double)4.0, (double)12.0, (double)13.0, (double)12.0), DeepslateSpeleothemBlock.m_49796_((double)5.0, (double)13.0, (double)5.0, (double)11.0, (double)19.0, (double)11.0), DeepslateSpeleothemBlock.m_49796_((double)7.0, (double)25.0, (double)7.0, (double)9.0, (double)32.0, (double)9.0), DeepslateSpeleothemBlock.m_49796_((double)6.0, (double)19.0, (double)6.0, (double)10.0, (double)25.0, (double)10.0)});
+                        yield Shapes.or((VoxelShape)DeepslateSpeleothemBlock.box((double)3.0, (double)0.0, (double)3.0, (double)13.0, (double)7.0, (double)13.0), (VoxelShape[])new VoxelShape[]{DeepslateSpeleothemBlock.box((double)4.0, (double)7.0, (double)4.0, (double)12.0, (double)13.0, (double)12.0), DeepslateSpeleothemBlock.box((double)5.0, (double)13.0, (double)5.0, (double)11.0, (double)19.0, (double)11.0), DeepslateSpeleothemBlock.box((double)7.0, (double)25.0, (double)7.0, (double)9.0, (double)32.0, (double)9.0), DeepslateSpeleothemBlock.box((double)6.0, (double)19.0, (double)6.0, (double)10.0, (double)25.0, (double)10.0)});
                     }
                     case WALL: {
-                        yield Shapes.m_83124_((VoxelShape)DeepslateSpeleothemBlock.m_49796_((double)3.0, (double)3.0, (double)9.0, (double)13.0, (double)13.0, (double)16.0), (VoxelShape[])new VoxelShape[]{DeepslateSpeleothemBlock.m_49796_((double)4.0, (double)4.0, (double)3.0, (double)12.0, (double)12.0, (double)9.0), DeepslateSpeleothemBlock.m_49796_((double)5.0, (double)5.0, (double)-3.0, (double)11.0, (double)11.0, (double)3.0), DeepslateSpeleothemBlock.m_49796_((double)7.0, (double)7.0, (double)-16.0, (double)9.0, (double)9.0, (double)-9.0), DeepslateSpeleothemBlock.m_49796_((double)6.0, (double)6.0, (double)-9.0, (double)10.0, (double)10.0, (double)-3.0)});
+                        yield Shapes.or((VoxelShape)DeepslateSpeleothemBlock.box((double)3.0, (double)3.0, (double)9.0, (double)13.0, (double)13.0, (double)16.0), (VoxelShape[])new VoxelShape[]{DeepslateSpeleothemBlock.box((double)4.0, (double)4.0, (double)3.0, (double)12.0, (double)12.0, (double)9.0), DeepslateSpeleothemBlock.box((double)5.0, (double)5.0, (double)-3.0, (double)11.0, (double)11.0, (double)3.0), DeepslateSpeleothemBlock.box((double)7.0, (double)7.0, (double)-16.0, (double)9.0, (double)9.0, (double)-9.0), DeepslateSpeleothemBlock.box((double)6.0, (double)6.0, (double)-9.0, (double)10.0, (double)10.0, (double)-3.0)});
                     }
                     case CEILING: 
                 }
-                yield Shapes.m_83124_((VoxelShape)DeepslateSpeleothemBlock.m_49796_((double)3.0, (double)9.0, (double)3.0, (double)13.0, (double)16.0, (double)13.0), (VoxelShape[])new VoxelShape[]{DeepslateSpeleothemBlock.m_49796_((double)4.0, (double)3.0, (double)4.0, (double)12.0, (double)9.0, (double)12.0), DeepslateSpeleothemBlock.m_49796_((double)5.0, (double)-3.0, (double)5.0, (double)11.0, (double)3.0, (double)11.0), DeepslateSpeleothemBlock.m_49796_((double)7.0, (double)-16.0, (double)7.0, (double)9.0, (double)-9.0, (double)9.0), DeepslateSpeleothemBlock.m_49796_((double)6.0, (double)-9.0, (double)6.0, (double)10.0, (double)-3.0, (double)10.0)});
+                yield Shapes.or((VoxelShape)DeepslateSpeleothemBlock.box((double)3.0, (double)9.0, (double)3.0, (double)13.0, (double)16.0, (double)13.0), (VoxelShape[])new VoxelShape[]{DeepslateSpeleothemBlock.box((double)4.0, (double)3.0, (double)4.0, (double)12.0, (double)9.0, (double)12.0), DeepslateSpeleothemBlock.box((double)5.0, (double)-3.0, (double)5.0, (double)11.0, (double)3.0, (double)11.0), DeepslateSpeleothemBlock.box((double)7.0, (double)-16.0, (double)7.0, (double)9.0, (double)-9.0, (double)9.0), DeepslateSpeleothemBlock.box((double)6.0, (double)-9.0, (double)6.0, (double)10.0, (double)-3.0, (double)10.0)});
             }
             case Direction.EAST -> {
-                switch ((AttachFace)state.m_61143_(FACE)) {
+                switch ((AttachFace)state.getValue(FACE)) {
                     default: {
                         throw new IncompatibleClassChangeError();
                     }
                     case FLOOR: {
-                        yield Shapes.m_83124_((VoxelShape)DeepslateSpeleothemBlock.m_49796_((double)3.0, (double)0.0, (double)3.0, (double)13.0, (double)7.0, (double)13.0), (VoxelShape[])new VoxelShape[]{DeepslateSpeleothemBlock.m_49796_((double)4.0, (double)7.0, (double)4.0, (double)12.0, (double)13.0, (double)12.0), DeepslateSpeleothemBlock.m_49796_((double)5.0, (double)13.0, (double)5.0, (double)11.0, (double)19.0, (double)11.0), DeepslateSpeleothemBlock.m_49796_((double)7.0, (double)25.0, (double)7.0, (double)9.0, (double)32.0, (double)9.0), DeepslateSpeleothemBlock.m_49796_((double)6.0, (double)19.0, (double)6.0, (double)10.0, (double)25.0, (double)10.0)});
+                        yield Shapes.or((VoxelShape)DeepslateSpeleothemBlock.box((double)3.0, (double)0.0, (double)3.0, (double)13.0, (double)7.0, (double)13.0), (VoxelShape[])new VoxelShape[]{DeepslateSpeleothemBlock.box((double)4.0, (double)7.0, (double)4.0, (double)12.0, (double)13.0, (double)12.0), DeepslateSpeleothemBlock.box((double)5.0, (double)13.0, (double)5.0, (double)11.0, (double)19.0, (double)11.0), DeepslateSpeleothemBlock.box((double)7.0, (double)25.0, (double)7.0, (double)9.0, (double)32.0, (double)9.0), DeepslateSpeleothemBlock.box((double)6.0, (double)19.0, (double)6.0, (double)10.0, (double)25.0, (double)10.0)});
                     }
                     case WALL: {
-                        yield Shapes.m_83124_((VoxelShape)DeepslateSpeleothemBlock.m_49796_((double)0.0, (double)3.0, (double)3.0, (double)7.0, (double)13.0, (double)13.0), (VoxelShape[])new VoxelShape[]{DeepslateSpeleothemBlock.m_49796_((double)7.0, (double)4.0, (double)4.0, (double)13.0, (double)12.0, (double)12.0), DeepslateSpeleothemBlock.m_49796_((double)13.0, (double)5.0, (double)5.0, (double)19.0, (double)11.0, (double)11.0), DeepslateSpeleothemBlock.m_49796_((double)25.0, (double)7.0, (double)7.0, (double)32.0, (double)9.0, (double)9.0), DeepslateSpeleothemBlock.m_49796_((double)19.0, (double)6.0, (double)6.0, (double)25.0, (double)10.0, (double)10.0)});
+                        yield Shapes.or((VoxelShape)DeepslateSpeleothemBlock.box((double)0.0, (double)3.0, (double)3.0, (double)7.0, (double)13.0, (double)13.0), (VoxelShape[])new VoxelShape[]{DeepslateSpeleothemBlock.box((double)7.0, (double)4.0, (double)4.0, (double)13.0, (double)12.0, (double)12.0), DeepslateSpeleothemBlock.box((double)13.0, (double)5.0, (double)5.0, (double)19.0, (double)11.0, (double)11.0), DeepslateSpeleothemBlock.box((double)25.0, (double)7.0, (double)7.0, (double)32.0, (double)9.0, (double)9.0), DeepslateSpeleothemBlock.box((double)19.0, (double)6.0, (double)6.0, (double)25.0, (double)10.0, (double)10.0)});
                     }
                     case CEILING: 
                 }
-                yield Shapes.m_83124_((VoxelShape)DeepslateSpeleothemBlock.m_49796_((double)3.0, (double)9.0, (double)3.0, (double)13.0, (double)16.0, (double)13.0), (VoxelShape[])new VoxelShape[]{DeepslateSpeleothemBlock.m_49796_((double)4.0, (double)3.0, (double)4.0, (double)12.0, (double)9.0, (double)12.0), DeepslateSpeleothemBlock.m_49796_((double)5.0, (double)-3.0, (double)5.0, (double)11.0, (double)3.0, (double)11.0), DeepslateSpeleothemBlock.m_49796_((double)7.0, (double)-16.0, (double)7.0, (double)9.0, (double)-9.0, (double)9.0), DeepslateSpeleothemBlock.m_49796_((double)6.0, (double)-9.0, (double)6.0, (double)10.0, (double)-3.0, (double)10.0)});
+                yield Shapes.or((VoxelShape)DeepslateSpeleothemBlock.box((double)3.0, (double)9.0, (double)3.0, (double)13.0, (double)16.0, (double)13.0), (VoxelShape[])new VoxelShape[]{DeepslateSpeleothemBlock.box((double)4.0, (double)3.0, (double)4.0, (double)12.0, (double)9.0, (double)12.0), DeepslateSpeleothemBlock.box((double)5.0, (double)-3.0, (double)5.0, (double)11.0, (double)3.0, (double)11.0), DeepslateSpeleothemBlock.box((double)7.0, (double)-16.0, (double)7.0, (double)9.0, (double)-9.0, (double)9.0), DeepslateSpeleothemBlock.box((double)6.0, (double)-9.0, (double)6.0, (double)10.0, (double)-3.0, (double)10.0)});
             }
             case Direction.WEST -> {
-                switch ((AttachFace)state.m_61143_(FACE)) {
+                switch ((AttachFace)state.getValue(FACE)) {
                     default: {
                         throw new IncompatibleClassChangeError();
                     }
                     case FLOOR: {
-                        yield Shapes.m_83124_((VoxelShape)DeepslateSpeleothemBlock.m_49796_((double)3.0, (double)0.0, (double)3.0, (double)13.0, (double)7.0, (double)13.0), (VoxelShape[])new VoxelShape[]{DeepslateSpeleothemBlock.m_49796_((double)4.0, (double)7.0, (double)4.0, (double)12.0, (double)13.0, (double)12.0), DeepslateSpeleothemBlock.m_49796_((double)5.0, (double)13.0, (double)5.0, (double)11.0, (double)19.0, (double)11.0), DeepslateSpeleothemBlock.m_49796_((double)7.0, (double)25.0, (double)7.0, (double)9.0, (double)32.0, (double)9.0), DeepslateSpeleothemBlock.m_49796_((double)6.0, (double)19.0, (double)6.0, (double)10.0, (double)25.0, (double)10.0)});
+                        yield Shapes.or((VoxelShape)DeepslateSpeleothemBlock.box((double)3.0, (double)0.0, (double)3.0, (double)13.0, (double)7.0, (double)13.0), (VoxelShape[])new VoxelShape[]{DeepslateSpeleothemBlock.box((double)4.0, (double)7.0, (double)4.0, (double)12.0, (double)13.0, (double)12.0), DeepslateSpeleothemBlock.box((double)5.0, (double)13.0, (double)5.0, (double)11.0, (double)19.0, (double)11.0), DeepslateSpeleothemBlock.box((double)7.0, (double)25.0, (double)7.0, (double)9.0, (double)32.0, (double)9.0), DeepslateSpeleothemBlock.box((double)6.0, (double)19.0, (double)6.0, (double)10.0, (double)25.0, (double)10.0)});
                     }
                     case WALL: {
-                        yield Shapes.m_83124_((VoxelShape)DeepslateSpeleothemBlock.m_49796_((double)9.0, (double)3.0, (double)3.0, (double)16.0, (double)13.0, (double)13.0), (VoxelShape[])new VoxelShape[]{DeepslateSpeleothemBlock.m_49796_((double)3.0, (double)4.0, (double)4.0, (double)9.0, (double)12.0, (double)12.0), DeepslateSpeleothemBlock.m_49796_((double)-3.0, (double)5.0, (double)5.0, (double)3.0, (double)11.0, (double)11.0), DeepslateSpeleothemBlock.m_49796_((double)-16.0, (double)7.0, (double)7.0, (double)-9.0, (double)9.0, (double)9.0), DeepslateSpeleothemBlock.m_49796_((double)-9.0, (double)6.0, (double)6.0, (double)-3.0, (double)10.0, (double)10.0)});
+                        yield Shapes.or((VoxelShape)DeepslateSpeleothemBlock.box((double)9.0, (double)3.0, (double)3.0, (double)16.0, (double)13.0, (double)13.0), (VoxelShape[])new VoxelShape[]{DeepslateSpeleothemBlock.box((double)3.0, (double)4.0, (double)4.0, (double)9.0, (double)12.0, (double)12.0), DeepslateSpeleothemBlock.box((double)-3.0, (double)5.0, (double)5.0, (double)3.0, (double)11.0, (double)11.0), DeepslateSpeleothemBlock.box((double)-16.0, (double)7.0, (double)7.0, (double)-9.0, (double)9.0, (double)9.0), DeepslateSpeleothemBlock.box((double)-9.0, (double)6.0, (double)6.0, (double)-3.0, (double)10.0, (double)10.0)});
                     }
                     case CEILING: 
                 }
-                yield Shapes.m_83124_((VoxelShape)DeepslateSpeleothemBlock.m_49796_((double)3.0, (double)9.0, (double)3.0, (double)13.0, (double)16.0, (double)13.0), (VoxelShape[])new VoxelShape[]{DeepslateSpeleothemBlock.m_49796_((double)4.0, (double)3.0, (double)4.0, (double)12.0, (double)9.0, (double)12.0), DeepslateSpeleothemBlock.m_49796_((double)5.0, (double)-3.0, (double)5.0, (double)11.0, (double)3.0, (double)11.0), DeepslateSpeleothemBlock.m_49796_((double)7.0, (double)-16.0, (double)7.0, (double)9.0, (double)-9.0, (double)9.0), DeepslateSpeleothemBlock.m_49796_((double)6.0, (double)-9.0, (double)6.0, (double)10.0, (double)-3.0, (double)10.0)});
+                yield Shapes.or((VoxelShape)DeepslateSpeleothemBlock.box((double)3.0, (double)9.0, (double)3.0, (double)13.0, (double)16.0, (double)13.0), (VoxelShape[])new VoxelShape[]{DeepslateSpeleothemBlock.box((double)4.0, (double)3.0, (double)4.0, (double)12.0, (double)9.0, (double)12.0), DeepslateSpeleothemBlock.box((double)5.0, (double)-3.0, (double)5.0, (double)11.0, (double)3.0, (double)11.0), DeepslateSpeleothemBlock.box((double)7.0, (double)-16.0, (double)7.0, (double)9.0, (double)-9.0, (double)9.0), DeepslateSpeleothemBlock.box((double)6.0, (double)-9.0, (double)6.0, (double)10.0, (double)-3.0, (double)10.0)});
             }
-        }).m_83216_(offset.f_82479_, offset.f_82480_, offset.f_82481_);
+        }).move(offset.x, offset.y, offset.z);
     }
 
-    protected void m_7926_(StateDefinition.Builder<Block, BlockState> builder) {
-        super.m_7926_(builder);
-        builder.m_61104_(new Property[]{FACING, FACE, WATERLOGGED});
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        super.createBlockStateDefinition(builder);
+        builder.add(new Property[]{FACING, FACE, WATERLOGGED});
     }
 
-    public BlockState m_5573_(BlockPlaceContext context) {
-        boolean flag = context.m_43725_().m_6425_(context.m_8083_()).m_76152_() == Fluids.f_76193_;
-        return (BlockState)((BlockState)((BlockState)super.m_5573_(context).m_61124_(FACE, (Comparable)this.faceForDirection(context.m_7820_()))).m_61124_((Property)FACING, (Comparable)context.m_8125_().m_122424_())).m_61124_((Property)WATERLOGGED, (Comparable)Boolean.valueOf(flag));
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        boolean flag = context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER;
+        return (BlockState)((BlockState)((BlockState)super.getStateForPlacement(context).setValue(FACE, (Comparable)this.faceForDirection(context.getNearestLookingDirection()))).setValue((Property)FACING, (Comparable)context.getHorizontalDirection().getOpposite())).setValue((Property)WATERLOGGED, (Comparable)Boolean.valueOf(flag));
     }
 
-    public BlockState m_6843_(BlockState state, Rotation rot) {
-        return (BlockState)state.m_61124_((Property)FACING, (Comparable)rot.m_55954_((Direction)state.m_61143_((Property)FACING)));
+    public BlockState rotate(BlockState state, Rotation rot) {
+        return (BlockState)state.setValue((Property)FACING, (Comparable)rot.rotate((Direction)state.getValue((Property)FACING)));
     }
 
-    public BlockState m_6943_(BlockState state, Mirror mirrorIn) {
-        return state.m_60717_(mirrorIn.m_54846_((Direction)state.m_61143_((Property)FACING)));
+    public BlockState mirror(BlockState state, Mirror mirrorIn) {
+        return state.rotate(mirrorIn.getRotation((Direction)state.getValue((Property)FACING)));
     }
 
     private AttachFace faceForDirection(Direction direction) {
-        if (direction.m_122434_() == Direction.Axis.Y) {
+        if (direction.getAxis() == Direction.Axis.Y) {
             return direction == Direction.UP ? AttachFace.CEILING : AttachFace.FLOOR;
         }
         return AttachFace.WALL;
     }
 
-    public FluidState m_5888_(BlockState state) {
-        return (Boolean)state.m_61143_((Property)WATERLOGGED) != false ? Fluids.f_76193_.m_76068_(false) : super.m_5888_(state);
+    public FluidState getFluidState(BlockState state) {
+        return (Boolean)state.getValue((Property)WATERLOGGED) != false ? Fluids.WATER.getSource(false) : super.getFluidState(state);
     }
 
-    public BlockState m_7417_(BlockState state, Direction facing, BlockState facingState, LevelAccessor world, BlockPos currentPos, BlockPos facingPos) {
-        if (((Boolean)state.m_61143_((Property)WATERLOGGED)).booleanValue()) {
-            world.m_186469_(currentPos, (Fluid)Fluids.f_76193_, Fluids.f_76193_.m_6718_((LevelReader)world));
+    public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor world, BlockPos currentPos, BlockPos facingPos) {
+        if (((Boolean)state.getValue((Property)WATERLOGGED)).booleanValue()) {
+            world.scheduleTick(currentPos, (Fluid)Fluids.WATER, Fluids.WATER.getTickDelay((LevelReader)world));
         }
-        return super.m_7417_(state, facing, facingState, world, currentPos, facingPos);
+        return super.updateShape(state, facing, facingState, world, currentPos, facingPos);
     }
 }
 

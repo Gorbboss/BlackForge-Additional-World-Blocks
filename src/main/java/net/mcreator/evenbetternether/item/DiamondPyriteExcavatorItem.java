@@ -53,62 +53,62 @@ extends TieredItem {
     public DiamondPyriteExcavatorItem() {
         super(new Tier(){
 
-            public int m_6609_() {
+            public int getUses() {
                 return 1024;
             }
 
-            public float m_6624_() {
+            public float getSpeed() {
                 return 9.0f;
             }
 
-            public float m_6631_() {
+            public float getAttackDamageBonus() {
                 return 2.0f;
             }
 
-            public int m_6604_() {
+            public int getLevel() {
                 return 3;
             }
 
-            public int m_6601_() {
+            public int getEnchantmentValue() {
                 return 17;
             }
 
-            public Ingredient m_6282_() {
-                return Ingredient.m_43927_((ItemStack[])new ItemStack[]{new ItemStack((ItemLike)Items.f_42415_)});
+            public Ingredient getRepairIngredient() {
+                return Ingredient.of((ItemStack[])new ItemStack[]{new ItemStack((ItemLike)Items.DIAMOND)});
             }
         }, new Item.Properties());
     }
 
-    public boolean m_8096_(BlockState blockstate) {
-        return blockstate.m_204336_(BlockTags.f_144280_) || blockstate.m_204336_(BlockTags.f_144281_) || blockstate.m_204336_(BlockTags.f_144282_) || blockstate.m_204336_(BlockTags.f_144283_);
+    public boolean isCorrectToolForDrops(BlockState blockstate) {
+        return blockstate.is(BlockTags.MINEABLE_WITH_AXE) || blockstate.is(BlockTags.MINEABLE_WITH_HOE) || blockstate.is(BlockTags.MINEABLE_WITH_PICKAXE) || blockstate.is(BlockTags.MINEABLE_WITH_SHOVEL);
     }
 
     public boolean canPerformAction(ItemStack stack, ToolAction toolAction) {
         return ToolActions.DEFAULT_AXE_ACTIONS.contains(toolAction) || ToolActions.DEFAULT_HOE_ACTIONS.contains(toolAction) || ToolActions.DEFAULT_SHOVEL_ACTIONS.contains(toolAction) || ToolActions.DEFAULT_PICKAXE_ACTIONS.contains(toolAction) || ToolActions.DEFAULT_SWORD_ACTIONS.contains(toolAction);
     }
 
-    public float m_8102_(ItemStack itemstack, BlockState blockstate) {
+    public float getDestroySpeed(ItemStack itemstack, BlockState blockstate) {
         return 9.0f;
     }
 
-    public Multimap<Attribute, AttributeModifier> m_7167_(EquipmentSlot equipmentSlot) {
+    public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot equipmentSlot) {
         if (equipmentSlot == EquipmentSlot.MAINHAND) {
             ImmutableMultimap.Builder builder = ImmutableMultimap.builder();
-            builder.putAll(super.m_7167_(equipmentSlot));
-            builder.put((Object)Attributes.f_22281_, (Object)new AttributeModifier(f_41374_, "Tool modifier", 3.0, AttributeModifier.Operation.ADDITION));
-            builder.put((Object)Attributes.f_22283_, (Object)new AttributeModifier(f_41375_, "Tool modifier", -2.8, AttributeModifier.Operation.ADDITION));
+            builder.putAll(super.getDefaultAttributeModifiers(equipmentSlot));
+            builder.put((Object)Attributes.ATTACK_DAMAGE, (Object)new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Tool modifier", 3.0, AttributeModifier.Operation.ADDITION));
+            builder.put((Object)Attributes.ATTACK_SPEED, (Object)new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Tool modifier", -2.8, AttributeModifier.Operation.ADDITION));
             return builder.build();
         }
-        return super.m_7167_(equipmentSlot);
+        return super.getDefaultAttributeModifiers(equipmentSlot);
     }
 
-    public boolean m_6813_(ItemStack itemstack, Level world, BlockState blockstate, BlockPos pos, LivingEntity entity) {
-        itemstack.m_41622_(1, entity, i -> i.m_21166_(EquipmentSlot.MAINHAND));
+    public boolean mineBlock(ItemStack itemstack, Level world, BlockState blockstate, BlockPos pos, LivingEntity entity) {
+        itemstack.hurtAndBreak(1, entity, i -> i.broadcastBreakEvent(EquipmentSlot.MAINHAND));
         return true;
     }
 
-    public boolean m_7579_(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
-        itemstack.m_41622_(2, entity, i -> i.m_21166_(EquipmentSlot.MAINHAND));
+    public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
+        itemstack.hurtAndBreak(2, entity, i -> i.broadcastBreakEvent(EquipmentSlot.MAINHAND));
         return true;
     }
 }

@@ -28,10 +28,10 @@ import net.minecraft.world.level.material.MapColor;
 public class MushroomPressurePlateBlock
 extends PressurePlateBlock {
     public MushroomPressurePlateBlock() {
-        super(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.m_284310_().m_278183_().m_280658_(NoteBlockInstrument.BASS).m_284180_(MapColor.f_283832_).m_60918_(SoundType.f_244244_).m_60913_(2.0f, 3.0f).m_60988_().m_280606_(), BlockSetType.f_271198_);
+        super(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of().ignitedByLava().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.COLOR_YELLOW).sound(SoundType.NETHER_WOOD).strength(2.0f, 3.0f).dynamicShape().forceSolidOn(), BlockSetType.OAK);
     }
 
-    public int m_7753_(BlockState state, BlockGetter worldIn, BlockPos pos) {
+    public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
         return 0;
     }
 }

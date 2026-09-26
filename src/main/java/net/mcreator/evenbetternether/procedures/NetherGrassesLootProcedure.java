@@ -45,7 +45,7 @@ import net.minecraftforge.fml.common.Mod;
 public class NetherGrassesLootProcedure {
     @SubscribeEvent
     public static void onBlockBreak(BlockEvent.BreakEvent event) {
-        NetherGrassesLootProcedure.execute((Event)event, event.getLevel(), event.getPos().m_123341_(), event.getPos().m_123342_(), event.getPos().m_123343_(), event.getState(), (Entity)event.getPlayer());
+        NetherGrassesLootProcedure.execute((Event)event, event.getLevel(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), event.getState(), (Entity)event.getPlayer());
     }
 
     public static void execute(LevelAccessor world, double x, double y, double z, BlockState blockstate, Entity entity) {
@@ -56,11 +56,11 @@ public class NetherGrassesLootProcedure {
         if (entity == null) {
             return;
         }
-        if (blockstate.m_204336_(BlockTags.create((ResourceLocation)new ResourceLocation("evenbetternether:nether_grasses"))) && (entity instanceof LivingEntity _livEnt && null != _livEnt ? _livEnt.m_21205_() : ItemStack.f_41583_).m_41720_() != Items.f_42574_ && Math.random() < 0.4 && world instanceof ServerLevel) {
+        if (blockstate.is(BlockTags.create((ResourceLocation)new ResourceLocation("evenbetternether:nether_grasses"))) && (entity instanceof LivingEntity _livEnt && null != _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() != Items.SHEARS && Math.random() < 0.4 && world instanceof ServerLevel) {
             ServerLevel _level = (ServerLevel)world;
             ItemEntity entityToSpawn = new ItemEntity((Level)_level, x, y, z, new ItemStack((ItemLike)EvenbetternetherModItems.SPELT_SEEDS.get()));
-            entityToSpawn.m_32010_(10);
-            _level.m_7967_((Entity)entityToSpawn);
+            entityToSpawn.setPickUpDelay(10);
+            _level.addFreshEntity((Entity)entityToSpawn);
         }
     }
 }

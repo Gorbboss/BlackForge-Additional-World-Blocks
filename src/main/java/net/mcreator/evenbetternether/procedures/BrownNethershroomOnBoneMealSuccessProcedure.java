@@ -24,22 +24,22 @@ import net.minecraft.world.level.block.state.properties.Property;
 public class BrownNethershroomOnBoneMealSuccessProcedure {
     public static void execute(LevelAccessor world, double x, double y, double z) {
         EnumProperty _enumProp;
-        world.m_7731_(BlockPos.m_274561_((double)x, (double)y, (double)z), Blocks.f_50016_.m_49966_(), 3);
-        world.m_7731_(BlockPos.m_274561_((double)x, (double)y, (double)z), ((Block)EvenbetternetherModBlocks.TALL_BROWN_NETHERSHROOM.get()).m_49966_(), 3);
+        world.setBlock(BlockPos.containing((double)x, (double)y, (double)z), Blocks.AIR.defaultBlockState(), 3);
+        world.setBlock(BlockPos.containing((double)x, (double)y, (double)z), ((Block)EvenbetternetherModBlocks.TALL_BROWN_NETHERSHROOM.get()).defaultBlockState(), 3);
         String _value = "lower";
-        BlockPos _pos = BlockPos.m_274561_((double)x, (double)y, (double)z);
-        BlockState _bs = world.m_8055_(_pos);
-        Property property = _bs.m_60734_().m_49965_().m_61081_("half");
-        if (property instanceof EnumProperty && (_enumProp = (EnumProperty)property).m_6215_(_value).isPresent()) {
-            world.m_7731_(_pos, (BlockState)_bs.m_61124_((Property)_enumProp, (Comparable)((Object)((Enum)_enumProp.m_6215_(_value).get()))), 3);
+        BlockPos _pos = BlockPos.containing((double)x, (double)y, (double)z);
+        BlockState _bs = world.getBlockState(_pos);
+        Property property = _bs.getBlock().getStateDefinition().getProperty("half");
+        if (property instanceof EnumProperty && (_enumProp = (EnumProperty)property).getValue(_value).isPresent()) {
+            world.setBlock(_pos, (BlockState)_bs.setValue((Property)_enumProp, (Comparable)((Object)((Enum)_enumProp.getValue(_value).get()))), 3);
         }
-        world.m_7731_(BlockPos.m_274561_((double)x, (double)(y + 1.0), (double)z), ((Block)EvenbetternetherModBlocks.TALL_BROWN_NETHERSHROOM.get()).m_49966_(), 3);
+        world.setBlock(BlockPos.containing((double)x, (double)(y + 1.0), (double)z), ((Block)EvenbetternetherModBlocks.TALL_BROWN_NETHERSHROOM.get()).defaultBlockState(), 3);
         _value = "upper";
-        _pos = BlockPos.m_274561_((double)x, (double)(y + 1.0), (double)z);
-        _bs = world.m_8055_(_pos);
-        property = _bs.m_60734_().m_49965_().m_61081_("half");
-        if (property instanceof EnumProperty && (_enumProp = (EnumProperty)property).m_6215_(_value).isPresent()) {
-            world.m_7731_(_pos, (BlockState)_bs.m_61124_((Property)_enumProp, (Comparable)((Object)((Enum)_enumProp.m_6215_(_value).get()))), 3);
+        _pos = BlockPos.containing((double)x, (double)(y + 1.0), (double)z);
+        _bs = world.getBlockState(_pos);
+        property = _bs.getBlock().getStateDefinition().getProperty("half");
+        if (property instanceof EnumProperty && (_enumProp = (EnumProperty)property).getValue(_value).isPresent()) {
+            world.setBlock(_pos, (BlockState)_bs.setValue((Property)_enumProp, (Comparable)((Object)((Enum)_enumProp.getValue(_value).get()))), 3);
         }
     }
 }

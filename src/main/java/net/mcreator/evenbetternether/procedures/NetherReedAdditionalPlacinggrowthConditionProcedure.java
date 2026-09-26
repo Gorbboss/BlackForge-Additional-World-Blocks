@@ -15,10 +15,10 @@ import net.minecraft.world.level.block.Blocks;
 
 public class NetherReedAdditionalPlacinggrowthConditionProcedure {
     public static boolean execute(LevelAccessor world, double x, double y, double z) {
-        if (world.m_6425_(BlockPos.m_274561_((double)(x + 1.0), (double)(y - 1.0), (double)z)).m_76188_().m_60734_() == Blocks.f_49991_ || world.m_6425_(BlockPos.m_274561_((double)(x - 1.0), (double)(y - 1.0), (double)z)).m_76188_().m_60734_() == Blocks.f_49991_ || world.m_6425_(BlockPos.m_274561_((double)x, (double)(y - 1.0), (double)(z + 1.0))).m_76188_().m_60734_() == Blocks.f_49991_ || world.m_6425_(BlockPos.m_274561_((double)x, (double)(y - 1.0), (double)(z - 1.0))).m_76188_().m_60734_() == Blocks.f_49991_) {
+        if (world.getFluidState(BlockPos.containing((double)(x + 1.0), (double)(y - 1.0), (double)z)).createLegacyBlock().getBlock() == Blocks.LAVA || world.getFluidState(BlockPos.containing((double)(x - 1.0), (double)(y - 1.0), (double)z)).createLegacyBlock().getBlock() == Blocks.LAVA || world.getFluidState(BlockPos.containing((double)x, (double)(y - 1.0), (double)(z + 1.0))).createLegacyBlock().getBlock() == Blocks.LAVA || world.getFluidState(BlockPos.containing((double)x, (double)(y - 1.0), (double)(z - 1.0))).createLegacyBlock().getBlock() == Blocks.LAVA) {
             return true;
         }
-        return world.m_8055_(BlockPos.m_274561_((double)x, (double)(y - 1.0), (double)z)).m_60734_() == EvenbetternetherModBlocks.NETHER_REED.get();
+        return world.getBlockState(BlockPos.containing((double)x, (double)(y - 1.0), (double)z)).getBlock() == EvenbetternetherModBlocks.NETHER_REED.get();
     }
 }
 

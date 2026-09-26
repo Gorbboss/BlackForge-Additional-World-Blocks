@@ -21,7 +21,7 @@ import net.minecraft.world.level.material.MapColor;
 public class NetherReedDoorBlock
 extends DoorBlock {
     public NetherReedDoorBlock() {
-        super(BlockBehaviour.Properties.m_284310_().m_280658_(NoteBlockInstrument.BASEDRUM).m_284180_(MapColor.f_283743_).m_60918_(SoundType.f_243772_).m_60913_(2.0f, 1.0f).m_60955_().m_60924_((bs, br, bp) -> false).m_60988_(), BlockSetType.f_271479_);
+        super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.COLOR_BLUE).sound(SoundType.BAMBOO_WOOD).strength(2.0f, 1.0f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false).dynamicShape(), BlockSetType.STONE);
     }
 }
 

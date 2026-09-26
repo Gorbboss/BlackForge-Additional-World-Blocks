@@ -13,8 +13,8 @@ import net.minecraft.world.level.LevelAccessor;
 
 public class SparseLavaFloeEntityWalksOnTheBlockProcedure {
     public static void execute(LevelAccessor world, double x, double y, double z) {
-        if (world.m_8044_() % 10L == 0L && Math.random() < 0.45) {
-            EvenbetternetherMod.queueServerWork(5, () -> world.m_46961_(BlockPos.m_274561_((double)x, (double)y, (double)z), false));
+        if (world.dayTime() % 10L == 0L && Math.random() < 0.45) {
+            EvenbetternetherMod.queueServerWork(5, () -> world.destroyBlock(BlockPos.containing((double)x, (double)y, (double)z), false));
         }
     }
 }

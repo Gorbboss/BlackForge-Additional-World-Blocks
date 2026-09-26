@@ -53,45 +53,45 @@ import net.minecraftforge.common.PlantType;
 public class NetherReedBlock
 extends SugarCaneBlock {
     public NetherReedBlock() {
-        super(BlockBehaviour.Properties.m_284310_().m_284180_(MapColor.f_283915_).m_60977_().m_60918_(SoundType.f_56754_).m_60966_().m_60910_().m_222979_(BlockBehaviour.OffsetType.XZ).m_278166_(PushReaction.DESTROY));
+        super(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).randomTicks().sound(SoundType.BAMBOO).instabreak().noCollission().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
     }
 
-    public VoxelShape m_5940_(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        Vec3 offset = state.m_60824_(world, pos);
-        return NetherReedBlock.m_49796_((double)4.0, (double)0.0, (double)4.0, (double)12.0, (double)16.0, (double)12.0).m_83216_(offset.f_82479_, offset.f_82480_, offset.f_82481_);
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        Vec3 offset = state.getOffset(world, pos);
+        return NetherReedBlock.box((double)4.0, (double)0.0, (double)4.0, (double)12.0, (double)16.0, (double)12.0).move(offset.x, offset.y, offset.z);
     }
 
-    public boolean m_7898_(BlockState blockstate, LevelReader worldIn, BlockPos pos) {
-        BlockPos blockpos = pos.m_7495_();
-        BlockState groundState = worldIn.m_8055_(blockpos);
+    public boolean canSurvive(BlockState blockstate, LevelReader worldIn, BlockPos pos) {
+        BlockPos blockpos = pos.below();
+        BlockState groundState = worldIn.getBlockState(blockpos);
         boolean additionalCondition = true;
         if (worldIn instanceof LevelAccessor world) {
-            int x = pos.m_123341_();
-            int y = pos.m_123342_();
-            int z = pos.m_123343_();
+            int x = pos.getX();
+            int y = pos.getY();
+            int z = pos.getZ();
             additionalCondition = NetherReedAdditionalPlacinggrowthConditionProcedure.execute(world, x, y, z);
         }
-        return groundState.m_60713_((Block)this) || (groundState.m_60713_(Blocks.f_50135_) || groundState.m_60713_(Blocks.f_50136_) || groundState.m_60713_(Blocks.f_49994_) || groundState.m_60713_(Blocks.f_50450_) || groundState.m_60713_(Blocks.f_50134_)) && additionalCondition;
+        return groundState.is((Block)this) || (groundState.is(Blocks.SOUL_SAND) || groundState.is(Blocks.SOUL_SOIL) || groundState.is(Blocks.GRAVEL) || groundState.is(Blocks.MAGMA_BLOCK) || groundState.is(Blocks.NETHERRACK)) && additionalCondition;
     }
 
     public PlantType getPlantType(BlockGetter world, BlockPos pos) {
         return PlantType.CAVE;
     }
 
-    public void m_213898_(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
-        if (world.m_46859_(pos.m_7494_())) {
+    public void randomTick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
+        if (world.isEmptyBlock(pos.above())) {
             int i = 1;
-            while (world.m_8055_(pos.m_6625_(i)).m_60713_((Block)this)) {
+            while (world.getBlockState(pos.below(i)).is((Block)this)) {
                 ++i;
             }
             if (i < 6) {
-                int j = (Integer)blockstate.m_61143_((Property)f_57164_);
+                int j = (Integer)blockstate.getValue((Property)AGE);
                 if (ForgeHooks.onCropsGrowPre((Level)world, (BlockPos)pos, (BlockState)blockstate, (boolean)true)) {
                     if (j == 15) {
-                        world.m_46597_(pos.m_7494_(), this.m_49966_());
-                        world.m_7731_(pos, (BlockState)blockstate.m_61124_((Property)f_57164_, (Comparable)Integer.valueOf(0)), 4);
+                        world.setBlockAndUpdate(pos.above(), this.defaultBlockState());
+                        world.setBlock(pos, (BlockState)blockstate.setValue((Property)AGE, (Comparable)Integer.valueOf(0)), 4);
                     } else {
-                        world.m_7731_(pos, (BlockState)blockstate.m_61124_((Property)f_57164_, (Comparable)Integer.valueOf(j + 1)), 4);
+                        world.setBlock(pos, (BlockState)blockstate.setValue((Property)AGE, (Comparable)Integer.valueOf(j + 1)), 4);
                     }
                 }
             }

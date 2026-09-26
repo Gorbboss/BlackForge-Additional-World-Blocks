@@ -43,42 +43,42 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 public class BulbousHangingMyceliumBlock
 extends Block {
     public BulbousHangingMyceliumBlock() {
-        super(BlockBehaviour.Properties.m_284310_().m_280658_(NoteBlockInstrument.BASEDRUM).m_60918_(SoundType.f_56759_).m_60913_(0.0f, 1.0f).m_60953_(s -> 13).m_60910_().m_60955_().m_60982_((bs, br, bp) -> true).m_60991_((bs, br, bp) -> true).m_60924_((bs, br, bp) -> false).m_60988_().m_222979_(BlockBehaviour.OffsetType.XZ));
+        super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.HARD_CROP).strength(0.0f, 1.0f).lightLevel(s -> 13).noCollission().noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).isRedstoneConductor((bs, br, bp) -> false).dynamicShape().offsetType(BlockBehaviour.OffsetType.XZ));
     }
 
-    public boolean m_7420_(BlockState state, BlockGetter reader, BlockPos pos) {
+    public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
         return true;
     }
 
-    public int m_7753_(BlockState state, BlockGetter worldIn, BlockPos pos) {
+    public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
         return 0;
     }
 
-    public VoxelShape m_5909_(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        return Shapes.m_83040_();
+    public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        return Shapes.empty();
     }
 
-    public VoxelShape m_5940_(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        Vec3 offset = state.m_60824_(world, pos);
-        return BulbousHangingMyceliumBlock.m_49796_((double)4.0, (double)4.0, (double)4.0, (double)12.0, (double)16.0, (double)12.0).m_83216_(offset.f_82479_, offset.f_82480_, offset.f_82481_);
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        Vec3 offset = state.getOffset(world, pos);
+        return BulbousHangingMyceliumBlock.box((double)4.0, (double)4.0, (double)4.0, (double)12.0, (double)16.0, (double)12.0).move(offset.x, offset.y, offset.z);
     }
 
-    public boolean m_7898_(BlockState blockstate, LevelReader worldIn, BlockPos pos) {
+    public boolean canSurvive(BlockState blockstate, LevelReader worldIn, BlockPos pos) {
         if (worldIn instanceof LevelAccessor world) {
-            int x = pos.m_123341_();
-            int y = pos.m_123342_();
-            int z = pos.m_123343_();
+            int x = pos.getX();
+            int y = pos.getY();
+            int z = pos.getZ();
             return HangingMyceliumBlockValidPlacementConditionProcedure.execute(world, x, y, z);
         }
-        return super.m_7898_(blockstate, worldIn, pos);
+        return super.canSurvive(blockstate, worldIn, pos);
     }
 
-    public BlockState m_7417_(BlockState state, Direction facing, BlockState facingState, LevelAccessor world, BlockPos currentPos, BlockPos facingPos) {
-        return !state.m_60710_((LevelReader)world, currentPos) ? Blocks.f_50016_.m_49966_() : super.m_7417_(state, facing, facingState, world, currentPos, facingPos);
+    public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor world, BlockPos currentPos, BlockPos facingPos) {
+        return !state.canSurvive((LevelReader)world, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, facing, facingState, world, currentPos, facingPos);
     }
 
-    public boolean m_6864_(BlockState state, BlockPlaceContext context) {
-        return context.m_43722_().m_41720_() != this.m_5456_();
+    public boolean canBeReplaced(BlockState state, BlockPlaceContext context) {
+        return context.getItemInHand().getItem() != this.asItem();
     }
 }
 

@@ -21,12 +21,12 @@ import net.minecraft.world.level.LevelAccessor;
 public class SpeltSeedsItem
 extends Item {
     public SpeltSeedsItem() {
-        super(new Item.Properties().m_41487_(64).m_41497_(Rarity.COMMON));
+        super(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON));
     }
 
-    public InteractionResult m_6225_(UseOnContext context) {
-        super.m_6225_(context);
-        SpeltSeedsRightclickedOnBlockProcedure.execute((LevelAccessor)context.m_43725_(), context.m_8083_().m_123341_(), context.m_8083_().m_123342_(), context.m_8083_().m_123343_(), context.m_43722_());
+    public InteractionResult useOn(UseOnContext context) {
+        super.useOn(context);
+        SpeltSeedsRightclickedOnBlockProcedure.execute((LevelAccessor)context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(), context.getClickedPos().getZ(), context.getItemInHand());
         return InteractionResult.SUCCESS;
     }
 }

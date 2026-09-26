@@ -36,10 +36,10 @@ import net.minecraftforge.common.IPlantable;
 public class NyceliumBlock
 extends Block {
     public NyceliumBlock() {
-        super(BlockBehaviour.Properties.m_284310_().m_280658_(NoteBlockInstrument.BASEDRUM).m_284180_(MapColor.f_283877_).m_60918_(SoundType.f_56710_).m_60913_(0.4f, 1.0f).m_60977_());
+        super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.RAW_IRON).sound(SoundType.NYLIUM).strength(0.4f, 1.0f).randomTicks());
     }
 
-    public int m_7753_(BlockState state, BlockGetter worldIn, BlockPos pos) {
+    public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
         return 15;
     }
 
@@ -47,11 +47,11 @@ extends Block {
         return true;
     }
 
-    public void m_213897_(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
-        super.m_213897_(blockstate, world, pos, random);
-        int x = pos.m_123341_();
-        int y = pos.m_123342_();
-        int z = pos.m_123343_();
+    public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
+        super.tick(blockstate, world, pos, random);
+        int x = pos.getX();
+        int y = pos.getY();
+        int z = pos.getZ();
         VerdantNyliumOnTickUpdateProcedure.execute((LevelAccessor)world, x, y, z);
     }
 }

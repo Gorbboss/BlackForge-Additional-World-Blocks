@@ -47,50 +47,50 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 public class DenseLavaFloeBlock
 extends Block {
     public DenseLavaFloeBlock() {
-        super(BlockBehaviour.Properties.m_284310_().m_280658_(NoteBlockInstrument.BASEDRUM).m_284180_(MapColor.f_283913_).m_60918_(SoundType.f_56718_).m_60913_(0.2f, 3.0f).m_60955_().m_60924_((bs, br, bp) -> false));
+        super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.COLOR_RED).sound(SoundType.BASALT).strength(0.2f, 3.0f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
     }
 
-    public boolean m_6104_(BlockState state, BlockState adjacentBlockState, Direction side) {
-        return adjacentBlockState.m_60734_() == this ? true : super.m_6104_(state, adjacentBlockState, side);
+    public boolean skipRendering(BlockState state, BlockState adjacentBlockState, Direction side) {
+        return adjacentBlockState.getBlock() == this ? true : super.skipRendering(state, adjacentBlockState, side);
     }
 
-    public boolean m_7420_(BlockState state, BlockGetter reader, BlockPos pos) {
+    public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
         return true;
     }
 
-    public int m_7753_(BlockState state, BlockGetter worldIn, BlockPos pos) {
+    public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
         return 0;
     }
 
-    public VoxelShape m_5909_(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        return Shapes.m_83040_();
+    public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        return Shapes.empty();
     }
 
-    public VoxelShape m_5940_(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        return DenseLavaFloeBlock.m_49796_((double)0.0, (double)-4.0, (double)0.0, (double)16.0, (double)1.0, (double)16.0);
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        return DenseLavaFloeBlock.box((double)0.0, (double)-4.0, (double)0.0, (double)16.0, (double)1.0, (double)16.0);
     }
 
-    public boolean m_7898_(BlockState blockstate, LevelReader worldIn, BlockPos pos) {
+    public boolean canSurvive(BlockState blockstate, LevelReader worldIn, BlockPos pos) {
         if (worldIn instanceof LevelAccessor world) {
-            int x = pos.m_123341_();
-            int y = pos.m_123342_();
-            int z = pos.m_123343_();
+            int x = pos.getX();
+            int y = pos.getY();
+            int z = pos.getZ();
             return CrimsonLilyBlockValidPlacementConditionProcedure.execute(world, x, y, z);
         }
-        return super.m_7898_(blockstate, worldIn, pos);
+        return super.canSurvive(blockstate, worldIn, pos);
     }
 
-    public BlockState m_7417_(BlockState state, Direction facing, BlockState facingState, LevelAccessor world, BlockPos currentPos, BlockPos facingPos) {
-        return !state.m_60710_((LevelReader)world, currentPos) ? Blocks.f_50016_.m_49966_() : super.m_7417_(state, facing, facingState, world, currentPos, facingPos);
+    public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor world, BlockPos currentPos, BlockPos facingPos) {
+        return !state.canSurvive((LevelReader)world, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, facing, facingState, world, currentPos, facingPos);
     }
 
-    public boolean m_6864_(BlockState state, BlockPlaceContext context) {
-        return context.m_43722_().m_41720_() != this.m_5456_();
+    public boolean canBeReplaced(BlockState state, BlockPlaceContext context) {
+        return context.getItemInHand().getItem() != this.asItem();
     }
 
-    public void m_7892_(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
-        super.m_7892_(blockstate, world, pos, entity);
-        DenseLavaFloeEntityWalksOnTheBlockProcedure.execute((LevelAccessor)world, pos.m_123341_(), pos.m_123342_(), pos.m_123343_());
+    public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
+        super.entityInside(blockstate, world, pos, entity);
+        DenseLavaFloeEntityWalksOnTheBlockProcedure.execute((LevelAccessor)world, pos.getX(), pos.getY(), pos.getZ());
     }
 }
 

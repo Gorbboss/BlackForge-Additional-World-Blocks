@@ -59,42 +59,42 @@ public class NethershroomBlock
 extends FlowerBlock
 implements BonemealableBlock {
     public NethershroomBlock() {
-        super(() -> MobEffects.f_19596_, 0, BlockBehaviour.Properties.m_284310_().m_284180_(MapColor.f_283915_).m_60918_(SoundType.f_56711_).m_60913_(0.1f, 0.0f).m_60910_().m_222979_(BlockBehaviour.OffsetType.XZ).m_278166_(PushReaction.DESTROY));
+        super(() -> MobEffects.MOVEMENT_SPEED, 0, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).sound(SoundType.FUNGUS).strength(0.1f, 0.0f).noCollission().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
     }
 
-    public VoxelShape m_5940_(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        Vec3 offset = state.m_60824_(world, pos);
-        return NethershroomBlock.m_49796_((double)4.0, (double)0.0, (double)4.0, (double)12.0, (double)16.0, (double)12.0).m_83216_(offset.f_82479_, offset.f_82480_, offset.f_82481_);
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        Vec3 offset = state.getOffset(world, pos);
+        return NethershroomBlock.box((double)4.0, (double)0.0, (double)4.0, (double)12.0, (double)16.0, (double)12.0).move(offset.x, offset.y, offset.z);
     }
 
     public BlockPathTypes getBlockPathType(BlockState state, BlockGetter world, BlockPos pos, Mob entity) {
         return BlockPathTypes.DAMAGE_OTHER;
     }
 
-    public boolean m_6266_(BlockState groundState, BlockGetter worldIn, BlockPos pos) {
-        return groundState.m_60713_((Block)EvenbetternetherModBlocks.NYCELIUM.get()) || groundState.m_60713_(Blocks.f_50195_);
+    public boolean mayPlaceOn(BlockState groundState, BlockGetter worldIn, BlockPos pos) {
+        return groundState.is((Block)EvenbetternetherModBlocks.NYCELIUM.get()) || groundState.is(Blocks.MYCELIUM);
     }
 
-    public boolean m_7898_(BlockState blockstate, LevelReader worldIn, BlockPos pos) {
-        BlockPos blockpos = pos.m_7495_();
-        BlockState groundState = worldIn.m_8055_(blockpos);
-        return this.m_6266_(groundState, (BlockGetter)worldIn, blockpos);
+    public boolean canSurvive(BlockState blockstate, LevelReader worldIn, BlockPos pos) {
+        BlockPos blockpos = pos.below();
+        BlockState groundState = worldIn.getBlockState(blockpos);
+        return this.mayPlaceOn(groundState, (BlockGetter)worldIn, blockpos);
     }
 
     public PlantType getPlantType(BlockGetter world, BlockPos pos) {
         return PlantType.CAVE;
     }
 
-    public boolean m_7370_(LevelReader worldIn, BlockPos pos, BlockState blockstate, boolean clientSide) {
+    public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState blockstate, boolean clientSide) {
         return true;
     }
 
-    public boolean m_214167_(Level world, RandomSource random, BlockPos pos, BlockState blockstate) {
+    public boolean isBonemealSuccess(Level world, RandomSource random, BlockPos pos, BlockState blockstate) {
         return true;
     }
 
-    public void m_214148_(ServerLevel world, RandomSource random, BlockPos pos, BlockState blockstate) {
-        NethershroomOnBoneMealSuccessProcedure.execute((LevelAccessor)world, pos.m_123341_(), pos.m_123342_(), pos.m_123343_());
+    public void performBonemeal(ServerLevel world, RandomSource random, BlockPos pos, BlockState blockstate) {
+        NethershroomOnBoneMealSuccessProcedure.execute((LevelAccessor)world, pos.getX(), pos.getY(), pos.getZ());
     }
 }
 

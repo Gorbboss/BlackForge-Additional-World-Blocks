@@ -23,10 +23,10 @@ import net.minecraft.world.level.material.MapColor;
 public class NetherReedMosaicBlock
 extends Block {
     public NetherReedMosaicBlock() {
-        super(BlockBehaviour.Properties.m_284310_().m_284180_(MapColor.f_283743_).m_60918_(SoundType.f_243772_).m_60913_(2.0f, 1.0f));
+        super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).sound(SoundType.BAMBOO_WOOD).strength(2.0f, 1.0f));
     }
 
-    public int m_7753_(BlockState state, BlockGetter worldIn, BlockPos pos) {
+    public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
         return 15;
     }
 }

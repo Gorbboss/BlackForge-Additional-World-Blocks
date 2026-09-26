@@ -29,23 +29,23 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 public class SoulFarmlandBlock
 extends Block {
     public SoulFarmlandBlock() {
-        super(BlockBehaviour.Properties.m_284310_().m_284180_(MapColor.f_283748_).m_60918_(SoundType.f_56716_).m_60978_(1.0f).m_60956_(0.4f).m_60955_().m_60924_((bs, br, bp) -> false));
+        super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).sound(SoundType.SOUL_SAND).strength(1.0f).speedFactor(0.4f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
     }
 
-    public boolean m_7420_(BlockState state, BlockGetter reader, BlockPos pos) {
+    public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
         return true;
     }
 
-    public int m_7753_(BlockState state, BlockGetter worldIn, BlockPos pos) {
+    public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
         return 0;
     }
 
-    public VoxelShape m_5909_(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        return Shapes.m_83040_();
+    public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        return Shapes.empty();
     }
 
-    public VoxelShape m_5940_(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        return SoulFarmlandBlock.m_49796_((double)0.0, (double)0.0, (double)0.0, (double)16.0, (double)15.0, (double)16.0);
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        return SoulFarmlandBlock.box((double)0.0, (double)0.0, (double)0.0, (double)16.0, (double)15.0, (double)16.0);
     }
 }
 

@@ -17,7 +17,7 @@ import net.minecraft.world.level.material.MapColor;
 public class NetherReedSlabBlock
 extends SlabBlock {
     public NetherReedSlabBlock() {
-        super(BlockBehaviour.Properties.m_284310_().m_284180_(MapColor.f_283743_).m_60918_(SoundType.f_243772_).m_60913_(2.0f, 1.0f).m_60988_());
+        super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).sound(SoundType.BAMBOO_WOOD).strength(2.0f, 1.0f).dynamicShape());
     }
 }
 

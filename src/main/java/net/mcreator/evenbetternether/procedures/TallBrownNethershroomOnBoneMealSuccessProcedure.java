@@ -27,19 +27,19 @@ public class TallBrownNethershroomOnBoneMealSuccessProcedure {
     public static void execute(LevelAccessor world, double x, double y, double z) {
         if (Math.random() < 0.3) {
             ServerLevel _level;
-            world.m_7731_(BlockPos.m_274561_((double)x, (double)y, (double)z), Blocks.f_50016_.m_49966_(), 3);
-            if (world.m_8055_(BlockPos.m_274561_((double)x, (double)(y + 1.0), (double)z)).m_60734_() == EvenbetternetherModBlocks.TALL_BROWN_NETHERSHROOM.get()) {
-                world.m_7731_(BlockPos.m_274561_((double)x, (double)(y + 1.0), (double)z), Blocks.f_50016_.m_49966_(), 3);
+            world.setBlock(BlockPos.containing((double)x, (double)y, (double)z), Blocks.AIR.defaultBlockState(), 3);
+            if (world.getBlockState(BlockPos.containing((double)x, (double)(y + 1.0), (double)z)).getBlock() == EvenbetternetherModBlocks.TALL_BROWN_NETHERSHROOM.get()) {
+                world.setBlock(BlockPos.containing((double)x, (double)(y + 1.0), (double)z), Blocks.AIR.defaultBlockState(), 3);
                 if (world instanceof ServerLevel) {
                     _level = (ServerLevel)world;
-                    ((ConfiguredFeature)_level.m_9598_().m_175515_(Registries.f_256911_).m_246971_(FeatureUtils.m_255087_((String)"evenbetternether:nether_mushroom_tree_brown")).m_203334_()).m_224953_((WorldGenLevel)_level, _level.m_7726_().m_8481_(), _level.m_213780_(), BlockPos.m_274561_((double)x, (double)y, (double)z));
+                    ((ConfiguredFeature)_level.registryAccess().registryOrThrow(Registries.CONFIGURED_FEATURE).getHolderOrThrow(FeatureUtils.createKey((String)"evenbetternether:nether_mushroom_tree_brown")).value()).place((WorldGenLevel)_level, _level.getChunkSource().getGenerator(), _level.getRandom(), BlockPos.containing((double)x, (double)y, (double)z));
                 }
             }
-            if (world.m_8055_(BlockPos.m_274561_((double)x, (double)(y - 1.0), (double)z)).m_60734_() == EvenbetternetherModBlocks.TALL_BROWN_NETHERSHROOM.get()) {
-                world.m_7731_(BlockPos.m_274561_((double)x, (double)(y - 1.0), (double)z), Blocks.f_50016_.m_49966_(), 3);
+            if (world.getBlockState(BlockPos.containing((double)x, (double)(y - 1.0), (double)z)).getBlock() == EvenbetternetherModBlocks.TALL_BROWN_NETHERSHROOM.get()) {
+                world.setBlock(BlockPos.containing((double)x, (double)(y - 1.0), (double)z), Blocks.AIR.defaultBlockState(), 3);
                 if (world instanceof ServerLevel) {
                     _level = (ServerLevel)world;
-                    ((ConfiguredFeature)_level.m_9598_().m_175515_(Registries.f_256911_).m_246971_(FeatureUtils.m_255087_((String)"evenbetternether:nether_mushroom_tree_brown")).m_203334_()).m_224953_((WorldGenLevel)_level, _level.m_7726_().m_8481_(), _level.m_213780_(), BlockPos.m_274561_((double)x, (double)(y - 1.0), (double)z));
+                    ((ConfiguredFeature)_level.registryAccess().registryOrThrow(Registries.CONFIGURED_FEATURE).getHolderOrThrow(FeatureUtils.createKey((String)"evenbetternether:nether_mushroom_tree_brown")).value()).place((WorldGenLevel)_level, _level.getChunkSource().getGenerator(), _level.getRandom(), BlockPos.containing((double)x, (double)(y - 1.0), (double)z));
                 }
             }
         }

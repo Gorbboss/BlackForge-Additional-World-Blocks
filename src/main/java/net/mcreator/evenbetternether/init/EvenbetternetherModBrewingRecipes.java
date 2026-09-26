@@ -45,14 +45,14 @@ implements IModPlugin {
     public void registerRecipes(IRecipeRegistration registration) {
         IVanillaRecipeFactory factory = registration.getVanillaRecipeFactory();
         ArrayList<IJeiBrewingRecipe> brewingRecipes = new ArrayList<IJeiBrewingRecipe>();
-        ItemStack potion = new ItemStack((ItemLike)Items.f_42589_);
-        ItemStack potion2 = new ItemStack((ItemLike)Items.f_42589_);
+        ItemStack potion = new ItemStack((ItemLike)Items.POTION);
+        ItemStack potion2 = new ItemStack((ItemLike)Items.POTION);
         ArrayList<ItemStack> ingredientStack = new ArrayList<ItemStack>();
         ArrayList<ItemStack> inputStack = new ArrayList<ItemStack>();
         ingredientStack.add(new ItemStack((ItemLike)EvenbetternetherModBlocks.BARREL_CACTUS.get()));
-        inputStack.add(new ItemStack((ItemLike)Items.f_42590_));
-        PotionUtils.m_43549_((ItemStack)potion, (Potion)Potions.f_43599_);
-        brewingRecipes.add(factory.createBrewingRecipe(List.copyOf(ingredientStack), List.copyOf(inputStack), potion.m_41777_()));
+        inputStack.add(new ItemStack((ItemLike)Items.GLASS_BOTTLE));
+        PotionUtils.setPotion((ItemStack)potion, (Potion)Potions.WATER);
+        brewingRecipes.add(factory.createBrewingRecipe(List.copyOf(ingredientStack), List.copyOf(inputStack), potion.copy()));
         ingredientStack.clear();
         inputStack.clear();
         registration.addRecipes(RecipeTypes.BREWING, brewingRecipes);

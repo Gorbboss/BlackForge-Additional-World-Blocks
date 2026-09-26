@@ -19,7 +19,7 @@ import net.minecraft.world.level.material.MapColor;
 public class PyriteWallBlock
 extends WallBlock {
     public PyriteWallBlock() {
-        super(BlockBehaviour.Properties.m_284310_().m_280658_(NoteBlockInstrument.BASEDRUM).m_284180_(MapColor.f_283832_).m_60918_(SoundType.f_154663_).m_60913_(2.0f, 10.0f).m_60999_().m_60988_().m_280606_());
+        super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.COLOR_YELLOW).sound(SoundType.COPPER).strength(2.0f, 10.0f).requiresCorrectToolForDrops().dynamicShape().forceSolidOn());
     }
 }
 

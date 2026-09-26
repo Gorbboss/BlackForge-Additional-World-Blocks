@@ -14,7 +14,7 @@ import net.minecraft.world.item.Rarity;
 public class SpeltItemItem
 extends Item {
     public SpeltItemItem() {
-        super(new Item.Properties().m_41487_(64).m_41497_(Rarity.COMMON));
+        super(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON));
     }
 }
 

@@ -23,14 +23,14 @@ import net.minecraft.world.level.material.MapColor;
 public class CarvedPyriteStairsBlock
 extends StairBlock {
     public CarvedPyriteStairsBlock() {
-        super(() -> Blocks.f_50016_.m_49966_(), BlockBehaviour.Properties.m_284310_().m_280658_(NoteBlockInstrument.BASEDRUM).m_284180_(MapColor.f_283832_).m_60918_(SoundType.f_154663_).m_60913_(2.0f, 10.0f).m_60999_().m_60988_());
+        super(() -> Blocks.AIR.defaultBlockState(), BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.COLOR_YELLOW).sound(SoundType.COPPER).strength(2.0f, 10.0f).requiresCorrectToolForDrops().dynamicShape());
     }
 
-    public float m_7325_() {
+    public float getExplosionResistance() {
         return 10.0f;
     }
 
-    public boolean m_6724_(BlockState state) {
+    public boolean isRandomlyTicking(BlockState state) {
         return false;
     }
 }

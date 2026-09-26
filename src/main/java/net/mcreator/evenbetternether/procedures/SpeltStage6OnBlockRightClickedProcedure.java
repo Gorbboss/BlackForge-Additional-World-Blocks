@@ -17,10 +17,10 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class SpeltStage6OnBlockRightClickedProcedure {
     public static void execute(LevelAccessor world, double x, double y, double z) {
-        BlockPos _pos = BlockPos.m_274561_((double)x, (double)y, (double)z);
-        Block.m_49892_((BlockState)world.m_8055_(_pos), (LevelAccessor)world, (BlockPos)BlockPos.m_274561_((double)x, (double)y, (double)z), null);
-        world.m_46961_(_pos, false);
-        world.m_7731_(BlockPos.m_274561_((double)x, (double)y, (double)z), ((Block)EvenbetternetherModBlocks.SPELT_STAGE_0.get()).m_49966_(), 3);
+        BlockPos _pos = BlockPos.containing((double)x, (double)y, (double)z);
+        Block.dropResources((BlockState)world.getBlockState(_pos), (LevelAccessor)world, (BlockPos)BlockPos.containing((double)x, (double)y, (double)z), null);
+        world.destroyBlock(_pos, false);
+        world.setBlock(BlockPos.containing((double)x, (double)y, (double)z), ((Block)EvenbetternetherModBlocks.SPELT_STAGE_0.get()).defaultBlockState(), 3);
     }
 }
 

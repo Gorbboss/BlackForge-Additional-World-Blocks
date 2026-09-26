@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.Blocks;
 
 public class CrimsonLilyBlockValidPlacementConditionProcedure {
     public static boolean execute(LevelAccessor world, double x, double y, double z) {
-        return world.m_8055_(BlockPos.m_274561_((double)x, (double)(y - 1.0), (double)z)).m_60734_() == Blocks.f_49991_;
+        return world.getBlockState(BlockPos.containing((double)x, (double)(y - 1.0), (double)z)).getBlock() == Blocks.LAVA;
     }
 }
 

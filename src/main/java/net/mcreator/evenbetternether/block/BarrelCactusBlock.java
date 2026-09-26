@@ -58,59 +58,59 @@ public class BarrelCactusBlock
 extends Block
 implements BonemealableBlock {
     public BarrelCactusBlock() {
-        super(BlockBehaviour.Properties.m_284310_().m_278183_().m_284180_(MapColor.f_283743_).m_60918_(SoundType.f_56711_).m_60913_(0.1f, 3.0f).m_60955_().m_60924_((bs, br, bp) -> false).m_60988_().m_222979_(BlockBehaviour.OffsetType.XZ));
+        super(BlockBehaviour.Properties.of().ignitedByLava().mapColor(MapColor.COLOR_BLUE).sound(SoundType.FUNGUS).strength(0.1f, 3.0f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false).dynamicShape().offsetType(BlockBehaviour.OffsetType.XZ));
     }
 
-    public boolean m_7420_(BlockState state, BlockGetter reader, BlockPos pos) {
+    public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
         return true;
     }
 
-    public int m_7753_(BlockState state, BlockGetter worldIn, BlockPos pos) {
+    public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
         return 0;
     }
 
-    public VoxelShape m_5909_(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        return Shapes.m_83040_();
+    public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        return Shapes.empty();
     }
 
-    public VoxelShape m_5940_(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        Vec3 offset = state.m_60824_(world, pos);
-        return Shapes.m_83124_((VoxelShape)BarrelCactusBlock.m_49796_((double)3.0, (double)0.0, (double)3.0, (double)13.0, (double)10.0, (double)13.0), (VoxelShape[])new VoxelShape[]{BarrelCactusBlock.m_49796_((double)2.0, (double)0.0, (double)3.0, (double)3.0, (double)9.0, (double)13.0), BarrelCactusBlock.m_49796_((double)13.0, (double)0.0, (double)3.0, (double)14.0, (double)9.0, (double)13.0), BarrelCactusBlock.m_49796_((double)3.0, (double)0.0, (double)13.0, (double)13.0, (double)9.0, (double)14.0), BarrelCactusBlock.m_49796_((double)3.0, (double)0.0, (double)2.0, (double)13.0, (double)9.0, (double)3.0)}).m_83216_(offset.f_82479_, offset.f_82480_, offset.f_82481_);
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        Vec3 offset = state.getOffset(world, pos);
+        return Shapes.or((VoxelShape)BarrelCactusBlock.box((double)3.0, (double)0.0, (double)3.0, (double)13.0, (double)10.0, (double)13.0), (VoxelShape[])new VoxelShape[]{BarrelCactusBlock.box((double)2.0, (double)0.0, (double)3.0, (double)3.0, (double)9.0, (double)13.0), BarrelCactusBlock.box((double)13.0, (double)0.0, (double)3.0, (double)14.0, (double)9.0, (double)13.0), BarrelCactusBlock.box((double)3.0, (double)0.0, (double)13.0, (double)13.0, (double)9.0, (double)14.0), BarrelCactusBlock.box((double)3.0, (double)0.0, (double)2.0, (double)13.0, (double)9.0, (double)3.0)}).move(offset.x, offset.y, offset.z);
     }
 
-    public boolean m_7898_(BlockState blockstate, LevelReader worldIn, BlockPos pos) {
+    public boolean canSurvive(BlockState blockstate, LevelReader worldIn, BlockPos pos) {
         if (worldIn instanceof LevelAccessor world) {
-            int x = pos.m_123341_();
-            int y = pos.m_123342_();
-            int z = pos.m_123343_();
+            int x = pos.getX();
+            int y = pos.getY();
+            int z = pos.getZ();
             return BarrelCactusBlockValidPlacementConditionProcedure.execute(world, x, y, z);
         }
-        return super.m_7898_(blockstate, worldIn, pos);
+        return super.canSurvive(blockstate, worldIn, pos);
     }
 
-    public BlockState m_7417_(BlockState state, Direction facing, BlockState facingState, LevelAccessor world, BlockPos currentPos, BlockPos facingPos) {
-        return !state.m_60710_((LevelReader)world, currentPos) ? Blocks.f_50016_.m_49966_() : super.m_7417_(state, facing, facingState, world, currentPos, facingPos);
+    public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor world, BlockPos currentPos, BlockPos facingPos) {
+        return !state.canSurvive((LevelReader)world, currentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, facing, facingState, world, currentPos, facingPos);
     }
 
     public BlockPathTypes getBlockPathType(BlockState state, BlockGetter world, BlockPos pos, Mob entity) {
         return BlockPathTypes.DAMAGE_OTHER;
     }
 
-    public void m_7892_(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
-        super.m_7892_(blockstate, world, pos, entity);
+    public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
+        super.entityInside(blockstate, world, pos, entity);
         BarrelCactusEntityCollidesInTheBlockProcedure.execute((LevelAccessor)world, entity);
     }
 
-    public boolean m_7370_(LevelReader worldIn, BlockPos pos, BlockState blockstate, boolean clientSide) {
+    public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState blockstate, boolean clientSide) {
         return true;
     }
 
-    public boolean m_214167_(Level world, RandomSource random, BlockPos pos, BlockState blockstate) {
+    public boolean isBonemealSuccess(Level world, RandomSource random, BlockPos pos, BlockState blockstate) {
         return true;
     }
 
-    public void m_214148_(ServerLevel world, RandomSource random, BlockPos pos, BlockState blockstate) {
-        BarrelCactusOnBoneMealSuccessProcedure.execute((LevelAccessor)world, pos.m_123341_(), pos.m_123342_(), pos.m_123343_());
+    public void performBonemeal(ServerLevel world, RandomSource random, BlockPos pos, BlockState blockstate) {
+        BarrelCactusOnBoneMealSuccessProcedure.execute((LevelAccessor)world, pos.getX(), pos.getY(), pos.getZ());
     }
 }
 

@@ -19,7 +19,7 @@ import net.minecraft.world.level.material.MapColor;
 public class SmoothBoneWallBlock
 extends WallBlock {
     public SmoothBoneWallBlock() {
-        super(BlockBehaviour.Properties.m_284310_().m_280658_(NoteBlockInstrument.BASEDRUM).m_284180_(MapColor.f_283906_).m_60918_(SoundType.f_56724_).m_60913_(1.0f, 3.0f).m_60988_().m_280606_());
+        super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.METAL).sound(SoundType.BONE_BLOCK).strength(1.0f, 3.0f).dynamicShape().forceSolidOn());
     }
 }
 

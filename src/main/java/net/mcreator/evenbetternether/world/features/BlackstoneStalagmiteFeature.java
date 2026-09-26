@@ -18,18 +18,18 @@ import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConf
 public class BlackstoneStalagmiteFeature
 extends RandomPatchFeature {
     public BlackstoneStalagmiteFeature() {
-        super(RandomPatchConfiguration.f_67902_);
+        super(RandomPatchConfiguration.CODEC);
     }
 
-    public boolean m_142674_(FeaturePlaceContext<RandomPatchConfiguration> context) {
-        WorldGenLevel world = context.m_159774_();
-        int x = context.m_159777_().m_123341_();
-        int y = context.m_159777_().m_123342_();
-        int z = context.m_159777_().m_123343_();
+    public boolean place(FeaturePlaceContext<RandomPatchConfiguration> context) {
+        WorldGenLevel world = context.level();
+        int x = context.origin().getX();
+        int y = context.origin().getY();
+        int z = context.origin().getZ();
         if (!NetherrackStalagmiteAdditionalGenerationConditionProcedure.execute()) {
             return false;
         }
-        return super.m_142674_(context);
+        return super.place(context);
     }
 }
 
