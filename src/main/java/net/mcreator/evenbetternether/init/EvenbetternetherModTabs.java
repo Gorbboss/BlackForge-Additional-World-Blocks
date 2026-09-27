@@ -163,6 +163,6 @@ public class EvenbetternetherModTabs {
         tabData.accept((ItemLike)((Block)EvenbetternetherModBlocks.SMOOTH_NETHERRACK_STAIRS.get()).asItem());
         tabData.accept((ItemLike)((Block)EvenbetternetherModBlocks.SMOOTH_NETHERRACK_SLAB.get()).asItem());
         tabData.accept((ItemLike)((Block)EvenbetternetherModBlocks.SMOOTH_NETHERRACK_WALL.get()).asItem());
+        BlackForgeImportedBlocks.BLOCKS.getEntries().forEach(block -> tabData.accept(block.get().asItem()));
     }).build());
 }
-

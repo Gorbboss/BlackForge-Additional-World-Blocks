@@ -3,6 +3,8 @@ package net.mcreator.evenbetternether.init;
 import java.util.function.Supplier;
 import net.mcreator.evenbetternether.EvenbetternetherMod;
 import net.mcreator.evenbetternether.block.ImportedStalactiteBlock;
+import net.mcreator.evenbetternether.block.ImportedNetherPlantBlock;
+import net.mcreator.evenbetternether.block.ImportedHangingVineBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -43,6 +45,26 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> BLACKSTONE_STALACTITE = stalactite("blackstone_stalactite", Blocks.BLACKSTONE);
     public static final RegistryObject<Block> BASALT_STALACTITE = stalactite("basalt_stalactite", Blocks.BASALT);
     public static final RegistryObject<Block> BONE_STALACTITE = stalactite("bone_stalactite", Blocks.BONE_BLOCK);
+
+    public static final RegistryObject<Block> HOOK_MUSHROOM = plant("hook_mushroom", 0);
+    public static final RegistryObject<Block> MOSS_COVER = plant("moss_cover", 0);
+    public static final RegistryObject<Block> NETHER_CACTUS = plant("nether_cactus", 0);
+    public static final RegistryObject<Block> NETHER_GRASS = plant("nether_grass", 0);
+    public static final RegistryObject<Block> GLOOMGRASS = plant("gloomgrass", 2);
+    public static final RegistryObject<Block> PALE_GLOOMGRASS = plant("pale_gloomgrass", 1);
+    public static final RegistryObject<Block> AGAVE = plant("agave", 0);
+    public static final RegistryObject<Block> GIANT_MOLD_SAPLING = plant("giant_mold_sapling", 0);
+    public static final RegistryObject<Block> STALAGNATE_SEED = plant("stalagnate_seed", 0);
+    public static final RegistryObject<Block> WART_SEED = plant("wart_seed", 0);
+    public static final RegistryObject<Block> LUMABUS_SEED = plant("lumabus_seed", 8);
+    public static final RegistryObject<Block> GOLDEN_LUMABUS_SEED = plant("golden_lumabus_seed", 10);
+
+    public static final RegistryObject<Block> BLACK_VINE = vine("black_vine", 0);
+    public static final RegistryObject<Block> BLOOMING_VINE = vine("blooming_vine", 4);
+    public static final RegistryObject<Block> GOLDEN_VINE = vine("golden_vine", 15);
+    public static final RegistryObject<Block> GLOOMSCULK_VINE = vine("gloomsculk_vine", 3);
+    public static final RegistryObject<Block> LUMABUS_VINE = vine("lumabus_vine", 12);
+    public static final RegistryObject<Block> GOLDEN_LUMABUS_VINE = vine("golden_lumabus_vine", 15);
 
     public static final RegistryObject<Block> WEEPING_OBSIDIAN = solid("weeping_obsidian");
     public static final RegistryObject<Block> OBSIDIAN_BRICKS = solid("obsidian_bricks");
@@ -99,6 +121,14 @@ public final class BlackForgeImportedBlocks {
 
     private static RegistryObject<Block> stalactite(String name, Block source) {
         return register(name, () -> new ImportedStalactiteBlock(source));
+    }
+
+    private static RegistryObject<Block> plant(String name, int light) {
+        return register(name, () -> new ImportedNetherPlantBlock(light));
+    }
+
+    private static RegistryObject<Block> vine(String name, int light) {
+        return register(name, () -> new ImportedHangingVineBlock(light));
     }
 
     private static RegistryObject<Block> register(String name, Supplier<? extends Block> factory) {
