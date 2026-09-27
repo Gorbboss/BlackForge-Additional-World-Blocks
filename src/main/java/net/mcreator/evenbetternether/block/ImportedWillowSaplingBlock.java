@@ -19,25 +19,37 @@ public class ImportedWillowSaplingBlock extends BushBlock implements Bonemealabl
     private static final Direction[] HORIZONTAL={Direction.NORTH,Direction.SOUTH,Direction.WEST,Direction.EAST};
     private final Supplier<Block> log,leaves,branch;
     public ImportedWillowSaplingBlock(Supplier<Block> log,Supplier<Block> leaves,Supplier<Block> branch){super(BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).noCollission());this.log=log;this.leaves=leaves;this.branch=branch;}
+    @Override protected boolean mayPlaceOn(BlockState s,net.minecraft.world.level.BlockGetter l,BlockPos p){
+        return s.is(Blocks.NETHERRACK)||s.is(Blocks.CRIMSON_NYLIUM)||s.is(Blocks.WARPED_NYLIUM)
+            ||s.is(Blocks.SOUL_SAND)||s.is(Blocks.SOUL_SOIL)||s.is(Blocks.SAND)||s.is(Blocks.RED_SAND)
+            ||s.is(Blocks.MYCELIUM)||s.is(Blocks.MAGMA_BLOCK);
+    }
     @Override public boolean isValidBonemealTarget(LevelReader l,BlockPos p,BlockState s,boolean c){return true;}
     @Override public boolean isBonemealSuccess(Level l,RandomSource r,BlockPos p,BlockState s){return r.nextFloat()<0.45F;}
     @Override public void performBonemeal(ServerLevel l,RandomSource r,BlockPos p,BlockState s){grow(l,r,p);}
     private void grow(ServerLevel l,RandomSource r,BlockPos p){
         int height=5+r.nextInt(3); for(int y=1;y<=height+1;y++)if(!l.getBlockState(p.above(y)).canBeReplaced())return;
         BlockState trunk=log.get().defaultBlockState(); for(int y=0;y<=height;y++)l.setBlock(p.above(y),trunk,Block.UPDATE_ALL);
-        BlockPos center=p.above(height); putLeaf(l,center.above(),Direction.UP);
-        for(Direction d:HORIZONTAL){putLeaf(l,center.above().relative(d),d);branch(l,center.relative(d),3+r.nextInt(2),r,d,center,0);}
+        BlockPos center=p.above(height);
+        for(Direction d:HORIZONTAL)branch(l,center.relative(d),3+r.nextInt(2),r,d,center,0);
+        putLeaf(l,center.above(),Direction.UP);
+        for(Direction d:HORIZONTAL)putLeaf(l,center.above().relative(d),d);
     }
     private void branch(ServerLevel l,BlockPos start,int length,RandomSource r,Direction direction,BlockPos center,int depth){
         if(depth>5)return; BlockPos.MutableBlockPos cursor=start.mutable();putLeaf(l,cursor,direction);hang(l,cursor.below(),1);Direction previous=direction;
         for(int i=0;i<length*length;i++){
             Direction d=r.nextInt(3)>0?previous:(r.nextBoolean()?previous.getClockWise():previous.getCounterClockWise());BlockPos next=cursor.relative(d);
             if(!l.getBlockState(next).canBeReplaced())continue;cursor.set(next);if(cursor.distManhattan(center)>length)break;putLeaf(l,cursor,d);
-            if(r.nextBoolean())putLeaf(l,cursor.above(),Direction.UP);if(r.nextInt(3)==0)putLeaf(l,cursor.below(),Direction.DOWN);if(r.nextBoolean())hang(l,cursor.below(),1+r.nextInt(4));
+            if(r.nextBoolean())putLeaf(l,cursor.above(),Direction.UP);if(r.nextInt(3)==0){cursor.move(Direction.DOWN);putLeaf(l,cursor,Direction.DOWN);}if(r.nextBoolean())hang(l,cursor.below(),1+r.nextInt(4));
             if(r.nextBoolean()){Direction side=d.getClockWise();BlockPos q=cursor.relative(side);if(l.getBlockState(q).canBeReplaced())branch(l,q,length,r,side,center,depth+1);side=side.getOpposite();q=cursor.relative(side);if(l.getBlockState(q).canBeReplaced())branch(l,q,length,r,side,center,depth+1);}
             Direction extra=HORIZONTAL[r.nextInt(4)];putLeaf(l,cursor.relative(extra),extra);previous=d;
         }
+        if(r.nextBoolean()&&l.isEmptyBlock(cursor))putLeaf(l,cursor,previous);
     }
     private void putLeaf(ServerLevel l,BlockPos p,Direction d){if(l.getBlockState(p).canBeReplaced())l.setBlock(p,leaves.get().defaultBlockState().setValue(ImportedWillowLeavesBlock.FACING,d).setValue(ImportedWillowLeavesBlock.NATURAL,true),Block.UPDATE_ALL);}
-    private void hang(ServerLevel l,BlockPos p,int length){if(!l.isEmptyBlock(p))return;Block b=branch.get();for(int i=0;i<length;i++){BlockPos q=p.below(i);if(!l.isEmptyBlock(q))return;boolean end=i==length-1||!l.isEmptyBlock(q.below());l.setBlock(q,b.defaultBlockState().setValue(ImportedWillowBranchBlock.SHAPE,end?ImportedWillowBranchBlock.Shape.END:ImportedWillowBranchBlock.Shape.MIDDLE),Block.UPDATE_ALL);if(end)return;}}
+    private void hang(ServerLevel l,BlockPos p,int length){
+        if(!l.isEmptyBlock(p))return;Block b=branch.get();
+        for(int i=0;i<length;i++){BlockPos q=p.below(i);if(!l.isEmptyBlock(q))return;if(l.isEmptyBlock(q.below()))l.setBlock(q,b.defaultBlockState().setValue(ImportedWillowBranchBlock.SHAPE,ImportedWillowBranchBlock.Shape.MIDDLE),Block.UPDATE_ALL);else{l.setBlock(q,b.defaultBlockState().setValue(ImportedWillowBranchBlock.SHAPE,ImportedWillowBranchBlock.Shape.END),Block.UPDATE_ALL);return;}}
+        BlockPos end=p.below(length);if(l.isEmptyBlock(end))l.setBlock(end,b.defaultBlockState().setValue(ImportedWillowBranchBlock.SHAPE,ImportedWillowBranchBlock.Shape.END),Block.UPDATE_ALL);
+    }
 }

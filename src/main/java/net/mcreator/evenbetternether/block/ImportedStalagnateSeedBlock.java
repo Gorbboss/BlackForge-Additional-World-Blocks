@@ -29,5 +29,20 @@ public class ImportedStalagnateSeedBlock extends BushBlock implements Bonemealab
     @Override public boolean canSurvive(BlockState s,LevelReader l,BlockPos p){BlockPos q=s.getValue(TOP)?p.above():p.below();BlockState support=l.getBlockState(q);return support.is(Blocks.NETHERRACK)||support.is(Blocks.CRIMSON_NYLIUM)||support.is(Blocks.WARPED_NYLIUM);}
     @Override public boolean isValidBonemealTarget(LevelReader l,BlockPos p,BlockState s,boolean c){Direction d=s.getValue(TOP)?Direction.DOWN:Direction.UP;for(int i=1;i<=3;i++)if(!l.isEmptyBlock(p.relative(d,i)))return false;return true;}
     @Override public boolean isBonemealSuccess(Level l,RandomSource r,BlockPos p,BlockState s){return r.nextInt(8)==0&&isValidBonemealTarget(l,p,s,false);}
-    @Override public void performBonemeal(ServerLevel l,RandomSource r,BlockPos p,BlockState s){Direction d=s.getValue(TOP)?Direction.DOWN:Direction.UP;int space=1;while(space<64&&l.isEmptyBlock(p.relative(d,space)))space++;if(space<3)return;int length=3+r.nextInt(Math.max(1,space-2));Block b=trunk.get();for(int i=0;i<length;i++){ImportedTripleShape shape=i==0?ImportedTripleShape.BOTTOM:i==length-1?ImportedTripleShape.TOP:ImportedTripleShape.MIDDLE;if(d==Direction.DOWN)shape=shape==ImportedTripleShape.TOP?ImportedTripleShape.BOTTOM:shape==ImportedTripleShape.BOTTOM?ImportedTripleShape.TOP:shape;l.setBlock(p.relative(d,i),b.defaultBlockState().setValue(ImportedStalagnateBlock.SHAPE,shape),Block.UPDATE_ALL);}}
+    @Override public void performBonemeal(ServerLevel l,RandomSource r,BlockPos p,BlockState s){
+        Direction d=s.getValue(TOP)?Direction.DOWN:Direction.UP;
+        int limit=d==Direction.UP?l.getMaxBuildHeight()-p.getY():p.getY()-l.getMinBuildHeight()+1;
+        int distance=1;
+        while(distance<limit&&l.isEmptyBlock(p.relative(d,distance)))distance++;
+        // Only grow when a real opposite surface was found; fill the entire gap so long
+        // Stalagnates can connect the Nether floor and ceiling in tall custom worlds.
+        if(distance>=limit||distance<3)return;
+        int length=distance;
+        Block b=trunk.get();
+        for(int i=0;i<length;i++){
+            ImportedTripleShape shape=i==0?ImportedTripleShape.BOTTOM:i==length-1?ImportedTripleShape.TOP:ImportedTripleShape.MIDDLE;
+            if(d==Direction.DOWN)shape=shape==ImportedTripleShape.TOP?ImportedTripleShape.BOTTOM:shape==ImportedTripleShape.BOTTOM?ImportedTripleShape.TOP:shape;
+            l.setBlock(p.relative(d,i),b.defaultBlockState().setValue(ImportedStalagnateBlock.SHAPE,shape),Block.UPDATE_ALL);
+        }
+    }
 }
