@@ -61,10 +61,10 @@ public class EvenbetternetherMod {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         EvenbetternetherModBlocks.REGISTRY.register(bus);
         EvenbetternetherModItems.REGISTRY.register(bus);
-        EvenbetternetherModTabs.REGISTRY.register(bus);
-        EvenbetternetherModFeatures.REGISTRY.register(bus);
         BlackForgeImportedBlocks.BLOCKS.register(bus);
         BlackForgeImportedBlocks.ITEMS.register(bus);
+        EvenbetternetherModTabs.REGISTRY.register(bus);
+        EvenbetternetherModFeatures.REGISTRY.register(bus);
     }
 
     public static <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, BiConsumer<T, Supplier<NetworkEvent.Context>> messageConsumer) {
