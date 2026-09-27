@@ -24,6 +24,7 @@ import net.mcreator.evenbetternether.block.ImportedStalagnateStemBlock;
 import net.mcreator.evenbetternether.block.ImportedBetterFeatherFernBlock;
 import net.mcreator.evenbetternether.block.ImportedBoneMushroomBlock;
 import net.mcreator.evenbetternether.block.ImportedSepiaBoneGrassBlock;
+import net.mcreator.evenbetternether.block.ImportedWillowTorchBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -80,12 +81,12 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> GLOOMGRASS = plant("gloomgrass", 2);
     public static final RegistryObject<Block> PALE_GLOOMGRASS = plant("pale_gloomgrass", 1);
     public static final RegistryObject<Item> AGAVE_LEAF = ITEMS.register("agave_leaf", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Block> AGAVE = register("agave", () -> new ImportedAgaveBlock(EvenbetternetherModBlocks.NETHER_AGAVE, EvenbetternetherModBlocks.NETHER_SAGUARO).leaf(AGAVE_LEAF));
-    public static final RegistryObject<Block> BETTER_NETHER_FEATHER_FERN = register("better_nether_feather_fern", () -> new ImportedBetterFeatherFernBlock(EvenbetternetherModBlocks.FEATHER_FERN));
+    public static final RegistryObject<Block> AGAVE = register("agave", () -> new ImportedAgaveBlock().leaf(AGAVE_LEAF));
+    public static final RegistryObject<Block> BETTER_NETHER_FEATHER_FERN = register("better_nether_feather_fern", ImportedBetterFeatherFernBlock::new);
     public static final RegistryObject<Block> BONE_MUSHROOM = register("bone_mushroom", () -> new ImportedBoneMushroomBlock(EvenbetternetherModBlocks.SMOOTH_BONE_BLOCK));
     public static final RegistryObject<Block> SEPIA_BONE_GRASS = register("sepia_bone_grass", ImportedSepiaBoneGrassBlock::new);
     public static final RegistryObject<Block> NETHER_MUSHROOM_STEM = register("nether_mushroom_stem", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM)));
-    public static final RegistryObject<Block> GIANT_MOLD = registerNoItem("giant_mold", ImportedGiantMoldBlock::new);
+    public static final RegistryObject<Block> GIANT_MOLD = registerNoItem("giant_mold", () -> new ImportedGiantMoldBlock(NETHER_MUSHROOM_STEM));
     public static final RegistryObject<Block> GIANT_MOLD_SAPLING = register("giant_mold_sapling", () -> new ImportedGiantMoldSaplingBlock(GIANT_MOLD));
     public static final RegistryObject<Block> STALAGNATE_STEM = register("stalagnate_stem", ImportedStalagnateStemBlock::new);
     public static final RegistryObject<Block> STALAGNATE_TRUNK = registerNoItem("stalagnate_trunk", () -> new ImportedStalagnateBlock(STALAGNATE_STEM));
@@ -108,8 +109,8 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> WILLOW_DOOR = register("willow_door", () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_DOOR).noOcclusion(), BlockSetType.CRIMSON));
     public static final RegistryObject<Block> WILLOW_FENCE = register("willow_fence", () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_FENCE)));
     public static final RegistryObject<Block> WILLOW_LEAVES = register("willow_leaves", ImportedWillowLeavesBlock::new);
-    public static final RegistryObject<Block> WILLOW_TORCH = register("willow_torch", () -> new Block(BlockBehaviour.Properties.copy(Blocks.TORCH).noCollission().lightLevel(state -> 14)));
-    public static final RegistryObject<Block> WILLOW_BRANCH = register("willow_branch", () -> new ImportedWillowBranchBlock(WILLOW_TORCH));
+    public static final RegistryObject<Block> WILLOW_BRANCH = register("willow_branch", ImportedWillowBranchBlock::new);
+    public static final RegistryObject<Block> WILLOW_TORCH = register("willow_torch", ImportedWillowTorchBlock::new);
     public static final RegistryObject<Block> WILLOW_SAPLING = register("willow_sapling", () -> new ImportedWillowSaplingBlock(WILLOW_LOG, WILLOW_LEAVES, WILLOW_BRANCH));
 
     public static final RegistryObject<Block> WEEPING_OBSIDIAN = solid("weeping_obsidian");

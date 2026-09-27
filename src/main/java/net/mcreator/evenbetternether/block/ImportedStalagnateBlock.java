@@ -24,4 +24,5 @@ public class ImportedStalagnateBlock extends Block {
     @Override public VoxelShape getCollisionShape(BlockState s,BlockGetter l,BlockPos p,CollisionContext c){return box(5,0,5,11,16,11);}
     @Override public boolean isLadder(BlockState s,net.minecraft.world.level.LevelReader l,BlockPos p,net.minecraft.world.entity.LivingEntity e){return true;}
     @Override public List<ItemStack> getDrops(BlockState s,LootParams.Builder b){return List.of(new ItemStack(stem.get()));}
+    @Override public ItemStack getCloneItemStack(BlockGetter l,BlockPos p,BlockState s){return new ItemStack(stem.get());}
 }

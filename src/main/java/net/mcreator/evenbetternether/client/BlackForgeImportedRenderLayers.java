@@ -20,6 +20,7 @@ public final class BlackForgeImportedRenderLayers {
             RenderType cutout = RenderType.cutout();
             ItemBlockRenderTypes.setRenderLayer(EvenbetternetherModBlocks.FEATHER_FERN.get(), cutout);
             ItemBlockRenderTypes.setRenderLayer(EvenbetternetherModBlocks.BARREL_CACTUS.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(EvenbetternetherModBlocks.HANGING_MYCELIUM.get(), cutout);
             ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.NETHERRACK_STALACTITE.get(), cutout);
             ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.GLOWSTONE_STALACTITE.get(), cutout);
             ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.BLACKSTONE_STALACTITE.get(), cutout);

@@ -163,6 +163,8 @@ public class EvenbetternetherModTabs {
         tabData.accept((ItemLike)((Block)EvenbetternetherModBlocks.SMOOTH_NETHERRACK_WALL.get()).asItem());
         // Imported content uses its own dependency-free item registry. Iterating
         // that registry directly guarantees every imported BlockItem appears.
-        BlackForgeImportedBlocks.ITEMS.getEntries().forEach(item -> tabData.accept(item.get()));
+        BlackForgeImportedBlocks.ITEMS.getEntries().stream()
+                .filter(item -> item != BlackForgeImportedBlocks.AGAVE_LEAF)
+                .forEach(item -> tabData.accept(item.get()));
     }).build());
 }
