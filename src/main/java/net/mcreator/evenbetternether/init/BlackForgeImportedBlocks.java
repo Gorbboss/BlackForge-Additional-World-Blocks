@@ -76,6 +76,8 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> JUNGLE_MOSS = register("jungle_moss", ImportedWallPlantBlock::new);
     public static final RegistryObject<Block> SCULK_MOSS = register("sculk_moss", ImportedWallPlantBlock::new);
     public static final RegistryObject<Block> WALL_MOSS = register("wall_moss", ImportedWallPlantBlock::new);
+    public static final RegistryObject<Block> LUMINOUS_MOSS = register("luminous_moss", () -> new ImportedWallPlantBlock(12));
+    public static final RegistryObject<Block> ROTTEN_MUTATED_MOSS = register("rotten_mutated_moss", ImportedWallPlantBlock::new);
     public static final RegistryObject<Block> NETHER_CACTUS = register("nether_cactus", ImportedNetherCactusBlock::new);
     public static final RegistryObject<Block> NETHER_GRASS = plant("nether_grass", 0);
     public static final RegistryObject<Block> GLOOMGRASS = plant("gloomgrass", 2);
