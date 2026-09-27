@@ -6,6 +6,17 @@ import net.mcreator.evenbetternether.block.ImportedStalactiteBlock;
 import net.mcreator.evenbetternether.block.ImportedNetherPlantBlock;
 import net.mcreator.evenbetternether.block.ImportedHangingVineBlock;
 import net.mcreator.evenbetternether.block.ImportedWillowSaplingBlock;
+import net.mcreator.evenbetternether.block.ImportedHookMushroomBlock;
+import net.mcreator.evenbetternether.block.ImportedMossCoverBlock;
+import net.mcreator.evenbetternether.block.ImportedWallPlantBlock;
+import net.mcreator.evenbetternether.block.ImportedNetherCactusBlock;
+import net.mcreator.evenbetternether.block.ImportedGiantMoldBlock;
+import net.mcreator.evenbetternether.block.ImportedGiantMoldSaplingBlock;
+import net.mcreator.evenbetternether.block.ImportedLumabusVineBlock;
+import net.mcreator.evenbetternether.block.ImportedLumabusSeedBlock;
+import net.mcreator.evenbetternether.block.ImportedWillowLeavesBlock;
+import net.mcreator.evenbetternether.block.ImportedWillowBranchBlock;
+import net.mcreator.evenbetternether.block.ImportedAgaveBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -52,27 +63,27 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> BASALT_STALACTITE = stalactite("basalt_stalactite", Blocks.BASALT);
     public static final RegistryObject<Block> BONE_STALACTITE = stalactite("bone_stalactite", Blocks.BONE_BLOCK);
 
-    public static final RegistryObject<Block> HOOK_MUSHROOM = plant("hook_mushroom", 0);
-    public static final RegistryObject<Block> MOSS_COVER = plant("moss_cover", 0);
-    public static final RegistryObject<Block> JUNGLE_MOSS = plant("jungle_moss", 0);
-    public static final RegistryObject<Block> NETHER_CACTUS = plant("nether_cactus", 0);
+    public static final RegistryObject<Block> HOOK_MUSHROOM = register("hook_mushroom", ImportedHookMushroomBlock::new);
+    public static final RegistryObject<Block> MOSS_COVER = register("moss_cover", ImportedMossCoverBlock::new);
+    public static final RegistryObject<Block> JUNGLE_MOSS = register("jungle_moss", ImportedWallPlantBlock::new);
+    public static final RegistryObject<Block> WALL_MOSS = register("wall_moss", ImportedWallPlantBlock::new);
+    public static final RegistryObject<Block> NETHER_CACTUS = register("nether_cactus", ImportedNetherCactusBlock::new);
     public static final RegistryObject<Block> NETHER_GRASS = plant("nether_grass", 0);
     public static final RegistryObject<Block> GLOOMGRASS = plant("gloomgrass", 2);
     public static final RegistryObject<Block> PALE_GLOOMGRASS = plant("pale_gloomgrass", 1);
-    public static final RegistryObject<Block> AGAVE = plant("agave", 0);
-    public static final RegistryObject<Block> GIANT_MOLD_SAPLING = plant("giant_mold_sapling", 0);
-    public static final RegistryObject<Block> GIANT_MOLD = plant("giant_mold", 0);
+    public static final RegistryObject<Block> AGAVE = register("agave", ImportedAgaveBlock::new);
+    public static final RegistryObject<Block> GIANT_MOLD = registerNoItem("giant_mold", ImportedGiantMoldBlock::new);
+    public static final RegistryObject<Block> GIANT_MOLD_SAPLING = register("giant_mold_sapling", () -> new ImportedGiantMoldSaplingBlock(GIANT_MOLD));
     public static final RegistryObject<Block> STALAGNATE_SEED = plant("stalagnate_seed", 0);
     public static final RegistryObject<Block> WART_SEED = plant("wart_seed", 0);
-    public static final RegistryObject<Block> LUMABUS_SEED = plant("lumabus_seed", 8);
-    public static final RegistryObject<Block> GOLDEN_LUMABUS_SEED = plant("golden_lumabus_seed", 10);
-
     public static final RegistryObject<Block> BLACK_VINE = vine("black_vine", 0);
     public static final RegistryObject<Block> BLOOMING_VINE = vine("blooming_vine", 4);
     public static final RegistryObject<Block> GOLDEN_VINE = vine("golden_vine", 15);
     public static final RegistryObject<Block> GLOOMSCULK_VINE = vine("gloomsculk_vine", 3);
-    public static final RegistryObject<Block> LUMABUS_VINE = vine("lumabus_vine", 12);
-    public static final RegistryObject<Block> GOLDEN_LUMABUS_VINE = vine("golden_lumabus_vine", 15);
+    public static final RegistryObject<Block> LUMABUS_VINE = registerNoItem("lumabus_vine", ImportedLumabusVineBlock::new);
+    public static final RegistryObject<Block> GOLDEN_LUMABUS_VINE = registerNoItem("golden_lumabus_vine", ImportedLumabusVineBlock::new);
+    public static final RegistryObject<Block> LUMABUS_SEED = register("lumabus_seed", () -> new ImportedLumabusSeedBlock(LUMABUS_VINE, 10, 21));
+    public static final RegistryObject<Block> GOLDEN_LUMABUS_SEED = register("golden_lumabus_seed", () -> new ImportedLumabusSeedBlock(GOLDEN_LUMABUS_VINE, 12, 23));
 
     public static final RegistryObject<Block> WILLOW_LOG = register("willow_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_STEM)));
     public static final RegistryObject<Block> WILLOW_BARK = register("willow_bark", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_HYPHAE)));
@@ -81,8 +92,9 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> WILLOW_PLANKS = register("willow_planks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS)));
     public static final RegistryObject<Block> WILLOW_DOOR = register("willow_door", () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_DOOR).noOcclusion(), BlockSetType.CRIMSON));
     public static final RegistryObject<Block> WILLOW_FENCE = register("willow_fence", () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_FENCE)));
-    public static final RegistryObject<Block> WILLOW_LEAVES = register("willow_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.AZALEA_LEAVES)));
-    public static final RegistryObject<Block> WILLOW_SAPLING = register("willow_sapling", () -> new ImportedWillowSaplingBlock(WILLOW_LOG, WILLOW_LEAVES));
+    public static final RegistryObject<Block> WILLOW_LEAVES = register("willow_leaves", ImportedWillowLeavesBlock::new);
+    public static final RegistryObject<Block> WILLOW_BRANCH = registerNoItem("willow_branch", ImportedWillowBranchBlock::new);
+    public static final RegistryObject<Block> WILLOW_SAPLING = register("willow_sapling", () -> new ImportedWillowSaplingBlock(WILLOW_LOG, WILLOW_LEAVES, WILLOW_BRANCH));
     public static final RegistryObject<Block> WILLOW_TORCH = register("willow_torch", () -> new Block(BlockBehaviour.Properties.copy(Blocks.TORCH).noCollission().lightLevel(state -> 14)));
 
     public static final RegistryObject<Block> WEEPING_OBSIDIAN = solid("weeping_obsidian");
@@ -154,5 +166,9 @@ public final class BlackForgeImportedBlocks {
         RegistryObject<Block> block = BLOCKS.register(name, factory);
         ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
         return block;
+    }
+
+    private static RegistryObject<Block> registerNoItem(String name, Supplier<? extends Block> factory) {
+        return BLOCKS.register(name, factory);
     }
 }

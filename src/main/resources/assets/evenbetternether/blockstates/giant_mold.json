@@ -1,1 +1,1 @@
-{"variants":{"":{"model":"evenbetternether:block/giant_mold_top"}}}
+{"variants":{"shape=top":{"model":"evenbetternether:block/giant_mold_top"},"shape=middle":[{"model":"evenbetternether:block/giant_mold_stem"},{"model":"evenbetternether:block/giant_mold_stem_2"}],"shape=bottom":{"model":"evenbetternether:block/giant_mold_bottom"}}}

@@ -1,1 +1,1 @@
-{"variants":{"bottom=false":{"model":"evenbetternether:block/lumabus_vine"},"bottom=true":{"model":"evenbetternether:block/lumabus_bulb_1"}}}
+{"variants":{"shape=top":{"model":"evenbetternether:block/lumabus_roots"},"shape=middle":[{"model":"evenbetternether:block/lumabus_vine"},{"model":"evenbetternether:block/lumabus_vine_mirrored"}],"shape=bottom":[{"model":"evenbetternether:block/lumabus_bulb_1"},{"model":"evenbetternether:block/lumabus_bulb_2"},{"model":"evenbetternether:block/lumabus_bulb_3"},{"model":"evenbetternether:block/lumabus_bulb_4"}]}}
