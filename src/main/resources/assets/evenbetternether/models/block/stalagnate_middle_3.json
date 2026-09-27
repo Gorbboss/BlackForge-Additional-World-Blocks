@@ -1,0 +1,8 @@
+{
+    "parent": "evenbetternether:block/stalagnate_trunk",
+	"textures":
+	{
+        "side": "evenbetternether:block/stalagnate_trunk_middle_2",
+        "top": "evenbetternether:block/stalagnate_top"
+    }
+}

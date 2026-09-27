@@ -1,0 +1,20 @@
+{
+	"variants": {
+		"shape=top": { "model": "evenbetternether:block/stalagnate_top", "uvlock": true },
+		"shape=middle": [
+			{ "model": "evenbetternether:block/stalagnate_middle_1" },
+			{ "model": "evenbetternether:block/stalagnate_middle_2" },
+			{ "model": "evenbetternether:block/stalagnate_middle_3" },
+			{ "model": "evenbetternether:block/stalagnate_middle_4" },
+			{ "model": "evenbetternether:block/stalagnate_middle_5" },
+			{ "model": "evenbetternether:block/stalagnate_middle_6" },
+			{ "model": "evenbetternether:block/stalagnate_middle_7" },
+			{ "model": "evenbetternether:block/stalagnate_middle_8" },
+			{ "model": "evenbetternether:block/stalagnate_middle_9" },
+			{ "model": "evenbetternether:block/stalagnate_middle_10" },
+			{ "model": "evenbetternether:block/stalagnate_middle_11" },
+			{ "model": "evenbetternether:block/stalagnate_middle_12" }
+		],
+		"shape=bottom": { "model": "evenbetternether:block/stalagnate_bottom" }
+    }
+}
