@@ -31,6 +31,7 @@ import net.mcreator.evenbetternether.init.EvenbetternetherModBlocks;
 import net.mcreator.evenbetternether.init.EvenbetternetherModFeatures;
 import net.mcreator.evenbetternether.init.EvenbetternetherModItems;
 import net.mcreator.evenbetternether.init.EvenbetternetherModTabs;
+import net.mcreator.evenbetternether.init.BlackForgeImportedBlocks;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
@@ -62,6 +63,8 @@ public class EvenbetternetherMod {
         EvenbetternetherModItems.REGISTRY.register(bus);
         EvenbetternetherModTabs.REGISTRY.register(bus);
         EvenbetternetherModFeatures.REGISTRY.register(bus);
+        BlackForgeImportedBlocks.BLOCKS.register(bus);
+        BlackForgeImportedBlocks.ITEMS.register(bus);
     }
 
     public static <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, BiConsumer<T, Supplier<NetworkEvent.Context>> messageConsumer) {

@@ -1,0 +1,22 @@
+{
+	"variants": {
+		"": [
+            { "model": "evenbetternether:block/blue_weeping_obsidian" },
+        	{ "model": "evenbetternether:block/blue_weeping_obsidian", "y": 90 },
+        	{ "model": "evenbetternether:block/blue_weeping_obsidian", "y": 180 },
+        	{ "model": "evenbetternether:block/blue_weeping_obsidian", "y": 270 },
+			{ "model": "evenbetternether:block/blue_weeping_obsidian", "x": 90 },
+        	{ "model": "evenbetternether:block/blue_weeping_obsidian", "x": 90, "y": 90 },
+        	{ "model": "evenbetternether:block/blue_weeping_obsidian", "x": 90, "y": 180 },
+        	{ "model": "evenbetternether:block/blue_weeping_obsidian", "x": 90, "y": 270 },
+			{ "model": "evenbetternether:block/blue_weeping_obsidian", "x": 180 },
+        	{ "model": "evenbetternether:block/blue_weeping_obsidian", "x": 180, "y": 90 },
+        	{ "model": "evenbetternether:block/blue_weeping_obsidian", "x": 180, "y": 180 },
+        	{ "model": "evenbetternether:block/blue_weeping_obsidian", "x": 180, "y": 270 },
+			{ "model": "evenbetternether:block/blue_weeping_obsidian", "x": 270 },
+        	{ "model": "evenbetternether:block/blue_weeping_obsidian", "x": 270, "y": 90 },
+        	{ "model": "evenbetternether:block/blue_weeping_obsidian", "x": 270, "y": 180 },
+        	{ "model": "evenbetternether:block/blue_weeping_obsidian", "x": 270, "y": 270 }
+        ]
+	}
+}

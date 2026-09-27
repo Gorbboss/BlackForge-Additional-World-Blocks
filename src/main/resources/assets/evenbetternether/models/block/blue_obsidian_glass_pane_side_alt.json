@@ -1,0 +1,7 @@
+{
+	"parent": "block/template_glass_pane_side_alt",
+	"textures": {
+		"edge": "evenbetternether:block/blue_obsidian_glass",
+		"pane": "evenbetternether:block/blue_obsidian_glass"
+	}
+}

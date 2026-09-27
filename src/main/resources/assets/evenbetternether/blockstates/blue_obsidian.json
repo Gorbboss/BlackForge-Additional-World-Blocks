@@ -1,0 +1,6 @@
+{
+	"variants":
+	{
+        "":  { "model": "evenbetternether:block/blue_obsidian" }
+    }
+}

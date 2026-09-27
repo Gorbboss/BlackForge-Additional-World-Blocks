@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "evenbetternether:block/obsidian_tile_small",
+        "top": "evenbetternether:block/obsidian_tile_small",
+        "side": "evenbetternether:block/obsidian_tile_small"
+    }
+}
