@@ -1,0 +1,7 @@
+{
+    "variants": {
+		"axis=y": { "model": "evenbetternether:block/nether_mushroom_stem" },
+        "axis=z": { "model": "evenbetternether:block/nether_mushroom_stem", "x": 90 },
+        "axis=x": { "model": "evenbetternether:block/nether_mushroom_stem", "x": 90, "y": 90 }
+	}
+}

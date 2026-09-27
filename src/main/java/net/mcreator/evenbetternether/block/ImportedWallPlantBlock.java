@@ -17,6 +17,11 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import java.util.List;
 
 public class ImportedWallPlantBlock extends Block {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
@@ -28,4 +33,5 @@ public class ImportedWallPlantBlock extends Block {
     @Override public BlockState getStateForPlacement(BlockPlaceContext c){for(Direction d:c.getNearestLookingDirections())if(d.getAxis().isHorizontal()){BlockState s=defaultBlockState().setValue(FACING,d.getOpposite());if(s.canSurvive(c.getLevel(),c.getClickedPos()))return s;}return null;}
     @Override public BlockState rotate(BlockState s,Rotation r){return s.setValue(FACING,r.rotate(s.getValue(FACING)));}
     @Override public BlockState mirror(BlockState s,Mirror m){return s.rotate(m.getRotation(s.getValue(FACING)));}
+    @Override public List<ItemStack> getDrops(BlockState s,LootParams.Builder b){ItemStack tool=b.getOptionalParameter(LootContextParams.TOOL);return tool!=null&&tool.is(Items.SHEARS)?List.of(new ItemStack(this)):List.of();}
 }

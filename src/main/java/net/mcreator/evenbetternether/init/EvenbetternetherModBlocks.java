@@ -136,7 +136,7 @@ public class EvenbetternetherModBlocks {
     public static final RegistryObject<Block> NETHER_AGAVE = REGISTRY.register("nether_agave", () -> new NetherAgaveBlock());
     public static final RegistryObject<Block> VERDANT_SPROUTS = REGISTRY.register("verdant_sprouts", () -> new VerdantSproutsBlock());
     public static final RegistryObject<Block> NETHER_SAGUARO = REGISTRY.register("nether_saguaro", () -> new NetherSaguaroBlock());
-    public static final RegistryObject<Block> BARREL_CACTUS = REGISTRY.register("barrel_cactus", () -> new BarrelCactusBlock());
+    public static final RegistryObject<Block> BARREL_CACTUS = REGISTRY.register("barrel_cactus", () -> new net.mcreator.evenbetternether.block.ImportedBarrelCactusBlock());
     public static final RegistryObject<Block> SOUL_ROOTS = REGISTRY.register("soul_roots", () -> new SoulRootsBlock());
     public static final RegistryObject<Block> SOUL_SPROUTS = REGISTRY.register("soul_sprouts", () -> new SoulSproutsBlock());
     public static final RegistryObject<Block> BASALT_SPELEOTHEM = REGISTRY.register("basalt_speleothem", () -> new BasaltSpeleothemBlock());
@@ -176,7 +176,7 @@ public class EvenbetternetherModBlocks {
     public static final RegistryObject<Block> NETHERSHROOM = REGISTRY.register("nethershroom", () -> new NethershroomBlock());
     public static final RegistryObject<Block> FUNGAL_ROOTS = REGISTRY.register("fungal_roots", () -> new FungalRootsBlock());
     public static final RegistryObject<Block> FUNGAL_SPROUTS = REGISTRY.register("fungal_sprouts", () -> new FungalSproutsBlock());
-    public static final RegistryObject<Block> HANGING_MYCELIUM = REGISTRY.register("hanging_mycelium", () -> new HangingMyceliumBlock());
+    public static final RegistryObject<Block> HANGING_MYCELIUM = REGISTRY.register("hanging_mycelium", () -> new net.mcreator.evenbetternether.block.CombinedHangingMyceliumBlock());
     public static final RegistryObject<Block> LONG_HANGING_MYCELIUM = REGISTRY.register("long_hanging_mycelium", () -> new LongHangingMyceliumBlock());
     public static final RegistryObject<Block> BULBOUS_HANGING_MYCELIUM = REGISTRY.register("bulbous_hanging_mycelium", () -> new BulbousHangingMyceliumBlock());
     public static final RegistryObject<Block> PYRITE_SLAB = REGISTRY.register("pyrite_slab", () -> new PyriteSlabBlock());
@@ -233,4 +233,3 @@ public class EvenbetternetherModBlocks {
     public static final RegistryObject<Block> SMOOTH_NETHERRACK_SLAB = REGISTRY.register("smooth_netherrack_slab", () -> new SmoothNetherrackSlabBlock());
     public static final RegistryObject<Block> SMOOTH_NETHERRACK_WALL = REGISTRY.register("smooth_netherrack_wall", () -> new SmoothNetherrackWallBlock());
 }
-

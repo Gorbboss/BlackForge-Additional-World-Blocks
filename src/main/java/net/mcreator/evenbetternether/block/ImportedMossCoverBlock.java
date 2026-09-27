@@ -13,6 +13,11 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import java.util.List;
 
 public class ImportedMossCoverBlock extends Block {
     private static final VoxelShape SHAPE = box(0,0,0,16,4,16);
@@ -27,4 +32,5 @@ public class ImportedMossCoverBlock extends Block {
         Direction d=Direction.Plane.HORIZONTAL.getRandomDirection(r); BlockPos q=p.relative(d);
         if(l.isEmptyBlock(q) && canSurvive(s,l,q)) l.setBlock(q,defaultBlockState(),UPDATE_ALL);
     }
+    @Override public List<ItemStack> getDrops(BlockState s,LootParams.Builder b){ItemStack tool=b.getOptionalParameter(LootContextParams.TOOL);return tool!=null&&tool.is(Items.SHEARS)?List.of(new ItemStack(this)):List.of();}
 }

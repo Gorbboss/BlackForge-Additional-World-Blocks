@@ -17,6 +17,9 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.storage.loot.LootParams;
+import java.util.List;
 
 /** Dependency-free port of BetterNether's three-block-tall Nether cactus. */
 public class ImportedNetherCactusBlock extends Block {
@@ -50,4 +53,5 @@ public class ImportedNetherCactusBlock extends Block {
         }
     }
     @Override public void entityInside(BlockState s, Level l, BlockPos p, Entity e) { e.hurt(l.damageSources().cactus(), 1.0F); }
+    @Override public List<ItemStack> getDrops(BlockState s,LootParams.Builder b){return List.of(new ItemStack(this));}
 }

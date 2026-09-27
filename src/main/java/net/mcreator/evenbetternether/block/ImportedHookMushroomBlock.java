@@ -13,6 +13,9 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.storage.loot.LootParams;
+import java.util.List;
 
 /** BetterNether Hook Mushroom: a ceiling plant, not a ground bush. */
 public class ImportedHookMushroomBlock extends Block {
@@ -25,4 +28,5 @@ public class ImportedHookMushroomBlock extends Block {
     }
     @Override public BlockState updateShape(BlockState s, Direction d, BlockState n, LevelAccessor l, BlockPos p, BlockPos np) { return canSurvive(s,l,p) ? s : Blocks.AIR.defaultBlockState(); }
     @Override public void randomTick(BlockState s,ServerLevel l,BlockPos p,RandomSource r){if(r.nextInt(16)!=0)return;int adjacent=0;for(Direction d:Direction.Plane.HORIZONTAL)if(l.getBlockState(p.relative(d)).is(this))adjacent++;if(adjacent>=2)return;Direction d=Direction.Plane.HORIZONTAL.getRandomDirection(r);BlockPos q=p.relative(d);if(l.isEmptyBlock(q)&&canSurvive(s,l,q))l.setBlock(q,defaultBlockState(),UPDATE_ALL);}
+    @Override public List<ItemStack> getDrops(BlockState s,LootParams.Builder b){return List.of(new ItemStack(this));}
 }
