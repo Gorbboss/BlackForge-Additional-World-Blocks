@@ -1,0 +1,7 @@
+{
+    "variants":
+	{
+        "shape=end": { "model": "evenbetternether:block/willow_branch_end" },
+        "shape=middle": { "model": "evenbetternether:block/willow_branch_middle" }
+    }
+}

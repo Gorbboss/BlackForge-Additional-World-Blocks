@@ -13,6 +13,8 @@ import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
@@ -55,11 +57,7 @@ public class ImportedNetherPlantBlock extends BushBlock implements BonemealableB
 
     @Override
     public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
-        for (int attempt = 0; attempt < 12; attempt++) {
-            BlockPos target = pos.offset(random.nextInt(7) - 3, random.nextInt(3) - 1, random.nextInt(7) - 3);
-            if (level.isEmptyBlock(target) && state.canSurvive(level, target)) {
-                level.setBlock(target, state, Block.UPDATE_ALL);
-            }
-        }
+        level.addFreshEntity(new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 0.5,
+                pos.getZ() + 0.5, new ItemStack(asItem())));
     }
 }
