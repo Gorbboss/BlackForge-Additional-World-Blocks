@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
-      "model": "evenbetternether:block/hanging_mycelium"
-    }
+    "bottom=true,variant=0":{"model":"evenbetternether:block/hanging_mycelium"},
+    "bottom=true,variant=1":{"model":"evenbetternether:block/long_hanging_mycelium"},
+    "bottom=true,variant=2":{"model":"evenbetternether:block/bulbous_hanging_mycelium"},
+    "bottom=false,variant=0":{"model":"evenbetternether:block/hanging_mycelium_connected_1"},
+    "bottom=false,variant=1":{"model":"evenbetternether:block/hanging_mycelium_connected_2"},
+    "bottom=false,variant=2":{"model":"evenbetternether:block/hanging_mycelium_connected_1"}
   }
 }

@@ -17,6 +17,13 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import java.util.List;
 
 /** Hanging, climbable vine which extends downward with bonemeal. */
 public class ImportedHangingVineBlock extends Block implements BonemealableBlock {
@@ -27,6 +34,7 @@ public class ImportedHangingVineBlock extends Block implements BonemealableBlock
         super(BlockBehaviour.Properties.copy(Blocks.WEEPING_VINES)
                 .noCollission()
                 .noOcclusion()
+                .emissiveRendering((state, level, pos) -> light > 0)
                 .lightLevel(state -> light));
         registerDefaultState(stateDefinition.any().setValue(BOTTOM, true));
     }
@@ -81,4 +89,5 @@ public class ImportedHangingVineBlock extends Block implements BonemealableBlock
     public boolean isLadder(BlockState state, LevelReader level, BlockPos pos, net.minecraft.world.entity.LivingEntity entity) {
         return true;
     }
+    @Override public List<ItemStack> getDrops(BlockState s,LootParams.Builder b){ItemStack tool=b.getOptionalParameter(LootContextParams.TOOL);return tool!=null&&(tool.is(Items.SHEARS)||EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SILK_TOUCH,tool)>0)?List.of(new ItemStack(this)):List.of();}
 }

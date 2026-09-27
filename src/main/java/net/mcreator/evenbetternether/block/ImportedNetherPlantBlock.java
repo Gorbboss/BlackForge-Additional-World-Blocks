@@ -17,6 +17,10 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import java.util.List;
 
 /** Small Nether plant with BetterNether-style permissive ground and bonemeal spreading. */
 public class ImportedNetherPlantBlock extends BushBlock implements BonemealableBlock {
@@ -60,4 +64,5 @@ public class ImportedNetherPlantBlock extends BushBlock implements BonemealableB
         level.addFreshEntity(new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 0.5,
                 pos.getZ() + 0.5, new ItemStack(asItem())));
     }
+    @Override public List<ItemStack> getDrops(BlockState s,LootParams.Builder b){ItemStack tool=b.getOptionalParameter(LootContextParams.TOOL);return tool!=null&&tool.is(Items.SHEARS)?List.of(new ItemStack(this)):List.of();}
 }

@@ -6,8 +6,8 @@
         "texture": "block/nether_wart_block"
     },
     "elements": [
-        {   "from": [ 5, 0, 5 ],
-            "to": [ 11, 6, 11 ],
+        {   "from": [ 6, 0, 4 ],
+            "to": [ 12, 6, 10 ],
             "faces": {
                 "down":  { "texture": "#texture" },
                 "up":    { "texture": "#texture" },

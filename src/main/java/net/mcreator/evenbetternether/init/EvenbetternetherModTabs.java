@@ -66,8 +66,6 @@ public class EvenbetternetherModTabs {
         tabData.accept((ItemLike)((Block)EvenbetternetherModBlocks.FUNGAL_ROOTS.get()).asItem());
         tabData.accept((ItemLike)((Block)EvenbetternetherModBlocks.FUNGAL_SPROUTS.get()).asItem());
         tabData.accept((ItemLike)((Block)EvenbetternetherModBlocks.HANGING_MYCELIUM.get()).asItem());
-        tabData.accept((ItemLike)((Block)EvenbetternetherModBlocks.LONG_HANGING_MYCELIUM.get()).asItem());
-        tabData.accept((ItemLike)((Block)EvenbetternetherModBlocks.BULBOUS_HANGING_MYCELIUM.get()).asItem());
         tabData.accept((ItemLike)((Block)EvenbetternetherModBlocks.BARREL_CACTUS.get()).asItem());
         tabData.accept((ItemLike)((Block)EvenbetternetherModBlocks.NETHER_SAGUARO.get()).asItem());
         tabData.accept((ItemLike)((Block)EvenbetternetherModBlocks.FEATHER_FERN.get()).asItem());
