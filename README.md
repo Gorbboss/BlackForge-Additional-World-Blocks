@@ -9,4 +9,7 @@ BCLib, WunderLib, or BetterNether at runtime. Imported construction blocks,
 stalactites, plants, vines, and the restricted willow set are implemented in
 staged commits so each batch can be verified by GitHub Actions.
 
+Current verification includes the dependency-free imported registries and their
+explicit creative-tab population.
+
 See [NOTICE.md](NOTICE.md) for upstream attribution.
