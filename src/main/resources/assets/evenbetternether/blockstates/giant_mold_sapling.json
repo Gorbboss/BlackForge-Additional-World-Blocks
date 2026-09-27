@@ -1,0 +1,6 @@
+{
+	"variants":
+	{
+        "":  { "model": "evenbetternether:block/giant_mold_sapling" }
+    }
+}

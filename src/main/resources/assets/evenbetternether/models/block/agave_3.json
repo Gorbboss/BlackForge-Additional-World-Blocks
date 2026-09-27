@@ -1,0 +1,7 @@
+{
+	"parent": "evenbetternether:block/agave",
+	"textures": {
+		"texture": "evenbetternether:block/agave_leaf_05",
+		"texture2": "evenbetternether:block/agave_leaf_05"
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "evenbetternether:block/lumabus_bulb_1",
+	"textures": {
+		"particle": "evenbetternether:block/lumabus_bulb_4",
+		"texture": "evenbetternether:block/lumabus_bulb_4"
+	}
+}

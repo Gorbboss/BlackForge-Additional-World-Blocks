@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "evenbetternether:block/gloomsculk_vine_bottom"
+  }
+}

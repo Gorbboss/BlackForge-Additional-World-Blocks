@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "evenbetternether:block/pale_gloomgrass_2"
+  }
+}

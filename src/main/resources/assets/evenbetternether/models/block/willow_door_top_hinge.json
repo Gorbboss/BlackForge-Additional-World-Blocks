@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_top_right",
+    "textures": {
+        "bottom": "evenbetternether:block/willow_door_top",
+        "top": "evenbetternether:block/willow_door_top"
+    }
+}

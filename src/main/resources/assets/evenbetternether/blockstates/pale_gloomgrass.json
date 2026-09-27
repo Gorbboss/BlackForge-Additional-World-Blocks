@@ -1,0 +1,24 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "evenbetternether:block/pale_gloomgrass_1"
+      },
+      {
+        "model": "evenbetternether:block/pale_gloomgrass_4"
+      },
+      {
+        "model": "evenbetternether:block/pale_gloomgrass_2"
+      },
+      {
+        "model": "evenbetternether:block/pale_gloomgrass_5"
+      },
+      {
+        "model": "evenbetternether:block/pale_gloomgrass_3"
+      },
+      {
+        "model": "evenbetternether:block/pale_gloomgrass_6"
+      }
+    ]
+  }
+}

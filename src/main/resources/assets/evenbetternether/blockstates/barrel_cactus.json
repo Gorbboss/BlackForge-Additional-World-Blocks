@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
-      "model": "evenbetternether:block/barrel_cactus"
-    }
+    "": [
+      {"model": "evenbetternether:block/barrel_cactus"},
+      {"model": "evenbetternether:block/barrel_cactus", "y": 90},
+      {"model": "evenbetternether:block/barrel_cactus", "y": 180},
+      {"model": "evenbetternether:block/barrel_cactus", "y": 270}
+    ]
   }
 }

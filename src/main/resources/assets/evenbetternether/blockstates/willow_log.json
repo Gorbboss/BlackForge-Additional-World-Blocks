@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "axis=y": [
+			{ "model": "evenbetternether:block/willow_log" },
+			{ "model": "evenbetternether:block/willow_log_2" }
+		],
+        "axis=z": [
+			{ "model": "evenbetternether:block/willow_log", "x": 90 },
+			{ "model": "evenbetternether:block/willow_log_2", "x": 90 }
+		],
+        "axis=x": [
+			{ "model": "evenbetternether:block/willow_log", "x": 90, "y": 90 },
+			{ "model": "evenbetternether:block/willow_log_2", "x": 90, "y": 90 }
+		]
+    }
+}

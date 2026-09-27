@@ -1,7 +1,24 @@
 {
-  "variants": {
-    "": {
-      "model": "evenbetternether:block/feather_fern"
+    "variants":
+	{
+        "age=0": { "model": "evenbetternether:block/feather_fern_3" },
+		"age=1": [
+			{ "model": "evenbetternether:block/feather_fern_2" },
+			{ "model": "evenbetternether:block/feather_fern_2", "y": 90 },
+			{ "model": "evenbetternether:block/feather_fern_2", "y": 180 },
+			{ "model": "evenbetternether:block/feather_fern_2", "y": 270 }
+		],
+		"age=2": [
+			{ "model": "evenbetternether:block/feather_fern_1" },
+			{ "model": "evenbetternether:block/feather_fern_1", "y": 90 },
+			{ "model": "evenbetternether:block/feather_fern_1", "y": 180 },
+			{ "model": "evenbetternether:block/feather_fern_1", "y": 270 }
+		],
+		"age=3": [
+			{ "model": "evenbetternether:block/feather_fern" },
+			{ "model": "evenbetternether:block/feather_fern", "y": 90 },
+			{ "model": "evenbetternether:block/feather_fern", "y": 180 },
+			{ "model": "evenbetternether:block/feather_fern", "y": 270 }
+		]
     }
-  }
 }

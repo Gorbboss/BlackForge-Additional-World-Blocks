@@ -1,0 +1,9 @@
+{
+    "variants":
+	{
+        "":
+		[
+			{ "model": "evenbetternether:block/willow_planks" }
+		]
+    }
+}

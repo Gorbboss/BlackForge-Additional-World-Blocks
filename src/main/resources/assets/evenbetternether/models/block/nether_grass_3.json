@@ -1,0 +1,6 @@
+{
+    "parent": "evenbetternether:block/grass_fan",
+    "textures": {
+        "texture": "evenbetternether:block/ngrass_3"
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "evenbetternether:block/willow_bark_mossy",
+        "down": "evenbetternether:block/willow_log_top",
+        "up": "evenbetternether:block/willow_log_top",
+        "north": "evenbetternether:block/willow_bark_mossy",
+        "east": "evenbetternether:block/willow_bark_mossy",
+        "south": "evenbetternether:block/willow_bark_mossy",
+        "west": "evenbetternether:block/willow_bark_mossy"
+    }
+}

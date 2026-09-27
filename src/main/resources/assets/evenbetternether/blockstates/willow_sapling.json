@@ -1,0 +1,6 @@
+{
+	"variants":
+	{
+        "":  { "model": "evenbetternether:block/willow_sapling" }
+    }
+}

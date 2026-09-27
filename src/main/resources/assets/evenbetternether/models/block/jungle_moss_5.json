@@ -1,0 +1,7 @@
+{
+	"parent": "evenbetternether:block/wall_moss_2",
+	"textures": {
+		"particle": "evenbetternether:block/jungle_moss_2",
+		"texture": "evenbetternether:block/jungle_moss_2"
+	}
+}
