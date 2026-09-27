@@ -31,7 +31,7 @@ public final class BlackForgeImportedBlocks {
             DeferredRegister.create(ForgeRegistries.ITEMS, EvenbetternetherMod.MODID);
 
     private static final BlockBehaviour.Properties OBSIDIAN = BlockBehaviour.Properties.copy(Blocks.OBSIDIAN);
-    private static final BlockBehaviour.Properties OBSIDIAN_GLASS = BlockBehaviour.Properties.copy(Blocks.TINTED_GLASS)
+    private static final BlockBehaviour.Properties OBSIDIAN_GLASS_PROPERTIES = BlockBehaviour.Properties.copy(Blocks.TINTED_GLASS)
             .strength(50.0F, 1200.0F)
             .noOcclusion();
 
@@ -86,11 +86,11 @@ public final class BlackForgeImportedBlocks {
     }
 
     private static RegistryObject<Block> glass(String name) {
-        return register(name, () -> new GlassBlock(OBSIDIAN_GLASS));
+        return register(name, () -> new GlassBlock(OBSIDIAN_GLASS_PROPERTIES));
     }
 
     private static RegistryObject<Block> pane(String name) {
-        return register(name, () -> new IronBarsBlock(OBSIDIAN_GLASS));
+        return register(name, () -> new IronBarsBlock(OBSIDIAN_GLASS_PROPERTIES));
     }
 
     private static RegistryObject<Block> wall(String name, Block source) {
