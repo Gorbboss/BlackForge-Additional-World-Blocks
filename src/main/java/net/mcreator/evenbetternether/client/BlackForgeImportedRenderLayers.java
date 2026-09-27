@@ -2,6 +2,7 @@ package net.mcreator.evenbetternether.client;
 
 import net.mcreator.evenbetternether.EvenbetternetherMod;
 import net.mcreator.evenbetternether.init.BlackForgeImportedBlocks;
+import net.mcreator.evenbetternether.init.EvenbetternetherModBlocks;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;
@@ -17,6 +18,8 @@ public final class BlackForgeImportedRenderLayers {
     public static void clientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             RenderType cutout = RenderType.cutout();
+            ItemBlockRenderTypes.setRenderLayer(EvenbetternetherModBlocks.FEATHER_FERN.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(EvenbetternetherModBlocks.BARREL_CACTUS.get(), cutout);
             ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.NETHERRACK_STALACTITE.get(), cutout);
             ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.GLOWSTONE_STALACTITE.get(), cutout);
             ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.BLACKSTONE_STALACTITE.get(), cutout);
