@@ -25,7 +25,14 @@ import java.util.List;
 
 public class ImportedWallPlantBlock extends Block {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-    public ImportedWallPlantBlock() { super(BlockBehaviour.Properties.copy(Blocks.GLOW_LICHEN).noCollission().noOcclusion()); registerDefaultState(stateDefinition.any().setValue(FACING,Direction.NORTH)); }
+    public ImportedWallPlantBlock() { this(0); }
+    public ImportedWallPlantBlock(int lightLevel) {
+        super(BlockBehaviour.Properties.copy(Blocks.GLOW_LICHEN)
+                .lightLevel(state -> lightLevel)
+                .noCollission()
+                .noOcclusion());
+        registerDefaultState(stateDefinition.any().setValue(FACING,Direction.NORTH));
+    }
     @Override protected void createBlockStateDefinition(StateDefinition.Builder<Block,BlockState>b){b.add(FACING);}
     @Override public VoxelShape getShape(BlockState s, BlockGetter l, BlockPos p, CollisionContext c){return switch(s.getValue(FACING)){case NORTH->box(2,2,10,14,14,16);case SOUTH->box(2,2,0,14,14,6);case WEST->box(10,2,2,16,14,14);default->box(0,2,2,6,14,14);};}
     @Override public boolean canSurvive(BlockState s, LevelReader l, BlockPos p){Direction d=s.getValue(FACING);BlockPos q=p.relative(d.getOpposite());return l.getBlockState(q).isFaceSturdy(l,q,d);}
