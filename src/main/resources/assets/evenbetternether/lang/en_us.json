@@ -241,5 +241,9 @@
   "block.evenbetternether.pallidium_tiny": "Tiny Pallidium",
   "block.evenbetternether.end_stone_stalactite": "End Stone Stalactite",
   "block.evenbetternether.thick_endstone_stalactite": "Thick Endstone Stalactite",
-  "block.evenbetternether.aurora_crystal": "Aurora Crystal"
+  "block.evenbetternether.aurora_crystal": "Aurora Crystal",
+  "block.evenbetternether.dragon_bone_block": "Dragon Bone Block",
+  "block.evenbetternether.dragon_bone_stairs": "Dragon Bone Stairs",
+  "block.evenbetternether.dragon_bone_slab": "Dragon Bone Slab",
+  "block.evenbetternether.amber_moss": "Amber Moss"
 }

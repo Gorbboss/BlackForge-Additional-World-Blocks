@@ -158,6 +158,11 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> THICK_ENDSTONE_STALACTITE = register("thick_endstone_stalactite", () -> new ImportedStalactiteBlock(Blocks.END_STONE));
     public static final RegistryObject<Block> AURORA_CRYSTAL = register("aurora_crystal", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).lightLevel(state -> 15).noOcclusion()));
 
+    public static final RegistryObject<Block> DRAGON_BONE_BLOCK = register("dragon_bone_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK)));
+    public static final RegistryObject<Block> DRAGON_BONE_STAIRS = register("dragon_bone_stairs", () -> new StairBlock(DRAGON_BONE_BLOCK.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK)));
+    public static final RegistryObject<Block> DRAGON_BONE_SLAB = register("dragon_bone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK)));
+    public static final RegistryObject<Block> AMBER_MOSS = register("amber_moss", () -> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+
     public static final RegistryObject<Block> BLUE_OBSIDIAN = solid("blue_obsidian");
     public static final RegistryObject<Block> BLUE_CRYING_OBSIDIAN = solid("blue_crying_obsidian");
     public static final RegistryObject<Block> BLUE_WEEPING_OBSIDIAN = solid("blue_weeping_obsidian");
