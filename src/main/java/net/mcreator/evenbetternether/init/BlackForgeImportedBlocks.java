@@ -154,6 +154,10 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> PALLIDIUM_THIN = register("pallidium_thin", () -> new ImportedPallidiumBlock(PALLIDIUM_HEAVY));
     public static final RegistryObject<Block> PALLIDIUM_TINY = register("pallidium_tiny", () -> new ImportedPallidiumBlock(PALLIDIUM_THIN));
 
+    public static final RegistryObject<Block> END_STONE_STALACTITE = register("end_stone_stalactite", () -> new ImportedStalactiteBlock(Blocks.END_STONE));
+    public static final RegistryObject<Block> THICK_ENDSTONE_STALACTITE = register("thick_endstone_stalactite", () -> new ImportedStalactiteBlock(Blocks.END_STONE));
+    public static final RegistryObject<Block> AURORA_CRYSTAL = register("aurora_crystal", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).lightLevel(state -> 15).noOcclusion()));
+
     public static final RegistryObject<Block> BLUE_OBSIDIAN = solid("blue_obsidian");
     public static final RegistryObject<Block> BLUE_CRYING_OBSIDIAN = solid("blue_crying_obsidian");
     public static final RegistryObject<Block> BLUE_WEEPING_OBSIDIAN = solid("blue_weeping_obsidian");

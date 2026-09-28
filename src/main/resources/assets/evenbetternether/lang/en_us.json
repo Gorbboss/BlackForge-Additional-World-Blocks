@@ -238,5 +238,8 @@
   "block.evenbetternether.pallidium_full": "Full Pallidium",
   "block.evenbetternether.pallidium_heavy": "Heavy Pallidium",
   "block.evenbetternether.pallidium_thin": "Thin Pallidium",
-  "block.evenbetternether.pallidium_tiny": "Tiny Pallidium"
+  "block.evenbetternether.pallidium_tiny": "Tiny Pallidium",
+  "block.evenbetternether.end_stone_stalactite": "End Stone Stalactite",
+  "block.evenbetternether.thick_endstone_stalactite": "Thick Endstone Stalactite",
+  "block.evenbetternether.aurora_crystal": "Aurora Crystal"
 }
