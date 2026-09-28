@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "evenbetternether:flavolite_polished"
+    }
+  },
+  "result": {
+    "item": "evenbetternether:flavolite_tiles",
+    "count": 4
+  }
+}

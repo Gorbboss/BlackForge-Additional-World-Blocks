@@ -225,5 +225,18 @@
   "block.evenbetternether.umbralith_pillar": "Umbralith Pillar",
   "block.evenbetternether.umbralith_stairs": "Umbralith Stairs",
   "block.evenbetternether.umbralith_slab": "Umbralith Slab",
-  "block.evenbetternether.umbralith_wall": "Umbralith Wall"
+  "block.evenbetternether.umbralith_wall": "Umbralith Wall",
+  "block.evenbetternether.flavolite": "Flavolite",
+  "block.evenbetternether.flavolite_polished": "Polished Flavolite",
+  "block.evenbetternether.flavolite_tiles": "Flavolite Tiles",
+  "block.evenbetternether.flavolite_pillar": "Flavolite Pillar",
+  "block.evenbetternether.flavolite_stairs": "Flavolite Stairs",
+  "block.evenbetternether.flavolite_slab": "Flavolite Slab",
+  "block.evenbetternether.flavolite_wall": "Flavolite Wall",
+  "block.evenbetternether.flavolite_runed": "Runed Flavolite",
+  "block.evenbetternether.flavolite_runed_eternal": "Eternal Runed Flavolite",
+  "block.evenbetternether.pallidium_full": "Full Pallidium",
+  "block.evenbetternether.pallidium_heavy": "Heavy Pallidium",
+  "block.evenbetternether.pallidium_thin": "Thin Pallidium",
+  "block.evenbetternether.pallidium_tiny": "Tiny Pallidium"
 }

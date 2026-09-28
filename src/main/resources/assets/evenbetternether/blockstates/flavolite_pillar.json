@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "evenbetternether:block/flavolite_pillar"
+    },
+    "axis=z": {
+      "model": "evenbetternether:block/flavolite_pillar",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "evenbetternether:block/flavolite_pillar",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

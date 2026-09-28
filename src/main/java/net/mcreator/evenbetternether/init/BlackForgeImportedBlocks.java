@@ -20,6 +20,7 @@ import net.mcreator.evenbetternether.block.ImportedAgaveBlock;
 import net.mcreator.evenbetternether.block.ImportedStalagnateBlock;
 import net.mcreator.evenbetternether.block.ImportedStalagnateSeedBlock;
 import net.mcreator.evenbetternether.block.ImportedWartSeedBlock;
+import net.mcreator.evenbetternether.block.ImportedPallidiumBlock;
 import net.mcreator.evenbetternether.block.ImportedFragileWartBlock;
 import net.mcreator.evenbetternether.block.ImportedStalagnateStemBlock;
 import net.mcreator.evenbetternether.block.ImportedBetterFeatherFernBlock;
@@ -137,6 +138,21 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> UMBRALITH_STAIRS = register("umbralith_stairs", () -> new StairBlock(UMBRALITH.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.END_STONE)));
     public static final RegistryObject<Block> UMBRALITH_SLAB = register("umbralith_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
     public static final RegistryObject<Block> UMBRALITH_WALL = register("umbralith_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+
+    public static final RegistryObject<Block> FLAVOLITE = register("flavolite", () -> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+    public static final RegistryObject<Block> FLAVOLITE_POLISHED = register("flavolite_polished", () -> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+    public static final RegistryObject<Block> FLAVOLITE_TILES = register("flavolite_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+    public static final RegistryObject<Block> FLAVOLITE_PILLAR = register("flavolite_pillar", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+    public static final RegistryObject<Block> FLAVOLITE_STAIRS = register("flavolite_stairs", () -> new StairBlock(FLAVOLITE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+    public static final RegistryObject<Block> FLAVOLITE_SLAB = register("flavolite_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+    public static final RegistryObject<Block> FLAVOLITE_WALL = register("flavolite_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+    public static final RegistryObject<Block> FLAVOLITE_RUNED = register("flavolite_runed", () -> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+    public static final RegistryObject<Block> FLAVOLITE_RUNED_ETERNAL = register("flavolite_runed_eternal", () -> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE).lightLevel(state -> 13)));
+
+    public static final RegistryObject<Block> PALLIDIUM_FULL = register("pallidium_full", () -> new ImportedPallidiumBlock(null));
+    public static final RegistryObject<Block> PALLIDIUM_HEAVY = register("pallidium_heavy", () -> new ImportedPallidiumBlock(PALLIDIUM_FULL));
+    public static final RegistryObject<Block> PALLIDIUM_THIN = register("pallidium_thin", () -> new ImportedPallidiumBlock(PALLIDIUM_HEAVY));
+    public static final RegistryObject<Block> PALLIDIUM_TINY = register("pallidium_tiny", () -> new ImportedPallidiumBlock(PALLIDIUM_THIN));
 
     public static final RegistryObject<Block> BLUE_OBSIDIAN = solid("blue_obsidian");
     public static final RegistryObject<Block> BLUE_CRYING_OBSIDIAN = solid("blue_crying_obsidian");

@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "minecraft:block/end_stone",
+    "side": "evenbetternether:block/pallidium_tiny_side",
+    "top": "evenbetternether:block/pallidium_tiny_top"
+  }
+}
