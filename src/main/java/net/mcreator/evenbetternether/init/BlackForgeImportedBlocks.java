@@ -21,6 +21,7 @@ import net.mcreator.evenbetternether.block.ImportedStalagnateBlock;
 import net.mcreator.evenbetternether.block.ImportedStalagnateSeedBlock;
 import net.mcreator.evenbetternether.block.ImportedWartSeedBlock;
 import net.mcreator.evenbetternether.block.ImportedPallidiumBlock;
+import net.mcreator.evenbetternether.block.ImportedEndPlantBlock;
 import net.mcreator.evenbetternether.block.ImportedFragileWartBlock;
 import net.mcreator.evenbetternether.block.ImportedStalagnateStemBlock;
 import net.mcreator.evenbetternether.block.ImportedBetterFeatherFernBlock;
@@ -162,6 +163,9 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> DRAGON_BONE_STAIRS = register("dragon_bone_stairs", () -> new StairBlock(DRAGON_BONE_BLOCK.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK)));
     public static final RegistryObject<Block> DRAGON_BONE_SLAB = register("dragon_bone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK)));
     public static final RegistryObject<Block> AMBER_MOSS = register("amber_moss", () -> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+
+    public static final RegistryObject<Block> AMBER_GRASS = register("amber_grass", ImportedEndPlantBlock::new);
+    public static final RegistryObject<Block> BUSHY_GRASS = register("bushy_grass", ImportedEndPlantBlock::new);
 
     public static final RegistryObject<Block> BLUE_OBSIDIAN = solid("blue_obsidian");
     public static final RegistryObject<Block> BLUE_CRYING_OBSIDIAN = solid("blue_crying_obsidian");

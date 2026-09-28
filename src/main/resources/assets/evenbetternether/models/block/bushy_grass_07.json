@@ -1,0 +1,6 @@
+{
+    "parent": "evenbetternether:block/crop_block_inverted",
+    "textures": {
+        "texture": "evenbetternether:block/bushy_grass_1"
+    }
+}
