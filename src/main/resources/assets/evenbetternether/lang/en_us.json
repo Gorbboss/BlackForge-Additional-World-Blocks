@@ -219,5 +219,11 @@
   "block.evenbetternether.willow_sapling": "Willow Sapling",
   "block.evenbetternether.willow_torch": "Willow Torch",
   "block.evenbetternether.fragile_wart": "Fragile Wart",
-  "block.evenbetternether.umbralith": "Umbralith"
+  "block.evenbetternether.umbralith": "Umbralith",
+  "block.evenbetternether.umbralith_polished": "Polished Umbralith",
+  "block.evenbetternether.umbralith_tiles": "Umbralith Tiles",
+  "block.evenbetternether.umbralith_pillar": "Umbralith Pillar",
+  "block.evenbetternether.umbralith_stairs": "Umbralith Stairs",
+  "block.evenbetternether.umbralith_slab": "Umbralith Slab",
+  "block.evenbetternether.umbralith_wall": "Umbralith Wall"
 }

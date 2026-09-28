@@ -131,6 +131,13 @@ public final class BlackForgeImportedBlocks {
 
     public static final RegistryObject<Block> UMBRALITH = register("umbralith", () -> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
 
+    public static final RegistryObject<Block> UMBRALITH_POLISHED = register("umbralith_polished", () -> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+    public static final RegistryObject<Block> UMBRALITH_TILES = register("umbralith_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+    public static final RegistryObject<Block> UMBRALITH_PILLAR = register("umbralith_pillar", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+    public static final RegistryObject<Block> UMBRALITH_STAIRS = register("umbralith_stairs", () -> new StairBlock(UMBRALITH.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+    public static final RegistryObject<Block> UMBRALITH_SLAB = register("umbralith_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+    public static final RegistryObject<Block> UMBRALITH_WALL = register("umbralith_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+
     public static final RegistryObject<Block> BLUE_OBSIDIAN = solid("blue_obsidian");
     public static final RegistryObject<Block> BLUE_CRYING_OBSIDIAN = solid("blue_crying_obsidian");
     public static final RegistryObject<Block> BLUE_WEEPING_OBSIDIAN = solid("blue_weeping_obsidian");
