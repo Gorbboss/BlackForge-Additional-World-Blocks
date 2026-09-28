@@ -20,6 +20,7 @@ import net.mcreator.evenbetternether.block.ImportedAgaveBlock;
 import net.mcreator.evenbetternether.block.ImportedStalagnateBlock;
 import net.mcreator.evenbetternether.block.ImportedStalagnateSeedBlock;
 import net.mcreator.evenbetternether.block.ImportedWartSeedBlock;
+import net.mcreator.evenbetternether.block.ImportedFragileWartBlock;
 import net.mcreator.evenbetternether.block.ImportedStalagnateStemBlock;
 import net.mcreator.evenbetternether.block.ImportedBetterFeatherFernBlock;
 import net.mcreator.evenbetternether.block.ImportedBoneMushroomBlock;
@@ -93,6 +94,7 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> STALAGNATE_STEM = register("stalagnate_stem", ImportedStalagnateStemBlock::new);
     public static final RegistryObject<Block> STALAGNATE_TRUNK = registerNoItem("stalagnate_trunk", () -> new ImportedStalagnateBlock(STALAGNATE_STEM));
     public static final RegistryObject<Block> STALAGNATE_SEED = register("stalagnate_seed", () -> new ImportedStalagnateSeedBlock(STALAGNATE_TRUNK));
+    public static final RegistryObject<Block> FRAGILE_WART = register("fragile_wart", ImportedFragileWartBlock::new);
     public static final RegistryObject<Block> WART_SEED = register("wart_seed", ImportedWartSeedBlock::new);
     public static final RegistryObject<Block> BLACK_VINE = vine("black_vine", 0);
     public static final RegistryObject<Block> BLOOMING_VINE = vine("blooming_vine", 4);
