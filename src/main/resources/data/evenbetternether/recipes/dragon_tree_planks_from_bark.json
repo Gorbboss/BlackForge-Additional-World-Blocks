@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "evenbetternether:dragon_tree_bark"
+    }
+  ],
+  "result": {
+    "item": "evenbetternether:dragon_tree_planks",
+    "count": 4
+  }
+}

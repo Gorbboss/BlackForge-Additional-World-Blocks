@@ -1,0 +1,6 @@
+{
+	"parent": "evenbetternether:block/charnia",
+	"textures": {
+		"texture": "evenbetternether:block/charnia_light_blue"
+	}
+}

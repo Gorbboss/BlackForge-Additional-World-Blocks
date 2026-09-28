@@ -30,6 +30,8 @@ import net.mcreator.evenbetternether.world.features.SSVBasaltStalagmiteFeature;
 import net.mcreator.evenbetternether.world.features.SSVBasaltStalagtiteFeature;
 import net.mcreator.evenbetternether.world.features.StoneStalagmiteFeature;
 import net.mcreator.evenbetternether.world.features.StoneStalagtiteFeature;
+import net.mcreator.evenbetternether.world.features.ImportedUmbralithArchFeature;
+import net.mcreator.evenbetternether.world.features.ImportedPallidiumFormationFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
@@ -59,5 +61,6 @@ public class EvenbetternetherModFeatures {
     public static final RegistryObject<Feature<?>> HANGING_MYCELIUM_FEATURE = REGISTRY.register("hanging_mycelium_feature", HangingMyceliumFeatureFeature::new);
     public static final RegistryObject<Feature<?>> LONG_HANGING_MYCELIUM_FEATURE = REGISTRY.register("long_hanging_mycelium_feature", LongHangingMyceliumFeatureFeature::new);
     public static final RegistryObject<Feature<?>> BULBOUS_HANGING_MYCELIUM_FEATURE = REGISTRY.register("bulbous_hanging_mycelium_feature", BulbousHangingMyceliumFeatureFeature::new);
+    public static final RegistryObject<Feature<?>> UMBRALITH_ARCH = REGISTRY.register("umbralith_arch", ImportedUmbralithArchFeature::new);
+    public static final RegistryObject<Feature<?>> PALLIDIUM_FORMATION = REGISTRY.register("pallidium_formation", ImportedPallidiumFormationFeature::new);
 }
-

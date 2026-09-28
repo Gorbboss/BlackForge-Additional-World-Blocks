@@ -1,0 +1,6 @@
+{
+    "parent": "block/fence_side",
+    "textures": {
+        "texture": "evenbetternether:block/dragon_tree_planks"
+    }
+}

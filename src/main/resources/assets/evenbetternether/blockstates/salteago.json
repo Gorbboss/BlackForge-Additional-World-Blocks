@@ -1,0 +1,10 @@
+{
+	"variants": {
+		"": [
+			{ "model": "evenbetternether:block/salteago_01" },
+			{ "model": "evenbetternether:block/salteago_02" },
+			{ "model": "evenbetternether:block/salteago_03" },
+			{ "model": "evenbetternether:block/salteago_04" }
+		]
+	}
+}

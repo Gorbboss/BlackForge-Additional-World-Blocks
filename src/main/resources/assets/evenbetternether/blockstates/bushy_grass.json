@@ -1,0 +1,14 @@
+{
+	"variants": {
+		"": [
+			{ "model": "evenbetternether:block/bushy_grass_01" },
+			{ "model": "evenbetternether:block/bushy_grass_02" },
+			{ "model": "evenbetternether:block/bushy_grass_03" },
+			{ "model": "evenbetternether:block/bushy_grass_04" },
+			{ "model": "evenbetternether:block/bushy_grass_05" },
+			{ "model": "evenbetternether:block/bushy_grass_06" },
+			{ "model": "evenbetternether:block/bushy_grass_07" },
+			{ "model": "evenbetternether:block/bushy_grass_08" }
+		]
+	}
+}

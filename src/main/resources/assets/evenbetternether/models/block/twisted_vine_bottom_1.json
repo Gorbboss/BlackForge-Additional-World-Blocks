@@ -1,0 +1,6 @@
+{
+	"parent": "evenbetternether:block/cross_no_distortion",
+	"textures": {
+		"texture": "evenbetternether:block/twisted_vine_bottom"
+	}
+}

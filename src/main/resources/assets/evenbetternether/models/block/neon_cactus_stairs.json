@@ -1,0 +1,8 @@
+{
+	"parent": "evenbetternether:block/lit_stairs",
+	"textures": {
+		"bottom": "evenbetternether:block/neon_cactus_block_top",
+		"top": "evenbetternether:block/neon_cactus_block_top",
+		"side": "evenbetternether:block/neon_cactus_block_side"
+	}
+}

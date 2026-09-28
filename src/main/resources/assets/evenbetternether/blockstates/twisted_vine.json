@@ -1,0 +1,13 @@
+{
+	"variants": {
+		"shape=top": { "model": "evenbetternether:block/twisted_vine_top" },
+		"shape=middle": [
+			{ "model": "evenbetternether:block/twisted_vine_middle_1" },
+			{ "model": "evenbetternether:block/twisted_vine_middle_2" }
+		],
+		"shape=bottom": [
+			{ "model": "evenbetternether:block/twisted_vine_bottom_1" },
+			{ "model": "evenbetternether:block/twisted_vine_bottom_2" }
+		]
+	}
+}

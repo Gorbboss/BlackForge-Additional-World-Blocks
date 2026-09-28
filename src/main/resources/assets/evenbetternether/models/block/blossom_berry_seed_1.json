@@ -1,0 +1,6 @@
+{
+	"parent": "evenbetternether:block/cross_no_distortion",
+	"textures": {
+		"texture": "evenbetternether:block/blossom_berry_seed_1"
+	}
+}

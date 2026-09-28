@@ -1,0 +1,6 @@
+{
+    "parent": "block/fence_post",
+    "textures": {
+        "texture": "evenbetternether:block/dragon_tree_planks"
+    }
+}

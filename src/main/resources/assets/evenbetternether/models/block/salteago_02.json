@@ -1,0 +1,6 @@
+{
+    "parent": "evenbetternether:block/crop_block",
+    "textures": {
+        "texture": "evenbetternether:block/salteago"
+    }
+}

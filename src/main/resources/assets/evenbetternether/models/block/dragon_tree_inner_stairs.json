@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "evenbetternether:block/dragon_tree_planks",
+        "top": "evenbetternether:block/dragon_tree_planks",
+        "side": "evenbetternether:block/dragon_tree_planks"
+    }
+}

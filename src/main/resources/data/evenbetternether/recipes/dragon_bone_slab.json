@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "evenbetternether:dragon_bone_block"
+    }
+  },
+  "result": {
+    "item": "evenbetternether:dragon_bone_slab",
+    "count": 6
+  }
+}

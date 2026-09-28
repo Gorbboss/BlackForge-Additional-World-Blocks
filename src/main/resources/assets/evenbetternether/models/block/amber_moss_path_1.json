@@ -1,0 +1,7 @@
+{   "parent": "evenbetternether:block/path",
+    "textures": {
+        "top": "evenbetternether:block/amber_moss_path_top",
+        "side": "evenbetternether:block/amber_moss_side_1",
+        "bottom": "block/end_stone"
+    }
+}

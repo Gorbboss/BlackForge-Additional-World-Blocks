@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "evenbetternether:nether_mushroom_cap",
-    "evenbetternether:brown_nether_mushroom_cap"
+    "evenbetternether:dragon_tree_leaves",
+    "evenbetternether:helix_tree_leaves"
   ]
 }

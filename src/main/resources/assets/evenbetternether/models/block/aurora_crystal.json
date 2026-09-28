@@ -1,0 +1,6 @@
+{
+	"parent": "evenbetternether:block/tint_cube_noshade",
+	"textures": {
+		"texture": "evenbetternether:block/aurora_crystal"
+	}
+}
