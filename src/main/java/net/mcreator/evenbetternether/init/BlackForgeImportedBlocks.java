@@ -129,6 +129,8 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> OBSIDIAN_GLASS = glass("obsidian_glass");
     public static final RegistryObject<Block> OBSIDIAN_GLASS_PANE = pane("obsidian_glass_pane");
 
+    public static final RegistryObject<Block> UMBRALITH = register("umbralith", () -> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+
     public static final RegistryObject<Block> BLUE_OBSIDIAN = solid("blue_obsidian");
     public static final RegistryObject<Block> BLUE_CRYING_OBSIDIAN = solid("blue_crying_obsidian");
     public static final RegistryObject<Block> BLUE_WEEPING_OBSIDIAN = solid("blue_weeping_obsidian");
