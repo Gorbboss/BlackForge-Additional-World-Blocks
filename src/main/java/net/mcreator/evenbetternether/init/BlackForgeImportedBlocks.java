@@ -167,6 +167,9 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> AMBER_GRASS = register("amber_grass", ImportedEndPlantBlock::new);
     public static final RegistryObject<Block> BUSHY_GRASS = register("bushy_grass", ImportedEndPlantBlock::new);
 
+    public static final RegistryObject<Block> INFLEXIA = register("inflexia", () -> new ImportedEndPlantBlock(7));
+    public static final RegistryObject<Block> FLAMMALIX = register("flammalix", () -> new ImportedEndPlantBlock(13));
+
     public static final RegistryObject<Block> BLUE_OBSIDIAN = solid("blue_obsidian");
     public static final RegistryObject<Block> BLUE_CRYING_OBSIDIAN = solid("blue_crying_obsidian");
     public static final RegistryObject<Block> BLUE_WEEPING_OBSIDIAN = solid("blue_weeping_obsidian");
