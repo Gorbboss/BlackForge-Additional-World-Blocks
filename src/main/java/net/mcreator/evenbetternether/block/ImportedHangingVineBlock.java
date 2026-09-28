@@ -4,7 +4,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.BlockGetter;
+import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
@@ -14,80 +15,32 @@ import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.level.storage.loot.LootParams;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
-import java.util.List;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 
-/** Hanging, climbable vine which extends downward with bonemeal. */
+/** Self-shaping, downward-growing vine used by BetterEnd's Twisted Vine. */
 public class ImportedHangingVineBlock extends Block implements BonemealableBlock {
-    public static final BooleanProperty BOTTOM = BooleanProperty.create("bottom");
-    private static final VoxelShape SHAPE = Block.box(2, 0, 2, 14, 16, 14);
-
+    public enum Shape implements StringRepresentable { TOP, MIDDLE, BOTTOM; public String getSerializedName(){ return name().toLowerCase(); } }
+    public static final EnumProperty<Shape> SHAPE = EnumProperty.create("shape", Shape.class);
     public ImportedHangingVineBlock(int light) {
-        super(BlockBehaviour.Properties.copy(Blocks.WEEPING_VINES)
-                .noCollission()
-                .noOcclusion()
-                .emissiveRendering((state, level, pos) -> light > 0)
-                .lightLevel(state -> light));
-        registerDefaultState(stateDefinition.any().setValue(BOTTOM, true));
+        super(BlockBehaviour.Properties.copy(Blocks.WEEPING_VINES).randomTicks().noCollission().noOcclusion().lightLevel(s -> light));
+        registerDefaultState(stateDefinition.any().setValue(SHAPE, Shape.BOTTOM));
     }
-
-    @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(BOTTOM);
+    @Override protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> b) { b.add(SHAPE); }
+    @Override public BlockState getStateForPlacement(BlockPlaceContext c) { return shaped(c.getLevel(), c.getClickedPos()); }
+    private BlockState shaped(LevelReader level, BlockPos pos) {
+        boolean above = level.getBlockState(pos.above()).is(this), below = level.getBlockState(pos.below()).is(this);
+        return defaultBlockState().setValue(SHAPE, above ? (below ? Shape.MIDDLE : Shape.BOTTOM) : Shape.TOP);
     }
-
-    @Override
-    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return SHAPE;
+    @Override public boolean canSurvive(BlockState s, LevelReader level, BlockPos pos) { BlockState a=level.getBlockState(pos.above()); return a.is(this) || a.isFaceSturdy(level,pos.above(),Direction.DOWN); }
+    @Override public BlockState updateShape(BlockState s, Direction d, BlockState n, LevelAccessor level, BlockPos p, BlockPos q) {
+        if (!canSurvive(s, level, p)) level.scheduleTick(p, this, 1);
+        return shaped(level, p);
     }
-
-    @Override
-    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        BlockState above = level.getBlockState(pos.above());
-        return above.is(this) || above.isFaceSturdy(level, pos.above(), Direction.DOWN);
-    }
-
-    @Override
-    public BlockState updateShape(BlockState state, Direction direction, BlockState neighbor, LevelAccessor level,
-                                  BlockPos pos, BlockPos neighborPos) {
-        if (!canSurvive(state, level, pos)) return Blocks.AIR.defaultBlockState();
-        return state.setValue(BOTTOM, !level.getBlockState(pos.below()).is(this));
-    }
-
-    @Override
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean client) {
-        BlockPos cursor = pos;
-        while (level.getBlockState(cursor.below()).is(this)) cursor = cursor.below();
-        return level.isEmptyBlock(cursor.below());
-    }
-
-    @Override
-    public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state) {
-        return true;
-    }
-
-    @Override
-    public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
-        BlockPos cursor = pos;
-        while (level.getBlockState(cursor.below()).is(this)) cursor = cursor.below();
-        BlockPos next = cursor.below();
-        if (level.isEmptyBlock(next)) {
-            level.setBlock(cursor, level.getBlockState(cursor).setValue(BOTTOM, false), Block.UPDATE_ALL);
-            level.setBlock(next, defaultBlockState(), Block.UPDATE_ALL);
-        }
-    }
-
-    @Override
-    public boolean isLadder(BlockState state, LevelReader level, BlockPos pos, net.minecraft.world.entity.LivingEntity entity) {
-        return true;
-    }
-    @Override public List<ItemStack> getDrops(BlockState s,LootParams.Builder b){ItemStack tool=b.getOptionalParameter(LootContextParams.TOOL);return tool!=null&&(tool.is(Items.SHEARS)||EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SILK_TOUCH,tool)>0)?List.of(new ItemStack(this)):List.of();}
+    @Override public void tick(BlockState s, ServerLevel level, BlockPos p, RandomSource r) { if (!canSurvive(s,level,p)) level.destroyBlock(p,true); }
+    @Override public void randomTick(BlockState s, ServerLevel level, BlockPos p, RandomSource r) { if (s.getValue(SHAPE)==Shape.BOTTOM && r.nextInt(7)==0) grow(level,p); }
+    private void grow(ServerLevel level, BlockPos p) { if (level.isEmptyBlock(p.below())) { level.setBlock(p.below(), defaultBlockState(), UPDATE_ALL); level.setBlock(p, shaped(level,p), UPDATE_ALL); } }
+    @Override public boolean isValidBonemealTarget(LevelReader l,BlockPos p,BlockState s,boolean c){ return l.isEmptyBlock(findBottom(l,p).below()); }
+    @Override public boolean isBonemealSuccess(Level l,RandomSource r,BlockPos p,BlockState s){ return true; }
+    @Override public void performBonemeal(ServerLevel l,RandomSource r,BlockPos p,BlockState s){ BlockPos b=findBottom(l,p); if(l.isEmptyBlock(b.below())) grow(l,b); }
+    private BlockPos findBottom(LevelReader l,BlockPos p){ while(l.getBlockState(p.below()).is(this)) p=p.below(); return p; }
 }

@@ -1,0 +1,10 @@
+{
+	"variants": {
+		"": [
+			{ "model": "evenbetternether:block/charnia_light_blue" },
+			{ "model": "evenbetternether:block/charnia_light_blue", "y": 90 },
+			{ "model": "evenbetternether:block/charnia_light_blue", "y": 180 },
+			{ "model": "evenbetternether:block/charnia_light_blue", "y": 270 }
+		]
+	}
+}

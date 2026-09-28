@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "": [
+			{ "model": "evenbetternether:block/creeping_moss" },
+			{ "model": "evenbetternether:block/creeping_moss", "y":  90 },
+			{ "model": "evenbetternether:block/creeping_moss", "y": 180 },
+			{ "model": "evenbetternether:block/creeping_moss", "y": 270 }
+		]
+    }
+}

@@ -1,0 +1,12 @@
+{
+	"parent": "block/cube",
+	"textures": {
+		"down": "evenbetternether:block/mossy_glowshroom_log_side",
+		"east": "evenbetternether:block/mossy_glowshroom_cap_transition",
+		"north": "evenbetternether:block/mossy_glowshroom_cap_transition",
+		"particle": "evenbetternether:block/mossy_glowshroom_cap_transition",
+		"south": "evenbetternether:block/mossy_glowshroom_cap_transition",
+		"up": "evenbetternether:block/mossy_glowshroom_cap",
+		"west": "evenbetternether:block/mossy_glowshroom_cap_transition"
+	}
+}

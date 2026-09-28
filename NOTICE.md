@@ -11,5 +11,12 @@ The published 1.3.1 JAR was compared with the author's public 1.0.1 source.
 Compiled classes from 1.3.1 were decompiled to recover the later MIT-licensed
 changes, while packaged resources were copied from the matching 1.3.1 release.
 
+Selected BetterEnd 1.20 code concepts and art assets are adapted from the
+MIT-licensed BetterEnd project by Quiqueck and contributors:
+
+- Source repository: https://github.com/quiqueck/BetterEnd/tree/1.20
+
+The adapted implementation does not bundle or require BCLib or WunderLib.
+
 Minecraft is a trademark of Microsoft. This project is not affiliated with or
 endorsed by Microsoft or Mojang Studios.

@@ -1,0 +1,18 @@
+{
+	"variants": {
+		"": [
+			{ "model": "evenbetternether:block/jungle_grass_01" },
+			{ "model": "evenbetternether:block/jungle_grass_02" },
+			{ "model": "evenbetternether:block/jungle_grass_03" },
+			{ "model": "evenbetternether:block/jungle_grass_04" },
+			{ "model": "evenbetternether:block/jungle_grass_05" },
+			{ "model": "evenbetternether:block/jungle_grass_06" },
+			{ "model": "evenbetternether:block/jungle_grass_07" },
+			{ "model": "evenbetternether:block/jungle_grass_08" },
+			{ "model": "evenbetternether:block/jungle_grass_09" },
+			{ "model": "evenbetternether:block/jungle_grass_10" },
+			{ "model": "evenbetternether:block/jungle_grass_11" },
+			{ "model": "evenbetternether:block/jungle_grass_12" }
+		]
+	}
+}

@@ -1,0 +1,6 @@
+{
+	"parent": "evenbetternether:block/cross_no_distortion",
+	"textures": {
+		"texture": "evenbetternether:block/blue_vine"
+	}
+}

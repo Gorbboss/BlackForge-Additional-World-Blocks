@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "evenbetternether:block/dragon_tree_stripped_log"
+    },
+    "axis=z": {
+      "model": "evenbetternether:block/dragon_tree_stripped_log",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "evenbetternether:block/dragon_tree_stripped_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "evenbetternether:block/cross_inverted",
+    "textures": {
+        "cross": "evenbetternether:block/twisted_umbrella_moss_small"
+    }
+}

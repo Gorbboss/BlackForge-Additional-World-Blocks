@@ -1,0 +1,10 @@
+{
+	"variants": {
+		"": [
+			{ "model": "evenbetternether:block/shadow_plant_01" },
+			{ "model": "evenbetternether:block/shadow_plant_02" },
+			{ "model": "evenbetternether:block/shadow_plant_03" },
+			{ "model": "evenbetternether:block/shadow_plant_04" }
+		]
+	}
+}

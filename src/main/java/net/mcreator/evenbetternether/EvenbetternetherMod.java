@@ -32,6 +32,7 @@ import net.mcreator.evenbetternether.init.EvenbetternetherModFeatures;
 import net.mcreator.evenbetternether.init.EvenbetternetherModItems;
 import net.mcreator.evenbetternether.init.EvenbetternetherModTabs;
 import net.mcreator.evenbetternether.init.BlackForgeImportedBlocks;
+import net.mcreator.evenbetternether.init.BlackForgeBetterEndBlocks;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
@@ -63,6 +64,8 @@ public class EvenbetternetherMod {
         EvenbetternetherModItems.REGISTRY.register(bus);
         BlackForgeImportedBlocks.BLOCKS.register(bus);
         BlackForgeImportedBlocks.ITEMS.register(bus);
+        BlackForgeBetterEndBlocks.BLOCKS.register(bus);
+        BlackForgeBetterEndBlocks.ITEMS.register(bus);
         EvenbetternetherModTabs.REGISTRY.register(bus);
         EvenbetternetherModFeatures.REGISTRY.register(bus);
     }

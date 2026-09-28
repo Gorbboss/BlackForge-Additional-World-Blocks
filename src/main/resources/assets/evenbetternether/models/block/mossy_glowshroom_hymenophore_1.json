@@ -1,0 +1,6 @@
+{
+	"parent": "evenbetternether:block/cube_noshade",
+	"textures": {
+		"texture": "evenbetternether:block/mossy_glowshroom_hymenophore_1"
+	}
+}

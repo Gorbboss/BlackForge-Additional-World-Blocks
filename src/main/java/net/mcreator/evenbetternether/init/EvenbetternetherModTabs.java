@@ -166,5 +166,6 @@ public class EvenbetternetherModTabs {
         BlackForgeImportedBlocks.ITEMS.getEntries().stream()
                 .filter(item -> item != BlackForgeImportedBlocks.AGAVE_LEAF)
                 .forEach(item -> tabData.accept(item.get()));
+        BlackForgeBetterEndBlocks.ITEMS.getEntries().forEach(item -> tabData.accept(item.get()));
     }).build());
 }

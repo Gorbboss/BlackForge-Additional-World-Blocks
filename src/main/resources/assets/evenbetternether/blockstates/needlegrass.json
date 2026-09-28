@@ -1,0 +1,14 @@
+{
+	"variants": {
+		"": [
+			{ "model": "evenbetternether:block/needlegrass_01" },
+			{ "model": "evenbetternether:block/needlegrass_02" },
+			{ "model": "evenbetternether:block/needlegrass_03" },
+			{ "model": "evenbetternether:block/needlegrass_04" },
+			{ "model": "evenbetternether:block/needlegrass_05" },
+			{ "model": "evenbetternether:block/needlegrass_06" },
+			{ "model": "evenbetternether:block/needlegrass_07" },
+			{ "model": "evenbetternether:block/needlegrass_08" }
+		]
+	}
+}

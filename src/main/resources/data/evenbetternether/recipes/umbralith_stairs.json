@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "evenbetternether:umbralith"
+    }
+  },
+  "result": {
+    "item": "evenbetternether:umbralith_stairs",
+    "count": 4
+  }
+}

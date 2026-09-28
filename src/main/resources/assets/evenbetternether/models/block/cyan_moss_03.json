@@ -1,0 +1,6 @@
+{
+	"parent": "evenbetternether:block/wall_moss_03",
+	"textures": {
+		"texture": "evenbetternether:block/cyan_moss"
+	}
+}

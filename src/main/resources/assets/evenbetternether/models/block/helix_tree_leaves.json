@@ -1,0 +1,6 @@
+{
+	"parent": "evenbetternether:block/tint_cube",
+	"textures": {
+		"texture": "evenbetternether:block/helix_tree_leaves"
+	}
+}
