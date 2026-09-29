@@ -112,6 +112,11 @@ public final class BlackForgeImportedRenderLayers {
             ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.CYAN_MOSS.get(), cutout);
             ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.NEON_CACTUS.get(), cutout);
 
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.TINY_CACTUS.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.TALL_CACTUS.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.DUNE_GRASS.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.TALL_DUNE_GRASS.get(), cutout);
+
             RenderType translucent = RenderType.translucent();
             ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.OBSIDIAN_GLASS.get(), translucent);
             ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.OBSIDIAN_GLASS_PANE.get(), translucent);

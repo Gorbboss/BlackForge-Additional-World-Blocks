@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "evenbetternether:block/tall_dune_grass_bottom"
+    },
+    "half=upper": {
+      "model": "evenbetternether:block/tall_dune_grass_top"
+    }
+  }
+}

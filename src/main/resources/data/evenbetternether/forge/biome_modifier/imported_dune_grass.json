@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "minecraft:desert",
+    "minecraft:beach"
+  ],
+  "features": "evenbetternether:imported_dune_grass",
+  "step": "vegetal_decoration"
+}

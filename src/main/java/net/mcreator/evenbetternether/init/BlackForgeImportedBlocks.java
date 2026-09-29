@@ -37,6 +37,8 @@ import net.mcreator.evenbetternether.block.ImportedBetterFeatherFernBlock;
 import net.mcreator.evenbetternether.block.ImportedBoneMushroomBlock;
 import net.mcreator.evenbetternether.block.ImportedSepiaBoneGrassBlock;
 import net.mcreator.evenbetternether.block.ImportedWillowTorchBlock;
+import net.mcreator.evenbetternether.block.ImportedDesertPlantBlock;
+import net.mcreator.evenbetternether.block.ImportedTallDesertPlantBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -277,6 +279,11 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> NEON_CACTUS = register("neon_cactus", ImportedNeonCactusBlock::new);
     public static final RegistryObject<Block> NEON_CACTUS_STAIRS = register("neon_cactus_stairs", () -> new StairBlock(NEON_CACTUS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.CACTUS)));
     public static final RegistryObject<Block> NEON_CACTUS_SLAB = register("neon_cactus_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.CACTUS)));
+
+    public static final RegistryObject<Block> TALL_CACTUS = register("tall_cactus", () -> new ImportedTallDesertPlantBlock(true));
+    public static final RegistryObject<Block> TINY_CACTUS = register("tiny_cactus", () -> new ImportedDesertPlantBlock(TALL_CACTUS, true));
+    public static final RegistryObject<Block> TALL_DUNE_GRASS = register("tall_dune_grass", () -> new ImportedTallDesertPlantBlock(false));
+    public static final RegistryObject<Block> DUNE_GRASS = register("dune_grass", () -> new ImportedDesertPlantBlock(TALL_DUNE_GRASS, false));
 
     public static final RegistryObject<Block> BLUE_OBSIDIAN = solid("blue_obsidian");
     public static final RegistryObject<Block> BLUE_CRYING_OBSIDIAN = solid("blue_crying_obsidian");
