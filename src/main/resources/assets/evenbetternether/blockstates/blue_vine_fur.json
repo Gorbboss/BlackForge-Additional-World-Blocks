@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=up":    { "model": "evenbetternether:block/blue_vine_fur" },
+        "facing=down":  { "model": "evenbetternether:block/blue_vine_fur", "x": 180 },
+        "facing=north": { "model": "evenbetternether:block/blue_vine_fur", "x": 90 },
+        "facing=south": { "model": "evenbetternether:block/blue_vine_fur", "x": 90, "y": 180 },
+        "facing=east":  { "model": "evenbetternether:block/blue_vine_fur", "x": 90, "y": 90 },
+        "facing=west":  { "model": "evenbetternether:block/blue_vine_fur", "x": 90, "y": 270 }
+    }
+}

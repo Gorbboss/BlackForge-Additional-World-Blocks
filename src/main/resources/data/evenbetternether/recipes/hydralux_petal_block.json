@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "evenbetternether:hydralux_petal"
+    }
+  },
+  "result": {
+    "item": "evenbetternether:hydralux_petal_block",
+    "count": 1
+  }
+}

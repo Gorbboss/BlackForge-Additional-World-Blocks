@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "evenbetternether:block/hydralux_petal_block_yellow"
+  }
+}
