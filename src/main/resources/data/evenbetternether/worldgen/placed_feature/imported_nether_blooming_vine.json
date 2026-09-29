@@ -1,0 +1,27 @@
+{
+  "feature": "evenbetternether:imported_nether_blooming_vine",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 8
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "min_inclusive": {
+          "absolute": 40
+        },
+        "max_inclusive": {
+          "absolute": 115
+        }
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "feature": "evenbetternether:imported_helix_tree_sapling",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 12
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "WORLD_SURFACE_WG"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

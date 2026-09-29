@@ -1,0 +1,46 @@
+{
+  "has_precipitation": false,
+  "temperature": 0.5,
+  "downfall": 0.5,
+  "effects": {
+    "fog_color": -10197916,
+    "water_color": -12228474,
+    "water_fog_color": -12228474,
+    "sky_color": 0,
+    "foliage_color": -5456450,
+    "grass_color": -5456450
+  },
+  "spawners": {
+    "monster": [],
+    "creature": [],
+    "ambient": [],
+    "axolotls": [],
+    "underground_water_creature": [],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [
+      "evenbetternether:umbralith_arch"
+    ],
+    [],
+    [
+      "evenbetternether:imported_umbralith_vein"
+    ],
+    [],
+    [],
+    [
+      "evenbetternether:pallidium_formation",
+      "evenbetternether:imported_inflexia",
+      "evenbetternether:imported_flammalix"
+    ],
+    []
+  ]
+}

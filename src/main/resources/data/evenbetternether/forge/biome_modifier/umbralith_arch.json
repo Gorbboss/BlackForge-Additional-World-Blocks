@@ -1,0 +1,8 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "minecraft:end_highlands"
+  ],
+  "features": "evenbetternether:umbralith_arch",
+  "step": "vegetal_decoration"
+}

@@ -1,0 +1,49 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "tries": 12,
+    "xz_spread": 5,
+    "y_spread": 1,
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "evenbetternether:lanceleaf_seed",
+              "Properties": {
+                "age": "0",
+                "waterlogged": "false"
+              }
+            }
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          }
+        },
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "minecraft:end_stone",
+              "evenbetternether:amber_moss"
+            ],
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

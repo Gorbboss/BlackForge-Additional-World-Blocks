@@ -40,6 +40,9 @@ import net.minecraftforge.registries.RegistryObject;
 @Mod.EventBusSubscriber
 public class EvenbetternetherModFeatures {
     public static final DeferredRegister<Feature<?>> REGISTRY = DeferredRegister.create((IForgeRegistry)ForgeRegistries.FEATURES, (String)"evenbetternether");
+    public static final RegistryObject<Feature<?>> HYDRALUX_POOL = REGISTRY.register("hydralux_pool", net.mcreator.evenbetternether.world.features.ImportedHydraluxPoolFeature::new);
+    public static final RegistryObject<Feature<?>> PALLIDIUM_FORMATION = REGISTRY.register("pallidium_formation", net.mcreator.evenbetternether.world.features.ImportedPallidiumFormationFeature::new);
+    public static final RegistryObject<Feature<?>> UMBRALITH_ARCH = REGISTRY.register("umbralith_arch", net.mcreator.evenbetternether.world.features.ImportedUmbralithArchFeature::new);
     public static final RegistryObject<Feature<?>> NETHERRACK_STALAGMITE = REGISTRY.register("netherrack_stalagmite", NetherrackStalagmiteFeature::new);
     public static final RegistryObject<Feature<?>> NETHERRACK_STALAGTITE = REGISTRY.register("netherrack_stalagtite", NetherrackStalagtiteFeature::new);
     public static final RegistryObject<Feature<?>> BASALT_STALAGMITE = REGISTRY.register("basalt_stalagmite", BasaltStalagmiteFeature::new);

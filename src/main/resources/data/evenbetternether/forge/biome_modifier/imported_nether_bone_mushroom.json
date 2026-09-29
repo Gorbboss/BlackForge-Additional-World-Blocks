@@ -1,0 +1,16 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "minecraft:nether_wastes",
+    "minecraft:crimson_forest",
+    "minecraft:warped_forest",
+    "minecraft:soul_sand_valley",
+    "minecraft:basalt_deltas",
+    "evenbetternether:bone_reef",
+    "evenbetternether:gravel_desert",
+    "evenbetternether:mushroom_forest",
+    "evenbetternether:withered_valley"
+  ],
+  "features": "evenbetternether:imported_nether_bone_mushroom",
+  "step": "vegetal_decoration"
+}

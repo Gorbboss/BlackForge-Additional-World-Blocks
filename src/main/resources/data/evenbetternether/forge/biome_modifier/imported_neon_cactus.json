@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "minecraft:end_highlands",
+    "minecraft:end_midlands"
+  ],
+  "features": "evenbetternether:imported_neon_cactus",
+  "step": "vegetal_decoration"
+}
