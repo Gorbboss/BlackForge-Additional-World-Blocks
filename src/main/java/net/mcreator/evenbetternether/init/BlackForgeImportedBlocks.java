@@ -176,6 +176,14 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> SHADOW_PLANT = register("shadow_plant", ImportedEndPlantBlock::new);
     public static final RegistryObject<Block> MURKWEED = register("murkweed", ImportedEndPlantBlock::new);
 
+    public static final RegistryObject<Block> SULPHURIC_ROCK = register("sulphuric_rock", () -> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+    public static final RegistryObject<Block> SULPHURIC_ROCK_POLISHED = register("sulphuric_rock_polished", () -> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+    public static final RegistryObject<Block> SULPHURIC_ROCK_TILES = register("sulphuric_rock_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+    public static final RegistryObject<Block> SULPHURIC_ROCK_PILLAR = register("sulphuric_rock_pillar", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+    public static final RegistryObject<Block> SULPHURIC_ROCK_STAIRS = register("sulphuric_rock_stairs", () -> new StairBlock(SULPHURIC_ROCK.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+    public static final RegistryObject<Block> SULPHURIC_ROCK_SLAB = register("sulphuric_rock_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+    public static final RegistryObject<Block> SULPHURIC_ROCK_WALL = register("sulphuric_rock_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+
     public static final RegistryObject<Block> BLUE_OBSIDIAN = solid("blue_obsidian");
     public static final RegistryObject<Block> BLUE_CRYING_OBSIDIAN = solid("blue_crying_obsidian");
     public static final RegistryObject<Block> BLUE_WEEPING_OBSIDIAN = solid("blue_weeping_obsidian");

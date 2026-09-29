@@ -253,5 +253,12 @@
   "block.evenbetternether.purple_polypore": "Purple Polypore",
   "block.evenbetternether.aurant_polypore": "Aurant Polypore",
   "block.evenbetternether.shadow_plant": "Shadow Plant",
-  "block.evenbetternether.murkweed": "Murkweed"
+  "block.evenbetternether.murkweed": "Murkweed",
+  "block.evenbetternether.sulphuric_rock": "Sulphuric Rock",
+  "block.evenbetternether.sulphuric_rock_polished": "Polished Sulphuric Rock",
+  "block.evenbetternether.sulphuric_rock_tiles": "Sulphuric Rock Tiles",
+  "block.evenbetternether.sulphuric_rock_pillar": "Sulphuric Rock Pillar",
+  "block.evenbetternether.sulphuric_rock_stairs": "Sulphuric Rock Stairs",
+  "block.evenbetternether.sulphuric_rock_slab": "Sulphuric Rock Slab",
+  "block.evenbetternether.sulphuric_rock_wall": "Sulphuric Rock Wall"
 }
