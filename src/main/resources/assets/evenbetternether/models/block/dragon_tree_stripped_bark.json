@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "evenbetternether:block/dragon_tree_stripped_log_side",
+    "side": "evenbetternether:block/dragon_tree_stripped_log_side"
+  }
+}

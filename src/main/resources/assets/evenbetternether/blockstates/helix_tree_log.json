@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "evenbetternether:block/helix_tree_log"
+    },
+    "axis=z": {
+      "model": "evenbetternether:block/helix_tree_log",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "evenbetternether:block/helix_tree_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

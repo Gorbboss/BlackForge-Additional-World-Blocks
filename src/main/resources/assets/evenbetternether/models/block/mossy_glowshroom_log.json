@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "evenbetternether:block/mossy_glowshroom_log_top",
+    "side": "evenbetternether:block/mossy_glowshroom_log_side"
+  }
+}

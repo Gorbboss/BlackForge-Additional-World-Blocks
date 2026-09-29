@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "evenbetternether:block/mossy_glowshroom_log"
+    },
+    "axis=z": {
+      "model": "evenbetternether:block/mossy_glowshroom_log",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "evenbetternether:block/mossy_glowshroom_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

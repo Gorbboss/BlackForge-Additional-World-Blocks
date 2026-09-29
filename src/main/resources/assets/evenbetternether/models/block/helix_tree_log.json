@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "evenbetternether:block/helix_tree_log_top",
+    "side": "evenbetternether:block/helix_tree_log_side"
+  }
+}

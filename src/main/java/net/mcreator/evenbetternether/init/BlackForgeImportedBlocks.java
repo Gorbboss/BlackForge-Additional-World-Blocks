@@ -25,6 +25,9 @@ import net.mcreator.evenbetternether.block.ImportedEndPlantBlock;
 import net.mcreator.evenbetternether.block.ImportedDirectionalFurBlock;
 import net.mcreator.evenbetternether.block.ImportedBarbedSculkRootBlock;
 import net.mcreator.evenbetternether.block.ImportedEndCropBlock;
+import net.mcreator.evenbetternether.block.ImportedEndTreeSaplingBlock;
+import net.mcreator.evenbetternether.block.ImportedStrippableLogBlock;
+import net.mcreator.evenbetternether.block.ImportedTransitionBlock;
 import net.mcreator.evenbetternether.block.ImportedFragileWartBlock;
 import net.mcreator.evenbetternether.block.ImportedStalagnateStemBlock;
 import net.mcreator.evenbetternether.block.ImportedBetterFeatherFernBlock;
@@ -40,6 +43,7 @@ import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
@@ -193,6 +197,28 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> BLOSSOM_BERRY_SEED = register("blossom_berry_seed", () -> new ImportedEndCropBlock(5, BLOSSOM_BERRY));
     public static final RegistryObject<Item> SHADOW_BERRY_RAW = ITEMS.register("shadow_berry_raw", () -> new Item(new Item.Properties().food(net.minecraft.world.food.Foods.SWEET_BERRIES)));
     public static final RegistryObject<Block> SHADOW_BERRY = register("shadow_berry", () -> new ImportedEndCropBlock(3, SHADOW_BERRY_RAW));
+
+    public static final RegistryObject<Block> HELIX_TREE_LOG = register("helix_tree_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_STEM)));
+    public static final RegistryObject<Block> HELIX_TREE_LEAVES = register("helix_tree_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.AZALEA_LEAVES).lightLevel(state -> 8)));
+    public static final RegistryObject<Block> HELIX_TREE_SAPLING = register("helix_tree_sapling", () -> new ImportedEndTreeSaplingBlock(ImportedEndTreeSaplingBlock.Kind.HELIX));
+    public static final RegistryObject<Block> MOSSY_GLOWSHROOM_LOG = register("mossy_glowshroom_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM)));
+    public static final RegistryObject<Block> MOSSY_GLOWSHROOM_CAP = register("mossy_glowshroom_cap", () -> new ImportedTransitionBlock(8));
+    public static final RegistryObject<Block> MOSSY_GLOWSHROOM_HYMENOPHORE = register("mossy_glowshroom_hymenophore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM).lightLevel(state -> 15)));
+    public static final RegistryObject<Block> MOSSY_GLOWSHROOM_FUR = register("mossy_glowshroom_fur", () -> new ImportedDirectionalFurBlock(12));
+    public static final RegistryObject<Block> MOSSY_GLOWSHROOM_SAPLING = register("mossy_glowshroom_sapling", () -> new ImportedEndTreeSaplingBlock(ImportedEndTreeSaplingBlock.Kind.MOSSY_GLOWSHROOM));
+
+    public static final RegistryObject<Block> DRAGON_TREE_STRIPPED_LOG = register("dragon_tree_stripped_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_WARPED_STEM)));
+    public static final RegistryObject<Block> DRAGON_TREE_STRIPPED_BARK = register("dragon_tree_stripped_bark", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_WARPED_HYPHAE)));
+    public static final RegistryObject<Block> DRAGON_TREE_LOG = register("dragon_tree_log", () -> new ImportedStrippableLogBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_STEM), DRAGON_TREE_STRIPPED_LOG));
+    public static final RegistryObject<Block> DRAGON_TREE_BARK = register("dragon_tree_bark", () -> new ImportedStrippableLogBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_HYPHAE), DRAGON_TREE_STRIPPED_BARK));
+    public static final RegistryObject<Block> DRAGON_TREE_PLANKS = register("dragon_tree_planks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.WARPED_PLANKS)));
+    public static final RegistryObject<Block> DRAGON_TREE_STAIRS = register("dragon_tree_stairs", () -> new StairBlock(DRAGON_TREE_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.WARPED_PLANKS)));
+    public static final RegistryObject<Block> DRAGON_TREE_SLAB = register("dragon_tree_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_PLANKS)));
+    public static final RegistryObject<Block> DRAGON_TREE_FENCE = register("dragon_tree_fence", () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_FENCE)));
+    public static final RegistryObject<Block> DRAGON_TREE_DOOR = register("dragon_tree_door", () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_DOOR).noOcclusion(), BlockSetType.WARPED));
+    public static final RegistryObject<Block> DRAGON_TREE_TRAPDOOR = register("dragon_tree_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_TRAPDOOR).noOcclusion(), BlockSetType.WARPED));
+    public static final RegistryObject<Block> DRAGON_TREE_LEAVES = register("dragon_tree_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.AZALEA_LEAVES)));
+    public static final RegistryObject<Block> DRAGON_TREE_SAPLING = register("dragon_tree_sapling", () -> new ImportedEndTreeSaplingBlock(ImportedEndTreeSaplingBlock.Kind.DRAGON));
 
     public static final RegistryObject<Block> BLUE_OBSIDIAN = solid("blue_obsidian");
     public static final RegistryObject<Block> BLUE_CRYING_OBSIDIAN = solid("blue_crying_obsidian");
