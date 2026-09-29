@@ -1,0 +1,15 @@
+{
+	"variants": {
+		"type=bottom": {
+			"model": "evenbetternether:block/barbed_sculk_root_slab"
+		},
+		"type=top": {
+			"model": "evenbetternether:block/barbed_sculk_root_slab",
+			"x": 180,
+			"uvlock": true
+		},
+		"type=double": {
+			"model": "evenbetternether:block/barbed_sculk_root_block"
+		}
+	}
+}

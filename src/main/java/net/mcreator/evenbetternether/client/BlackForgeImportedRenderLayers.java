@@ -97,6 +97,21 @@ public final class BlackForgeImportedRenderLayers {
             ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.BLUE_VINE_FUR.get(), cutout);
             ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.TWISTED_VINE.get(), cutout);
 
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.NEEDLEGRASS.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.CREEPING_MOSS.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.AERIDIUM.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.CHORUS_GRASS.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.SALTEAGO.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.BLOOMING_COOKSONIA.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.JUNGLE_GRASS.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.VAIOLUSH_FERN.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.FRACTURN.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.BLUE_CHARNIA.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.CRYSTAL_MOSS_COVER.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.TAIL_MOSS.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.CYAN_MOSS.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.NEON_CACTUS.get(), cutout);
+
             RenderType translucent = RenderType.translucent();
             ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.OBSIDIAN_GLASS.get(), translucent);
             ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.OBSIDIAN_GLASS_PANE.get(), translucent);

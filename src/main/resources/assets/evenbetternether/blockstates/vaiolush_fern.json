@@ -1,0 +1,10 @@
+{
+	"variants": {
+		"": [
+			{ "model": "evenbetternether:block/vaiolush_fern_01" },
+			{ "model": "evenbetternether:block/vaiolush_fern_02" },
+			{ "model": "evenbetternether:block/vaiolush_fern_03" },
+			{ "model": "evenbetternether:block/vaiolush_fern_04" }
+		]
+	}
+}

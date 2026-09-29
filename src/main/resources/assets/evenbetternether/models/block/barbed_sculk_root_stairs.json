@@ -1,0 +1,8 @@
+{
+	"parent": "evenbetternether:block/lit_stairs",
+	"textures": {
+		"bottom": "evenbetternether:block/barbed_sculk_root_block_top",
+		"top": "evenbetternether:block/barbed_sculk_root_block_top",
+		"side": "evenbetternether:block/barbed_sculk_root_block_side"
+	}
+}

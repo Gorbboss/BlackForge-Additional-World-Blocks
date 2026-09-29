@@ -1,0 +1,6 @@
+{
+    "parent": "evenbetternether:block/cross_inverted",
+    "textures": {
+        "cross": "evenbetternether:block/jungle_grass"
+    }
+}

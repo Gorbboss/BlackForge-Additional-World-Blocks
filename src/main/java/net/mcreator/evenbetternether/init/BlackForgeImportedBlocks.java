@@ -41,6 +41,9 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.GlassBlock;
+import net.minecraft.world.level.block.GlowLichenBlock;
+import net.minecraft.world.level.block.DirtPathBlock;
+import net.mcreator.evenbetternether.block.ImportedNeonCactusBlock;
 import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
@@ -254,6 +257,26 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> BLUE_VINE_LANTERN = register("blue_vine_lantern", () -> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE).lightLevel(state -> 15)));
     public static final RegistryObject<Block> BLUE_VINE_FUR = register("blue_vine_fur", () -> new ImportedDirectionalFurBlock(10));
     public static final RegistryObject<Block> TWISTED_VINE = register("twisted_vine", () -> new ImportedHangingVineBlock(8));
+
+    public static final RegistryObject<Block> NEEDLEGRASS = register("needlegrass", () -> new ImportedEndPlantBlock(0));
+    public static final RegistryObject<Block> CREEPING_MOSS = register("creeping_moss", () -> new ImportedEndPlantBlock(11));
+    public static final RegistryObject<Block> AERIDIUM = register("aeridium", () -> new ImportedEndPlantBlock(0));
+    public static final RegistryObject<Block> CHORUS_GRASS = register("chorus_grass", () -> new ImportedEndPlantBlock(0));
+    public static final RegistryObject<Block> SALTEAGO = register("salteago", () -> new ImportedEndPlantBlock(0));
+    public static final RegistryObject<Block> BLOOMING_COOKSONIA = register("blooming_cooksonia", () -> new ImportedEndPlantBlock(0));
+    public static final RegistryObject<Block> JUNGLE_GRASS = register("jungle_grass", () -> new ImportedEndPlantBlock(0));
+    public static final RegistryObject<Block> VAIOLUSH_FERN = register("vaiolush_fern", () -> new ImportedEndPlantBlock(0));
+    public static final RegistryObject<Block> FRACTURN = register("fracturn", () -> new ImportedEndPlantBlock(0));
+    public static final RegistryObject<Block> BLUE_CHARNIA = register("charnia_light_blue", () -> new ImportedEndPlantBlock(8));
+    public static final RegistryObject<Block> CRYSTAL_MOSS_COVER = register("crystal_moss_cover", () -> new GlowLichenBlock(BlockBehaviour.Properties.copy(Blocks.GLOW_LICHEN).lightLevel(state -> 10)));
+    public static final RegistryObject<Block> TAIL_MOSS = register("tail_moss", () -> new ImportedWallPlantBlock(0));
+    public static final RegistryObject<Block> CYAN_MOSS = register("cyan_moss", () -> new ImportedWallPlantBlock(0));
+    public static final RegistryObject<Block> AMBER_MOSS_PATH = register("amber_moss_path", () -> new DirtPathBlock(BlockBehaviour.Properties.copy(Blocks.DIRT_PATH)));
+    public static final RegistryObject<Block> BARBED_SCULK_ROOT_STAIRS = register("barbed_sculk_root_stairs", () -> new StairBlock(BARBED_SCULK_ROOT.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.SCULK)));
+    public static final RegistryObject<Block> BARBED_SCULK_ROOT_SLAB = register("barbed_sculk_root_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SCULK)));
+    public static final RegistryObject<Block> NEON_CACTUS = register("neon_cactus", ImportedNeonCactusBlock::new);
+    public static final RegistryObject<Block> NEON_CACTUS_STAIRS = register("neon_cactus_stairs", () -> new StairBlock(NEON_CACTUS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.CACTUS)));
+    public static final RegistryObject<Block> NEON_CACTUS_SLAB = register("neon_cactus_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.CACTUS)));
 
     public static final RegistryObject<Block> BLUE_OBSIDIAN = solid("blue_obsidian");
     public static final RegistryObject<Block> BLUE_CRYING_OBSIDIAN = solid("blue_crying_obsidian");

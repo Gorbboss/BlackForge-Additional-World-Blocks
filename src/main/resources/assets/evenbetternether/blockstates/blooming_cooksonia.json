@@ -1,0 +1,10 @@
+{
+	"variants": {
+		"": [
+			{ "model": "evenbetternether:block/blooming_cooksonia_01" },
+			{ "model": "evenbetternether:block/blooming_cooksonia_02" },
+			{ "model": "evenbetternether:block/blooming_cooksonia_03" },
+			{ "model": "evenbetternether:block/blooming_cooksonia_04" }
+		]
+	}
+}

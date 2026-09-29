@@ -1,0 +1,10 @@
+{
+	"variants": {
+		"": [
+			{ "model": "evenbetternether:block/fracturn_01" },
+			{ "model": "evenbetternether:block/fracturn_02" },
+			{ "model": "evenbetternether:block/fracturn_03" },
+			{ "model": "evenbetternether:block/fracturn_04" }
+		]
+	}
+}

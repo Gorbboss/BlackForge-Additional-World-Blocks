@@ -1,0 +1,8 @@
+{
+	"variants": {
+		"": [
+			{ "model": "evenbetternether:block/aeridium_01" },
+			{ "model": "evenbetternether:block/aeridium_02" }
+		]
+	}
+}

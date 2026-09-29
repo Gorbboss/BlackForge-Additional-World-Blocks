@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "evenbetternether:block/blooming_cooksonia_potted"
+    }
+}
