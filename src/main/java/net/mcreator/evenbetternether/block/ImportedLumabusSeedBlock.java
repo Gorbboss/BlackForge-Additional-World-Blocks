@@ -18,7 +18,12 @@ import net.minecraft.world.level.block.state.BlockState;
 public class ImportedLumabusSeedBlock extends BushBlock implements BonemealableBlock {
     private final Supplier<Block> vine; private final int mean,max;
     public ImportedLumabusSeedBlock(Supplier<Block> vine,int mean,int max){super(BlockBehaviour.Properties.copy(Blocks.WEEPING_VINES).noCollission().noOcclusion().randomTicks());this.vine=vine;this.mean=mean;this.max=max;}
-    @Override public boolean canSurvive(BlockState s,LevelReader l,BlockPos p){return l.getBlockState(p.above()).isFaceSturdy(l,p.above(),Direction.DOWN);}
+    @Override public boolean canSurvive(BlockState s,LevelReader l,BlockPos p){
+        BlockState above=l.getBlockState(p.above());
+        return (above.is(Blocks.NETHERRACK)||above.is(Blocks.CRIMSON_NYLIUM)||above.is(Blocks.WARPED_NYLIUM)
+                ||above.is(Blocks.SOUL_SAND)||above.is(Blocks.SOUL_SOIL)||above.is(Blocks.BLACKSTONE)
+                ||above.is(Blocks.BASALT)) && above.isFaceSturdy(l,p.above(),Direction.DOWN);
+    }
     @Override public boolean isValidBonemealTarget(LevelReader l,BlockPos p,BlockState s,boolean c){return l.isEmptyBlock(p.below());}
     @Override public boolean isBonemealSuccess(Level l,RandomSource r,BlockPos p,BlockState s){return r.nextInt(4)==0&&l.isEmptyBlock(p.below());}
     @Override public void performBonemeal(ServerLevel l,RandomSource r,BlockPos p,BlockState s){grow(l,r,p);}

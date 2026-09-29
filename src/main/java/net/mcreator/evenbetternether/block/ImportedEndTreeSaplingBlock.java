@@ -22,7 +22,7 @@ public class ImportedEndTreeSaplingBlock extends BushBlock implements Bonemealab
     private final Kind kind;
     public ImportedEndTreeSaplingBlock(Kind kind){super(BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).randomTicks().noCollission());this.kind=kind;}
     @Override protected boolean mayPlaceOn(BlockState ground, BlockGetter level, BlockPos pos) {
-        return ground.isFaceSturdy(level, pos, Direction.UP);
+        return ImportedEndSoil.supports(ground);
     }
     @Override public boolean isValidBonemealTarget(LevelReader l,BlockPos p,BlockState s,boolean c){return true;}
     @Override public boolean isBonemealSuccess(Level l,RandomSource r,BlockPos p,BlockState s){return true;}

@@ -13,6 +13,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BonemealableBlock;
@@ -33,7 +35,10 @@ public class ImportedEndCropBlock extends Block implements BonemealableBlock {
         registerDefaultState(stateDefinition.any().setValue(AGE, 0));
     }
     @Override protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> b) { b.add(AGE); }
-    @Override public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) { return level.getBlockState(pos.below()).isFaceSturdy(level, pos.below(), net.minecraft.core.Direction.UP); }
+    @Override public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) { return ImportedEndSoil.supports(level.getBlockState(pos.below())); }
+    @Override public BlockState updateShape(BlockState state, Direction direction, BlockState neighbor, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+        return state.canSurvive(level, pos) ? state : Blocks.AIR.defaultBlockState();
+    }
     @Override public boolean isValidBonemealTarget(LevelReader l, BlockPos p, BlockState s, boolean c) { return s.getValue(AGE) < 3; }
     @Override public boolean isBonemealSuccess(Level l, RandomSource r, BlockPos p, BlockState s) { return true; }
     @Override public void performBonemeal(ServerLevel l, RandomSource r, BlockPos p, BlockState s) { l.setBlock(p, s.setValue(AGE, Math.min(3, s.getValue(AGE) + 1)), UPDATE_ALL); }

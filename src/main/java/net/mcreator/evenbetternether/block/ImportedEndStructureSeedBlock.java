@@ -9,6 +9,7 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BonemealableBlock;
@@ -31,7 +32,20 @@ public class ImportedEndStructureSeedBlock extends Block implements Bonemealable
     private final Kind kind;
     public ImportedEndStructureSeedBlock(Kind kind){super(BlockBehaviour.Properties.copy(Blocks.CHORUS_FLOWER).randomTicks().noCollission().noOcclusion());this.kind=kind;registerDefaultState(stateDefinition.any().setValue(AGE,0).setValue(WATERLOGGED,false));}
     @Override protected void createBlockStateDefinition(StateDefinition.Builder<Block,BlockState>b){b.add(AGE,WATERLOGGED);}
-    @Override public BlockState getStateForPlacement(BlockPlaceContext c){return defaultBlockState().setValue(WATERLOGGED,c.getLevel().getFluidState(c.getClickedPos()).is(Fluids.WATER));}
+    @Override public BlockState getStateForPlacement(BlockPlaceContext c){
+        boolean water=c.getLevel().getFluidState(c.getClickedPos()).is(Fluids.WATER);
+        if (water != (kind == Kind.HYDRALUX)) return null;
+        BlockState state=defaultBlockState().setValue(WATERLOGGED,water);
+        return state.canSurvive(c.getLevel(),c.getClickedPos()) ? state : null;
+    }
+    @Override public boolean canSurvive(BlockState state,LevelReader level,BlockPos pos){
+        return ImportedEndSoil.supports(level.getBlockState(pos.below()))
+                && state.getValue(WATERLOGGED) == (kind == Kind.HYDRALUX);
+    }
+    @Override public BlockState updateShape(BlockState state,Direction direction,BlockState neighbor,LevelAccessor level,BlockPos pos,BlockPos neighborPos){
+        if(state.getValue(WATERLOGGED)) level.scheduleTick(pos,Fluids.WATER,Fluids.WATER.getTickDelay(level));
+        return state.canSurvive(level,pos) ? state : Blocks.AIR.defaultBlockState();
+    }
     @Override public FluidState getFluidState(BlockState s){return s.getValue(WATERLOGGED)?Fluids.WATER.getSource(false):super.getFluidState(s);}
     @Override public boolean isValidBonemealTarget(LevelReader l,BlockPos p,BlockState s,boolean c){return true;}
     @Override public boolean isBonemealSuccess(Level l,RandomSource r,BlockPos p,BlockState s){return true;}
