@@ -22,6 +22,9 @@ import net.mcreator.evenbetternether.block.ImportedStalagnateSeedBlock;
 import net.mcreator.evenbetternether.block.ImportedWartSeedBlock;
 import net.mcreator.evenbetternether.block.ImportedPallidiumBlock;
 import net.mcreator.evenbetternether.block.ImportedEndPlantBlock;
+import net.mcreator.evenbetternether.block.ImportedDirectionalFurBlock;
+import net.mcreator.evenbetternether.block.ImportedBarbedSculkRootBlock;
+import net.mcreator.evenbetternether.block.ImportedEndCropBlock;
 import net.mcreator.evenbetternether.block.ImportedFragileWartBlock;
 import net.mcreator.evenbetternether.block.ImportedStalagnateStemBlock;
 import net.mcreator.evenbetternether.block.ImportedBetterFeatherFernBlock;
@@ -183,6 +186,13 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> SULPHURIC_ROCK_STAIRS = register("sulphuric_rock_stairs", () -> new StairBlock(SULPHURIC_ROCK.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.END_STONE)));
     public static final RegistryObject<Block> SULPHURIC_ROCK_SLAB = register("sulphuric_rock_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
     public static final RegistryObject<Block> SULPHURIC_ROCK_WALL = register("sulphuric_rock_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+
+    public static final RegistryObject<Block> AMARANITA_FUR = register("amaranita_fur", () -> new ImportedDirectionalFurBlock(10));
+    public static final RegistryObject<Block> BARBED_SCULK_ROOT = register("barbed_sculk_root", ImportedBarbedSculkRootBlock::new);
+    public static final RegistryObject<Item> BLOSSOM_BERRY = ITEMS.register("blossom_berry", () -> new Item(new Item.Properties().food(net.minecraft.world.food.Foods.APPLE)));
+    public static final RegistryObject<Block> BLOSSOM_BERRY_SEED = register("blossom_berry_seed", () -> new ImportedEndCropBlock(5, BLOSSOM_BERRY));
+    public static final RegistryObject<Item> SHADOW_BERRY_RAW = ITEMS.register("shadow_berry_raw", () -> new Item(new Item.Properties().food(net.minecraft.world.food.Foods.SWEET_BERRIES)));
+    public static final RegistryObject<Block> SHADOW_BERRY = register("shadow_berry", () -> new ImportedEndCropBlock(3, SHADOW_BERRY_RAW));
 
     public static final RegistryObject<Block> BLUE_OBSIDIAN = solid("blue_obsidian");
     public static final RegistryObject<Block> BLUE_CRYING_OBSIDIAN = solid("blue_crying_obsidian");

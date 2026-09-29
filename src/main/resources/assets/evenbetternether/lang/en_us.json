@@ -260,5 +260,11 @@
   "block.evenbetternether.sulphuric_rock_pillar": "Sulphuric Rock Pillar",
   "block.evenbetternether.sulphuric_rock_stairs": "Sulphuric Rock Stairs",
   "block.evenbetternether.sulphuric_rock_slab": "Sulphuric Rock Slab",
-  "block.evenbetternether.sulphuric_rock_wall": "Sulphuric Rock Wall"
+  "block.evenbetternether.sulphuric_rock_wall": "Sulphuric Rock Wall",
+  "block.evenbetternether.amaranita_fur": "Amaranita Fur",
+  "block.evenbetternether.barbed_sculk_root": "Barbed Sculk Root",
+  "block.evenbetternether.blossom_berry_seed": "Blossom Berry Seed",
+  "block.evenbetternether.shadow_berry": "Shadow Berry",
+  "item.evenbetternether.blossom_berry": "Blossom Berry",
+  "item.evenbetternether.shadow_berry_raw": "Shadow Berry"
 }
