@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "#evenbetternether:cattail_placeable",
+    "minecraft:gravel",
+    "minecraft:sand"
+  ]
+}

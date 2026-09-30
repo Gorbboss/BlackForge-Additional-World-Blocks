@@ -44,6 +44,7 @@ import net.mcreator.evenbetternether.block.ImportedMushroomColonyBlock;
 import net.mcreator.evenbetternether.block.ImportedTallMushroomColonyBlock;
 import net.mcreator.evenbetternether.block.ImportedLuminousFlowerBlock;
 import net.minecraft.world.level.block.DoublePlantBlock;
+import net.mcreator.evenbetternether.block.ImportedCattailBlock;
 import net.mcreator.evenbetternether.block.ImportedTallDesertPlantBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -299,6 +300,9 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> CLOVER = register("clover", () -> new ImportedCloverBlock(BlockBehaviour.Properties.copy(Blocks.PINK_PETALS).replaceable().noCollission()));
     public static final RegistryObject<Block> NETHER_CLOVER = register("nether_clover", () -> new ImportedCloverBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_WART).replaceable().noCollission()));
     public static final RegistryObject<Block> LUMINOUS_FLOWER = register("luminous_flower", () -> new ImportedLuminousFlowerBlock(BlockBehaviour.Properties.copy(Blocks.DANDELION).lightLevel(state -> 10)));
+
+    public static final RegistryObject<Block> CATTAIL = register("cattail", () -> new ImportedCattailBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
+    public static final RegistryObject<Block> REEDS = register("reeds", () -> new ImportedCattailBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
 
     public static final RegistryObject<Block> TALL_BROWN_MUSHROOM_COLONY = register("tall_brown_mushroom_colony", () -> new ImportedTallMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM)));
     public static final RegistryObject<Block> BROWN_MUSHROOM_COLONY = register("brown_mushroom_colony", () -> new ImportedMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM), TALL_BROWN_MUSHROOM_COLONY));

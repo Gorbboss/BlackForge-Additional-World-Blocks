@@ -31,3 +31,5 @@ Clover, Nether Clover, and Luminous Flower also use Some More Blocks
 
 Brown and Red Mushroom Colonies and their tall variants use Some More Blocks
 1.20.1 textures and adapted behavior under the MIT license noted above.
+
+Cattail and reeds code, textures, models, and cattail placement data are selectively adapted from Some More Blocks (MIT, Copyright 2025 Seface Studios). See licenses/SomeMoreBlocks-MIT.txt.

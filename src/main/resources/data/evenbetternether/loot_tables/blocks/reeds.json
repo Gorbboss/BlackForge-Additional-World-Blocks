@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "items": [
+              "minecraft:shears"
+            ]
+          }
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "evenbetternether:reeds",
+          "properties": {
+            "half": "lower"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "evenbetternether:reeds"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}
