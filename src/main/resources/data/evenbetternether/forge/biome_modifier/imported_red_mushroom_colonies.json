@@ -1,0 +1,11 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "minecraft:swamp",
+    "minecraft:old_growth_spruce_taiga",
+    "minecraft:old_growth_birch_forest",
+    "minecraft:mushroom_fields"
+  ],
+  "features": "evenbetternether:imported_red_mushroom_colonies",
+  "step": "vegetal_decoration"
+}

@@ -28,3 +28,6 @@ textures and adapted behavior under the MIT license noted above.
 
 Clover, Nether Clover, and Luminous Flower also use Some More Blocks
 1.20.1 textures and adapted behavior under the MIT license noted above.
+
+Brown and Red Mushroom Colonies and their tall variants use Some More Blocks
+1.20.1 textures and adapted behavior under the MIT license noted above.

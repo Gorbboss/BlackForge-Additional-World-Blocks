@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "evenbetternether:block/tall_red_mushroom_colony_bottom"
+  }
+}

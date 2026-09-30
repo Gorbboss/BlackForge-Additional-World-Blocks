@@ -347,5 +347,9 @@
   "block.evenbetternether.large_snow_fern": "Large Snow Fern",
   "block.evenbetternether.clover": "Clover",
   "block.evenbetternether.nether_clover": "Nether Clover",
-  "block.evenbetternether.luminous_flower": "Luminous Flower"
+  "block.evenbetternether.luminous_flower": "Luminous Flower",
+  "block.evenbetternether.brown_mushroom_colony": "Brown Mushroom Colony",
+  "block.evenbetternether.tall_brown_mushroom_colony": "Tall Brown Mushroom Colony",
+  "block.evenbetternether.red_mushroom_colony": "Red Mushroom Colony",
+  "block.evenbetternether.tall_red_mushroom_colony": "Tall Red Mushroom Colony"
 }
