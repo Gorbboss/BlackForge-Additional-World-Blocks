@@ -7,6 +7,14 @@
     "minecraft:mangrove_roots",
     "minecraft:muddy_mangrove_roots",
     "minecraft:crimson_nylium",
-    "minecraft:warped_nylium"
+    "minecraft:warped_nylium",
+    {
+      "id": "minecraft:pale_moss_block",
+      "required": false
+    },
+    {
+      "id": "minecraft:pale_oak_log",
+      "required": false
+    }
   ]
 }

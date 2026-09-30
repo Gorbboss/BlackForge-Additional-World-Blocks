@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#evenbetternether:generates/small_lily_pads",
+  "features": "evenbetternether:smb_patch_small_lily_pads",
+  "step": "vegetal_decoration"
+}

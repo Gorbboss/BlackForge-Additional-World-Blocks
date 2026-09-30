@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "evenbetternether:block/tall_pale_mushroom_colony_bottom"
+    },
+    "half=upper": {
+      "model": "evenbetternether:block/tall_pale_mushroom_colony_top"
+    }
+  }
+}

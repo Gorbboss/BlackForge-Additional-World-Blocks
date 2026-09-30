@@ -134,6 +134,18 @@ public final class BlackForgeImportedRenderLayers {
             ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.CATTAIL.get(), cutout);
             ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.REEDS.get(), cutout);
 
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.SMALL_LILY_PADS.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.BIG_LILY_PAD.get(), cutout);
+
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.CRIMSON_FUNGUS_COLONY.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.TALL_CRIMSON_FUNGUS_COLONY.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.WARPED_FUNGUS_COLONY.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.TALL_WARPED_FUNGUS_COLONY.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.PALE_MUSHROOM.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.PALE_MUSHROOM_COLONY.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.TALL_PALE_MUSHROOM_COLONY.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.PALE_ROSE_BUSH.get(), cutout);
+
             RenderType translucent = RenderType.translucent();
             ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.OBSIDIAN_GLASS.get(), translucent);
             ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.OBSIDIAN_GLASS_PANE.get(), translucent);

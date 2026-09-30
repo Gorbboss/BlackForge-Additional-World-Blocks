@@ -301,6 +301,21 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> NETHER_CLOVER = register("nether_clover", () -> new ImportedCloverBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_WART).replaceable().noCollission()));
     public static final RegistryObject<Block> LUMINOUS_FLOWER = register("luminous_flower", () -> new ImportedLuminousFlowerBlock(BlockBehaviour.Properties.copy(Blocks.DANDELION).lightLevel(state -> 10)));
 
+    public static final RegistryObject<Block> TALL_CRIMSON_FUNGUS_COLONY = register("tall_crimson_fungus_colony", () -> new ImportedTallMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_FUNGUS)));
+    public static final RegistryObject<Block> CRIMSON_FUNGUS_COLONY = register("crimson_fungus_colony", () -> new ImportedMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_FUNGUS), TALL_CRIMSON_FUNGUS_COLONY));
+    public static final RegistryObject<Block> TALL_WARPED_FUNGUS_COLONY = register("tall_warped_fungus_colony", () -> new ImportedTallMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_FUNGUS)));
+    public static final RegistryObject<Block> WARPED_FUNGUS_COLONY = register("warped_fungus_colony", () -> new ImportedMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_FUNGUS), TALL_WARPED_FUNGUS_COLONY));
+    public static final RegistryObject<Block> TALL_PALE_MUSHROOM_COLONY = register("tall_pale_mushroom_colony", () -> new ImportedTallMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM)));
+    public static final RegistryObject<Block> PALE_MUSHROOM_COLONY = register("pale_mushroom_colony", () -> new ImportedMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM), TALL_PALE_MUSHROOM_COLONY));
+    public static final RegistryObject<Block> PALE_MUSHROOM = register("pale_mushroom", net.mcreator.evenbetternether.block.ImportedPaleMushroomBlock::new);
+    public static final RegistryObject<Block> PALE_ROSE_BUSH = register("pale_rose_bush", () -> new net.minecraft.world.level.block.TallFlowerBlock(BlockBehaviour.Properties.copy(Blocks.ROSE_BUSH)));
+    public static final RegistryObject<Block> POLISHED_RESIN = register("polished_resin", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
+    public static final RegistryObject<Block> POLISHED_RESIN_STAIRS = register("polished_resin_stairs", () -> new StairBlock(() -> POLISHED_RESIN.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.BRICKS)));
+    public static final RegistryObject<Block> POLISHED_RESIN_SLAB = register("polished_resin_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
+
+    public static final RegistryObject<Block> SMALL_LILY_PADS = registerWaterPlant("small_lily_pads", () -> new net.minecraft.world.level.block.WaterlilyBlock(BlockBehaviour.Properties.copy(Blocks.LILY_PAD).noCollission()));
+    public static final RegistryObject<Block> BIG_LILY_PAD = registerWaterPlant("big_lily_pad", () -> new net.mcreator.evenbetternether.block.ImportedBigLilyPadBlock(BlockBehaviour.Properties.copy(Blocks.LILY_PAD)));
+
     public static final RegistryObject<Block> CATTAIL = register("cattail", () -> new ImportedCattailBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
     public static final RegistryObject<Block> REEDS = register("reeds", () -> new ImportedCattailBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
 
@@ -365,6 +380,12 @@ public final class BlackForgeImportedBlocks {
     private static RegistryObject<Block> register(String name, Supplier<? extends Block> factory) {
         RegistryObject<Block> block = BLOCKS.register(name, factory);
         ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        return block;
+    }
+
+    private static RegistryObject<Block> registerWaterPlant(String name, Supplier<? extends Block> factory) {
+        RegistryObject<Block> block = BLOCKS.register(name, factory);
+        ITEMS.register(name, () -> new net.minecraft.world.item.PlaceOnWaterBlockItem(block.get(), new Item.Properties()));
         return block;
     }
 

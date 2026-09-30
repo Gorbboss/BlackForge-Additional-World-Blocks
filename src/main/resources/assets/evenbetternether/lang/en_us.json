@@ -353,5 +353,18 @@
   "block.evenbetternether.red_mushroom_colony": "Red Mushroom Colony",
   "block.evenbetternether.tall_red_mushroom_colony": "Tall Red Mushroom Colony",
   "block.evenbetternether.cattail": "Cattail",
-  "block.evenbetternether.reeds": "Reeds"
+  "block.evenbetternether.reeds": "Reeds",
+  "block.evenbetternether.small_lily_pads": "Small Lily Pads",
+  "block.evenbetternether.big_lily_pad": "Big Lily Pad",
+  "block.evenbetternether.crimson_fungus_colony": "Crimson Fungus Colony",
+  "block.evenbetternether.tall_crimson_fungus_colony": "Tall Crimson Fungus Colony",
+  "block.evenbetternether.warped_fungus_colony": "Warped Fungus Colony",
+  "block.evenbetternether.tall_warped_fungus_colony": "Tall Warped Fungus Colony",
+  "block.evenbetternether.pale_mushroom": "Pale Mushroom",
+  "block.evenbetternether.pale_mushroom_colony": "Pale Mushroom Colony",
+  "block.evenbetternether.tall_pale_mushroom_colony": "Tall Pale Mushroom Colony",
+  "block.evenbetternether.pale_rose_bush": "Pale Rose Bush",
+  "block.evenbetternether.polished_resin": "Polished Resin",
+  "block.evenbetternether.polished_resin_stairs": "Polished Resin Stairs",
+  "block.evenbetternether.polished_resin_slab": "Polished Resin Slab"
 }

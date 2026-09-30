@@ -1,0 +1,11 @@
+{
+  "values": [
+    {
+      "id": "minecraft:pale_garden",
+      "required": false
+    },
+    "minecraft:dripstone_caves",
+    "minecraft:lush_caves",
+    "minecraft:deep_dark"
+  ]
+}

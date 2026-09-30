@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "evenbetternether:block/polished_resin_slab"
+    },
+    "type=double": {
+      "model": "evenbetternether:block/polished_resin"
+    },
+    "type=top": {
+      "model": "evenbetternether:block/polished_resin_slab_top"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "evenbetternether:polished_resin"
+  },
+  "result": "evenbetternether:polished_resin_slab",
+  "count": 2
+}

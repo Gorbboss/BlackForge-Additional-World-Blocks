@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "evenbetternether:block/tall_crimson_fungus_colony_bottom"
+  }
+}

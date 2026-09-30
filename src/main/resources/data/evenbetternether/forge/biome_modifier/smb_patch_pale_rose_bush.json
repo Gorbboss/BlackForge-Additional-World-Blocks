@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#evenbetternether:generates/pale_mushroom_colony",
+  "features": "evenbetternether:smb_patch_pale_rose_bush",
+  "step": "vegetal_decoration"
+}

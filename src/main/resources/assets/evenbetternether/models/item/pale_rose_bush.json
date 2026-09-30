@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "evenbetternether:block/pale_rose_bush_top",
+    "layer1": "evenbetternether:block/pale_rose_bush_top_emissive"
+  }
+}

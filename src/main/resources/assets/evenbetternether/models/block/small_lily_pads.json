@@ -1,0 +1,6 @@
+{
+  "parent": "evenbetternether:block/templates/square_horizontal",
+  "textures": {
+    "texture": "evenbetternether:block/small_lily_pads"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#evenbetternether:generates/warped_fungus_colony",
+  "features": "evenbetternether:smb_patch_warped_fungus_colony",
+  "step": "vegetal_decoration"
+}

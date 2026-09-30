@@ -48,6 +48,9 @@
     "evenbetternether:smooth_bone_slab",
     "evenbetternether:smooth_bone_stairs",
     "evenbetternether:smooth_bone_block",
-    "evenbetternether:verdant_nylium"
+    "evenbetternether:verdant_nylium",
+    "evenbetternether:polished_resin",
+    "evenbetternether:polished_resin_stairs",
+    "evenbetternether:polished_resin_slab"
   ]
 }

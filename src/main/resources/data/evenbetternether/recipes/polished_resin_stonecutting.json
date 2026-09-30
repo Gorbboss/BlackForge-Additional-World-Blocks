@@ -1,0 +1,14 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "vanillabackport"
+    }
+  ],
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:resin_block"
+  },
+  "result": "evenbetternether:polished_resin",
+  "count": 1
+}
