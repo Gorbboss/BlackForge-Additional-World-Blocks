@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/cross_emissive",
+  "parent": "evenbetternether:block/templates/cross_overlay",
   "textures": {
     "cross": "evenbetternether:block/pale_rose_bush_top",
     "cross_emissive": "evenbetternether:block/pale_rose_bush_top_emissive"

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#evenbetternether:generates/crimson_fungus_colony",
+  "features": "evenbetternether:smb_simple_crimson_fungus_colony_wall",
+  "step": "vegetal_decoration"
+}

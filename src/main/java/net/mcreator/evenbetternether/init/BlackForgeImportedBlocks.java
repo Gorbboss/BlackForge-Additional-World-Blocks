@@ -237,7 +237,7 @@ public final class BlackForgeImportedBlocks {
 
     public static final RegistryObject<Item> HYDRALUX_PETAL = ITEMS.register("hydralux_petal", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Block> HYDRALUX_SAPLING = register("hydralux_sapling", () -> new ImportedEndStructureSeedBlock(ImportedEndStructureSeedBlock.Kind.HYDRALUX));
-    public static final RegistryObject<Block> HYDRALUX = register("hydralux", () -> new ImportedEndShapeBlock(ImportedEndShapeBlock.Shape.ROOTS, 12));
+    public static final RegistryObject<Block> HYDRALUX = registerNoItem("hydralux", () -> new ImportedEndShapeBlock(ImportedEndShapeBlock.Shape.ROOTS, 12));
     public static final RegistryObject<Block> HYDRALUX_PETAL_BLOCK = register("hydralux_petal_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE).lightLevel(state -> 10)));
     public static final RegistryObject<Block> HYDRALUX_PETAL_BLOCK_WHITE = register("hydralux_petal_block_white", () -> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE).lightLevel(state -> 8)));
     public static final RegistryObject<Block> HYDRALUX_PETAL_BLOCK_ORANGE = register("hydralux_petal_block_orange", () -> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE).lightLevel(state -> 8)));
@@ -256,11 +256,11 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> HYDRALUX_PETAL_BLOCK_RED = register("hydralux_petal_block_red", () -> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE).lightLevel(state -> 8)));
     public static final RegistryObject<Block> HYDRALUX_PETAL_BLOCK_BLACK = register("hydralux_petal_block_black", () -> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE).lightLevel(state -> 8)));
     public static final RegistryObject<Block> GLOWING_PILLAR_SEED = register("glowing_pillar_seed", () -> new ImportedEndStructureSeedBlock(ImportedEndStructureSeedBlock.Kind.GLOWING_PILLAR));
-    public static final RegistryObject<Block> GLOWING_PILLAR_ROOTS = register("glowing_pillar_roots", () -> new ImportedEndShapeBlock(ImportedEndShapeBlock.Shape.BOTTOM, 9));
+    public static final RegistryObject<Block> GLOWING_PILLAR_ROOTS = registerNoItem("glowing_pillar_roots", () -> new ImportedEndShapeBlock(ImportedEndShapeBlock.Shape.BOTTOM, 9));
     public static final RegistryObject<Block> GLOWING_PILLAR_LUMINOPHOR = register("glowing_pillar_luminophor", () -> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE).lightLevel(state -> 15)));
     public static final RegistryObject<Block> GLOWING_PILLAR_LEAVES = register("glowing_pillar_leaves", () -> new ImportedDirectionalFurBlock(15));
     public static final RegistryObject<Block> LANCELEAF_SEED = register("lanceleaf_seed", () -> new ImportedEndStructureSeedBlock(ImportedEndStructureSeedBlock.Kind.LANCELEAF));
-    public static final RegistryObject<Block> LANCELEAF = register("lanceleaf", ImportedLanceleafBlock::new);
+    public static final RegistryObject<Block> LANCELEAF = registerNoItem("lanceleaf", ImportedLanceleafBlock::new);
     public static final RegistryObject<Block> BLUE_VINE_SEED = register("blue_vine_seed", () -> new ImportedEndStructureSeedBlock(ImportedEndStructureSeedBlock.Kind.BLUE_VINE));
     public static final RegistryObject<Block> BLUE_VINE = register("blue_vine", () -> new ImportedEndShapeBlock(ImportedEndShapeBlock.Shape.BOTTOM, 5));
     public static final RegistryObject<Block> BLUE_VINE_LANTERN = register("blue_vine_lantern", () -> new Block(BlockBehaviour.Properties.copy(Blocks.END_STONE).lightLevel(state -> 15)));
@@ -284,8 +284,6 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> BARBED_SCULK_ROOT_STAIRS = register("barbed_sculk_root_stairs", () -> new StairBlock(BARBED_SCULK_ROOT.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.SCULK)));
     public static final RegistryObject<Block> BARBED_SCULK_ROOT_SLAB = register("barbed_sculk_root_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SCULK)));
     public static final RegistryObject<Block> NEON_CACTUS = register("neon_cactus", ImportedNeonCactusBlock::new);
-    public static final RegistryObject<Block> NEON_CACTUS_STAIRS = register("neon_cactus_stairs", () -> new StairBlock(NEON_CACTUS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.CACTUS)));
-    public static final RegistryObject<Block> NEON_CACTUS_SLAB = register("neon_cactus_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.CACTUS)));
 
     public static final RegistryObject<Block> TALL_CACTUS = register("tall_cactus", () -> new ImportedTallDesertPlantBlock(true));
     public static final RegistryObject<Block> TINY_CACTUS = register("tiny_cactus", () -> new ImportedDesertPlantBlock(TALL_CACTUS, true));
@@ -302,11 +300,14 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> LUMINOUS_FLOWER = register("luminous_flower", () -> new ImportedLuminousFlowerBlock(BlockBehaviour.Properties.copy(Blocks.DANDELION).lightLevel(state -> 10)));
 
     public static final RegistryObject<Block> TALL_CRIMSON_FUNGUS_COLONY = register("tall_crimson_fungus_colony", () -> new ImportedTallMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_FUNGUS)));
-    public static final RegistryObject<Block> CRIMSON_FUNGUS_COLONY = register("crimson_fungus_colony", () -> new ImportedMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_FUNGUS), TALL_CRIMSON_FUNGUS_COLONY));
+    public static final RegistryObject<Block> CRIMSON_FUNGUS_COLONY_WALL = registerNoItem("crimson_fungus_colony_wall", () -> new net.mcreator.evenbetternether.block.ImportedWallMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_FUNGUS)));
+    public static final RegistryObject<Block> CRIMSON_FUNGUS_COLONY = registerColony("crimson_fungus_colony", CRIMSON_FUNGUS_COLONY_WALL, () -> new ImportedMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_FUNGUS), TALL_CRIMSON_FUNGUS_COLONY));
     public static final RegistryObject<Block> TALL_WARPED_FUNGUS_COLONY = register("tall_warped_fungus_colony", () -> new ImportedTallMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_FUNGUS)));
-    public static final RegistryObject<Block> WARPED_FUNGUS_COLONY = register("warped_fungus_colony", () -> new ImportedMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_FUNGUS), TALL_WARPED_FUNGUS_COLONY));
+    public static final RegistryObject<Block> WARPED_FUNGUS_COLONY_WALL = registerNoItem("warped_fungus_colony_wall", () -> new net.mcreator.evenbetternether.block.ImportedWallMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_FUNGUS)));
+    public static final RegistryObject<Block> WARPED_FUNGUS_COLONY = registerColony("warped_fungus_colony", WARPED_FUNGUS_COLONY_WALL, () -> new ImportedMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_FUNGUS), TALL_WARPED_FUNGUS_COLONY));
     public static final RegistryObject<Block> TALL_PALE_MUSHROOM_COLONY = register("tall_pale_mushroom_colony", () -> new ImportedTallMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM)));
-    public static final RegistryObject<Block> PALE_MUSHROOM_COLONY = register("pale_mushroom_colony", () -> new ImportedMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM), TALL_PALE_MUSHROOM_COLONY));
+    public static final RegistryObject<Block> PALE_MUSHROOM_COLONY_WALL = registerNoItem("pale_mushroom_colony_wall", () -> new net.mcreator.evenbetternether.block.ImportedWallMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM)));
+    public static final RegistryObject<Block> PALE_MUSHROOM_COLONY = registerColony("pale_mushroom_colony", PALE_MUSHROOM_COLONY_WALL, () -> new ImportedMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM), TALL_PALE_MUSHROOM_COLONY));
     public static final RegistryObject<Block> PALE_MUSHROOM = register("pale_mushroom", net.mcreator.evenbetternether.block.ImportedPaleMushroomBlock::new);
     public static final RegistryObject<Block> PALE_ROSE_BUSH = register("pale_rose_bush", () -> new net.minecraft.world.level.block.TallFlowerBlock(BlockBehaviour.Properties.copy(Blocks.ROSE_BUSH)));
     public static final RegistryObject<Block> POLISHED_RESIN = register("polished_resin", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
@@ -323,9 +324,11 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> REEDS = register("reeds", () -> new ImportedCattailBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
 
     public static final RegistryObject<Block> TALL_BROWN_MUSHROOM_COLONY = register("tall_brown_mushroom_colony", () -> new ImportedTallMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM)));
-    public static final RegistryObject<Block> BROWN_MUSHROOM_COLONY = register("brown_mushroom_colony", () -> new ImportedMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM), TALL_BROWN_MUSHROOM_COLONY));
+    public static final RegistryObject<Block> BROWN_MUSHROOM_COLONY_WALL = registerNoItem("brown_mushroom_colony_wall", () -> new net.mcreator.evenbetternether.block.ImportedWallMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM)));
+    public static final RegistryObject<Block> BROWN_MUSHROOM_COLONY = registerColony("brown_mushroom_colony", BROWN_MUSHROOM_COLONY_WALL, () -> new ImportedMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM), TALL_BROWN_MUSHROOM_COLONY));
     public static final RegistryObject<Block> TALL_RED_MUSHROOM_COLONY = register("tall_red_mushroom_colony", () -> new ImportedTallMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM)));
-    public static final RegistryObject<Block> RED_MUSHROOM_COLONY = register("red_mushroom_colony", () -> new ImportedMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM), TALL_RED_MUSHROOM_COLONY));
+    public static final RegistryObject<Block> RED_MUSHROOM_COLONY_WALL = registerNoItem("red_mushroom_colony_wall", () -> new net.mcreator.evenbetternether.block.ImportedWallMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM)));
+    public static final RegistryObject<Block> RED_MUSHROOM_COLONY = registerColony("red_mushroom_colony", RED_MUSHROOM_COLONY_WALL, () -> new ImportedMushroomColonyBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM), TALL_RED_MUSHROOM_COLONY));
 
     public static final RegistryObject<Block> BLUE_OBSIDIAN = solid("blue_obsidian");
     public static final RegistryObject<Block> BLUE_CRYING_OBSIDIAN = solid("blue_crying_obsidian");
@@ -389,6 +392,12 @@ public final class BlackForgeImportedBlocks {
     private static RegistryObject<Block> registerWaterPlant(String name, Supplier<? extends Block> factory) {
         RegistryObject<Block> block = BLOCKS.register(name, factory);
         ITEMS.register(name, () -> new net.minecraft.world.item.PlaceOnWaterBlockItem(block.get(), new Item.Properties()));
+        return block;
+    }
+
+    private static RegistryObject<Block> registerColony(String name, Supplier<Block> wall, Supplier<? extends Block> factory) {
+        RegistryObject<Block> block = BLOCKS.register(name, factory);
+        ITEMS.register(name, () -> new net.minecraft.world.item.StandingAndWallBlockItem(block.get(), wall.get(), new Item.Properties(), net.minecraft.core.Direction.DOWN));
         return block;
     }
 

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=west": {
+      "model": "evenbetternether:block/brown_mushroom_colony_wall",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "evenbetternether:block/brown_mushroom_colony_wall"
+    },
+    "facing=north": {
+      "model": "evenbetternether:block/brown_mushroom_colony_wall",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "evenbetternether:block/brown_mushroom_colony_wall",
+      "y": 270
+    }
+  }
+}

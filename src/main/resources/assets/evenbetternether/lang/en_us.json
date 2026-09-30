@@ -334,9 +334,7 @@
   "block.evenbetternether.amber_moss_path": "Amber Moss Path",
   "block.evenbetternether.barbed_sculk_root_stairs": "Barbed Sculk Root Stairs",
   "block.evenbetternether.barbed_sculk_root_slab": "Barbed Sculk Root Slab",
-  "block.evenbetternether.neon_cactus": "Neon Cactus",
-  "block.evenbetternether.neon_cactus_stairs": "Neon Cactus Stairs",
-  "block.evenbetternether.neon_cactus_slab": "Neon Cactus Slab",
+  "block.evenbetternether.neon_cactus": "Barbed Sculk Root",
   "block.evenbetternether.tiny_cactus": "Tiny Cactus",
   "block.evenbetternether.tall_cactus": "Tall Cactus",
   "block.evenbetternether.dune_grass": "Dune Grass",
@@ -368,5 +366,10 @@
   "block.evenbetternether.polished_resin_stairs": "Polished Resin Stairs",
   "block.evenbetternether.polished_resin_slab": "Polished Resin Slab",
   "block.evenbetternether.snow_bush": "Snow Bush",
-  "block.evenbetternether.snow_firefly_bush": "Snow Firefly Bush"
+  "block.evenbetternether.snow_firefly_bush": "Snow Firefly Bush",
+  "block.evenbetternether.brown_mushroom_colony_wall": "Brown Mushroom Colony",
+  "block.evenbetternether.red_mushroom_colony_wall": "Red Mushroom Colony",
+  "block.evenbetternether.crimson_fungus_colony_wall": "Crimson Fungus Colony",
+  "block.evenbetternether.warped_fungus_colony_wall": "Warped Fungus Colony",
+  "block.evenbetternether.pale_mushroom_colony_wall": "Pale Mushroom Colony"
 }

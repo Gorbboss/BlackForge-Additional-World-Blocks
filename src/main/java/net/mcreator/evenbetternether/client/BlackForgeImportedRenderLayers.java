@@ -149,6 +149,12 @@ public final class BlackForgeImportedRenderLayers {
             ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.SNOW_BUSH.get(), cutout);
             ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.SNOW_FIREFLY_BUSH.get(), cutout);
 
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.BROWN_MUSHROOM_COLONY_WALL.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.RED_MUSHROOM_COLONY_WALL.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.CRIMSON_FUNGUS_COLONY_WALL.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.WARPED_FUNGUS_COLONY_WALL.get(), cutout);
+            ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.PALE_MUSHROOM_COLONY_WALL.get(), cutout);
+
             RenderType translucent = RenderType.translucent();
             ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.OBSIDIAN_GLASS.get(), translucent);
             ItemBlockRenderTypes.setRenderLayer(BlackForgeImportedBlocks.OBSIDIAN_GLASS_PANE.get(), translucent);

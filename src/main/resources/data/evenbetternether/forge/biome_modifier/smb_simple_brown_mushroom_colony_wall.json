@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#evenbetternether:generates/brown_mushroom_colony",
+  "features": "evenbetternether:smb_simple_brown_mushroom_colony_wall",
+  "step": "vegetal_decoration"
+}
