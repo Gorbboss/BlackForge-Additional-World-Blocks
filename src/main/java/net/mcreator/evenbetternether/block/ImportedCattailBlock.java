@@ -39,10 +39,10 @@ public class ImportedCattailBlock extends DoublePlantBlock implements SimpleWate
     if (state.getValue(HALF) != DoubleBlockHalf.UPPER) {
       return (blockBelow.is(DRY_GROUND) && !state.getValue(WATERLOGGED) ||
         blockBelow.is(WET_GROUND) && state.getValue(WATERLOGGED)) &&
-        !level.getBlockState(pos.above()).liquid();
+        level.getFluidState(pos.above()).isEmpty();
     }
 
-    return blockBelow.is(this) && blockBelow.getValue(HALF) == DoubleBlockHalf.LOWER;
+    return !state.getValue(WATERLOGGED) && blockBelow.is(this) && blockBelow.getValue(HALF) == DoubleBlockHalf.LOWER;
   }
 
   @Override
@@ -56,6 +56,7 @@ public class ImportedCattailBlock extends DoublePlantBlock implements SimpleWate
     BlockPos pos = context.getClickedPos();
     FluidState fluidState = level.getFluidState(pos);
 
+    if (!fluidState.isEmpty() && (fluidState.getType() != Fluids.WATER || !fluidState.isSource())) return null;
     BlockState state = super.getStateForPlacement(context);
     return state == null ? null : state.setValue(WATERLOGGED, fluidState.getType() == Fluids.WATER);
   }
@@ -63,7 +64,13 @@ public class ImportedCattailBlock extends DoublePlantBlock implements SimpleWate
   @Override
   public BlockState updateShape(BlockState state, Direction direction, BlockState neighbor, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
     if (state.getValue(WATERLOGGED)) level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
-    return super.updateShape(state, direction, neighbor, level, pos, neighborPos);
+    BlockState updated = super.updateShape(state, direction, neighbor, level, pos, neighborPos);
+    return updated.isAir() && state.getValue(WATERLOGGED) ? net.minecraft.world.level.block.Blocks.WATER.defaultBlockState() : updated;
+  }
+
+  @Override
+  public boolean canPlaceLiquid(net.minecraft.world.level.BlockGetter level, BlockPos pos, BlockState state, net.minecraft.world.level.material.Fluid fluid) {
+    return state.getValue(HALF) == DoubleBlockHalf.LOWER && !state.getValue(WATERLOGGED) && fluid == Fluids.WATER;
   }
 
   @NotNull

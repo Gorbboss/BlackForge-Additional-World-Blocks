@@ -37,6 +37,11 @@ public class ImportedDesertPlantBlock extends TallGrassBlock {
         return supports(ground, cactus);
     }
 
+    @Override public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        return super.canSurvive(state, level, pos) && level.getFluidState(pos).isEmpty()
+                && level.getFluidState(pos.above()).isEmpty();
+    }
+
     @Override public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean client) {
         return level.isEmptyBlock(pos.above()) && tall.get().defaultBlockState().canSurvive(level, pos);
     }

@@ -5,6 +5,8 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoublePlantBlock;
@@ -26,5 +28,9 @@ public class ImportedTallDesertPlantBlock extends DoublePlantBlock {
 
     @Override public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
         if (cactus && entity instanceof LivingEntity) entity.hurt(level.damageSources().cactus(), 1.0F);
+    }
+    @Override public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        return super.canSurvive(state, level, pos) && level.getFluidState(pos).isEmpty()
+                && (state.getValue(HALF) == DoubleBlockHalf.UPPER || level.getFluidState(pos.above()).isEmpty());
     }
 }

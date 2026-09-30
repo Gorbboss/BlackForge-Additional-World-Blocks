@@ -99,7 +99,7 @@ public class ImportedBigLilyPadBlock extends WaterlilyBlock {
     BlockState neighborState = level.getBlockState(neighborBlockPos);
 
     if (state.getValue(POSITION) != ImportedLilyPart.BOTTOM_LEFT) {
-      return neighborState.is(this) && neighborState.getValue(POSITION) == expectedPosition && super.canSurvive(state, level, pos);
+      return neighborState.is(this) && neighborState.getValue(POSITION) == expectedPosition && neighborState.getValue(FACING) == state.getValue(FACING) && super.canSurvive(state, level, pos);
     }
 
     return super.canSurvive(state, level, pos);
@@ -114,7 +114,8 @@ public class ImportedBigLilyPadBlock extends WaterlilyBlock {
     if (position == ImportedLilyPart.BOTTOM_RIGHT) {
       BlockPos bottomLeftPos = pos.relative(facing.getCounterClockWise());
 
-      if (level.getBlockState(bottomLeftPos).is(this)) {
+      BlockState anchor = level.getBlockState(bottomLeftPos);
+      if (anchor.is(this) && anchor.getValue(POSITION) == ImportedLilyPart.BOTTOM_LEFT && anchor.getValue(FACING) == facing) {
         level.destroyBlock(bottomLeftPos, true);
         return;
       }
@@ -138,9 +139,7 @@ public class ImportedBigLilyPadBlock extends WaterlilyBlock {
 
     BlockPos bottomLeftPos = this.getRelativeBottomLeftBlockPos(state, pos);
     BlockState bottomLeft = level.getBlockState(bottomLeftPos);
-    level.setBlock(bottomLeftPos, Blocks.STONE.defaultBlockState(), 35);
-
-    if (bottomLeft.is(this) && bottomLeft.getValue(POSITION) == ImportedLilyPart.BOTTOM_LEFT) {
+    if (bottomLeft.is(this) && bottomLeft.getValue(POSITION) == ImportedLilyPart.BOTTOM_LEFT && bottomLeft.getValue(FACING) == state.getValue(FACING)) {
       BlockState newState = bottomLeft.getFluidState().is(Fluids.WATER) ? Blocks.WATER.defaultBlockState() : Blocks.AIR.defaultBlockState();
       level.setBlock(bottomLeftPos, newState, 35);
       level.levelEvent(player, 2001, bottomLeftPos, Block.getId(bottomLeft));

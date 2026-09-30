@@ -69,7 +69,7 @@ public class ImportedCloverBlock extends BushBlock {
   public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
     if (state.is(BlackForgeImportedBlocks.NETHER_CLOVER.get())) {
       BlockState blockBelow = level.getBlockState(pos.below());
-      return (blockBelow.is(net.minecraft.world.level.block.Blocks.NETHERRACK) || blockBelow.is(net.minecraft.world.level.block.Blocks.CRIMSON_NYLIUM) || blockBelow.is(net.minecraft.world.level.block.Blocks.WARPED_NYLIUM) || blockBelow.is(net.minecraft.world.level.block.Blocks.SOUL_SAND) || blockBelow.is(net.minecraft.world.level.block.Blocks.SOUL_SOIL)) && !level.getBlockState(pos.above()).liquid();
+      return (blockBelow.is(net.minecraft.world.level.block.Blocks.NETHERRACK) || blockBelow.is(net.minecraft.world.level.block.Blocks.CRIMSON_NYLIUM) || blockBelow.is(net.minecraft.world.level.block.Blocks.WARPED_NYLIUM) || blockBelow.is(net.minecraft.world.level.block.Blocks.SOUL_SAND) || blockBelow.is(net.minecraft.world.level.block.Blocks.SOUL_SOIL)) && level.getFluidState(pos).isEmpty() && level.getFluidState(pos.above()).isEmpty();
     }
 
     return super.canSurvive(state, level, pos);

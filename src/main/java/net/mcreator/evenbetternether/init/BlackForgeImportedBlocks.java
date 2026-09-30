@@ -290,9 +290,9 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> TALL_DUNE_GRASS = register("tall_dune_grass", () -> new ImportedTallDesertPlantBlock(false));
     public static final RegistryObject<Block> DUNE_GRASS = register("dune_grass", () -> new ImportedDesertPlantBlock(TALL_DUNE_GRASS, false));
 
-    public static final RegistryObject<Block> TALL_SNOW_GRASS = register("tall_snow_grass", () -> new DoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
+    public static final RegistryObject<Block> TALL_SNOW_GRASS = register("tall_snow_grass", () -> new net.mcreator.evenbetternether.block.ImportedTallSnowPlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
     public static final RegistryObject<Block> SHORT_SNOW_GRASS = register("short_snow_grass", () -> new ImportedSnowPlantBlock(TALL_SNOW_GRASS, false));
-    public static final RegistryObject<Block> LARGE_SNOW_FERN = register("large_snow_fern", () -> new DoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.LARGE_FERN)));
+    public static final RegistryObject<Block> LARGE_SNOW_FERN = register("large_snow_fern", () -> new net.mcreator.evenbetternether.block.ImportedTallSnowPlantBlock(BlockBehaviour.Properties.copy(Blocks.LARGE_FERN)));
     public static final RegistryObject<Block> SNOW_FERN = register("snow_fern", () -> new ImportedSnowPlantBlock(LARGE_SNOW_FERN, true));
 
     public static final RegistryObject<Block> CLOVER = register("clover", () -> new ImportedCloverBlock(BlockBehaviour.Properties.copy(Blocks.PINK_PETALS).replaceable().noCollission()));

@@ -23,7 +23,7 @@ public class ImportedSnowPlantBlock extends TallGrassBlock {
     }
 
     @Override public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        return level.getBlockState(pos.below()).is(BlockTags.DIRT);
+        return level.getBlockState(pos.below()).is(BlockTags.DIRT) && level.getFluidState(pos).isEmpty();
     }
 
     @Override public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean client) {
