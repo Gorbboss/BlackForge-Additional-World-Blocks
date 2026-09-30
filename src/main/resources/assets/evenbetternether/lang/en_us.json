@@ -340,5 +340,9 @@
   "block.evenbetternether.tiny_cactus": "Tiny Cactus",
   "block.evenbetternether.tall_cactus": "Tall Cactus",
   "block.evenbetternether.dune_grass": "Dune Grass",
-  "block.evenbetternether.tall_dune_grass": "Tall Dune Grass"
+  "block.evenbetternether.tall_dune_grass": "Tall Dune Grass",
+  "block.evenbetternether.short_snow_grass": "Short Snow Grass",
+  "block.evenbetternether.tall_snow_grass": "Tall Snow Grass",
+  "block.evenbetternether.snow_fern": "Snow Fern",
+  "block.evenbetternether.large_snow_fern": "Large Snow Fern"
 }

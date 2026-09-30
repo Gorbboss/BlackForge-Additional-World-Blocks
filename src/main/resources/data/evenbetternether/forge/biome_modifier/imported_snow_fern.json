@@ -1,0 +1,8 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "minecraft:snowy_taiga"
+  ],
+  "features": "evenbetternether:imported_snow_fern",
+  "step": "vegetal_decoration"
+}

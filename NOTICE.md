@@ -22,3 +22,6 @@ behavior are from Some More Blocks (Minecraft 1.20.1), copyright 2025
 Seface Studios, used under the MIT License:
 https://github.com/Seface-Studios/some-more-blocks/tree/1.20.1-1.21.11/1.20.1
 The license text is included in licenses/SomeMoreBlocks-MIT.txt.
+
+Snow Grass and Snow Fern variants also use Some More Blocks 1.20.1
+textures and adapted behavior under the MIT license noted above.

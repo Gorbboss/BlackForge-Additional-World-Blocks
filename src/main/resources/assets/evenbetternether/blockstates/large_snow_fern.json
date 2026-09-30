@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "evenbetternether:block/large_snow_fern_bottom"
+    },
+    "half=upper": {
+      "model": "evenbetternether:block/large_snow_fern_top"
+    }
+  }
+}

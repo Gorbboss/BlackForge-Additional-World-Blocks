@@ -38,6 +38,8 @@ import net.mcreator.evenbetternether.block.ImportedBoneMushroomBlock;
 import net.mcreator.evenbetternether.block.ImportedSepiaBoneGrassBlock;
 import net.mcreator.evenbetternether.block.ImportedWillowTorchBlock;
 import net.mcreator.evenbetternether.block.ImportedDesertPlantBlock;
+import net.mcreator.evenbetternether.block.ImportedSnowPlantBlock;
+import net.minecraft.world.level.block.DoublePlantBlock;
 import net.mcreator.evenbetternether.block.ImportedTallDesertPlantBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -284,6 +286,11 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> TINY_CACTUS = register("tiny_cactus", () -> new ImportedDesertPlantBlock(TALL_CACTUS, true));
     public static final RegistryObject<Block> TALL_DUNE_GRASS = register("tall_dune_grass", () -> new ImportedTallDesertPlantBlock(false));
     public static final RegistryObject<Block> DUNE_GRASS = register("dune_grass", () -> new ImportedDesertPlantBlock(TALL_DUNE_GRASS, false));
+
+    public static final RegistryObject<Block> TALL_SNOW_GRASS = register("tall_snow_grass", () -> new DoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
+    public static final RegistryObject<Block> SHORT_SNOW_GRASS = register("short_snow_grass", () -> new ImportedSnowPlantBlock(TALL_SNOW_GRASS, false));
+    public static final RegistryObject<Block> LARGE_SNOW_FERN = register("large_snow_fern", () -> new DoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.LARGE_FERN)));
+    public static final RegistryObject<Block> SNOW_FERN = register("snow_fern", () -> new ImportedSnowPlantBlock(LARGE_SNOW_FERN, true));
 
     public static final RegistryObject<Block> BLUE_OBSIDIAN = solid("blue_obsidian");
     public static final RegistryObject<Block> BLUE_CRYING_OBSIDIAN = solid("blue_crying_obsidian");

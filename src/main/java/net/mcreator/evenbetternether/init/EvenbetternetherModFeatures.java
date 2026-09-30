@@ -42,6 +42,8 @@ public class EvenbetternetherModFeatures {
     public static final DeferredRegister<Feature<?>> REGISTRY = DeferredRegister.create((IForgeRegistry)ForgeRegistries.FEATURES, (String)"evenbetternether");
     public static final RegistryObject<Feature<?>> IMPORTED_CACTUS_PLANTS = REGISTRY.register("imported_cactus_plants", () -> new net.mcreator.evenbetternether.world.features.ImportedDesertPlantsFeature(true));
     public static final RegistryObject<Feature<?>> IMPORTED_DUNE_GRASS = REGISTRY.register("imported_dune_grass", () -> new net.mcreator.evenbetternether.world.features.ImportedDesertPlantsFeature(false));
+    public static final RegistryObject<Feature<?>> IMPORTED_SNOW_GRASS = REGISTRY.register("imported_snow_grass", () -> new net.mcreator.evenbetternether.world.features.ImportedSnowPlantsFeature(false));
+    public static final RegistryObject<Feature<?>> IMPORTED_SNOW_FERN = REGISTRY.register("imported_snow_fern", () -> new net.mcreator.evenbetternether.world.features.ImportedSnowPlantsFeature(true));
     public static final RegistryObject<Feature<?>> HYDRALUX_POOL = REGISTRY.register("hydralux_pool", net.mcreator.evenbetternether.world.features.ImportedHydraluxPoolFeature::new);
     public static final RegistryObject<Feature<?>> PALLIDIUM_FORMATION = REGISTRY.register("pallidium_formation", net.mcreator.evenbetternether.world.features.ImportedPallidiumFormationFeature::new);
     public static final RegistryObject<Feature<?>> UMBRALITH_ARCH = REGISTRY.register("umbralith_arch", net.mcreator.evenbetternether.world.features.ImportedUmbralithArchFeature::new);
