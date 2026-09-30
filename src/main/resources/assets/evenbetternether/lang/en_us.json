@@ -344,5 +344,8 @@
   "block.evenbetternether.short_snow_grass": "Short Snow Grass",
   "block.evenbetternether.tall_snow_grass": "Tall Snow Grass",
   "block.evenbetternether.snow_fern": "Snow Fern",
-  "block.evenbetternether.large_snow_fern": "Large Snow Fern"
+  "block.evenbetternether.large_snow_fern": "Large Snow Fern",
+  "block.evenbetternether.clover": "Clover",
+  "block.evenbetternether.nether_clover": "Nether Clover",
+  "block.evenbetternether.luminous_flower": "Luminous Flower"
 }

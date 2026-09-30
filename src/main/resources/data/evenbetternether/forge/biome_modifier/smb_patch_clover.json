@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#evenbetternether:smb_generates/clover",
+  "features": "evenbetternether:smb_patch_clover",
+  "step": "vegetal_decoration"
+}

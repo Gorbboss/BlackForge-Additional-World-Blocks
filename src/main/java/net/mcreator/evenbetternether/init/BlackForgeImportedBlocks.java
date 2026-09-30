@@ -39,6 +39,8 @@ import net.mcreator.evenbetternether.block.ImportedSepiaBoneGrassBlock;
 import net.mcreator.evenbetternether.block.ImportedWillowTorchBlock;
 import net.mcreator.evenbetternether.block.ImportedDesertPlantBlock;
 import net.mcreator.evenbetternether.block.ImportedSnowPlantBlock;
+import net.mcreator.evenbetternether.block.ImportedCloverBlock;
+import net.mcreator.evenbetternether.block.ImportedLuminousFlowerBlock;
 import net.minecraft.world.level.block.DoublePlantBlock;
 import net.mcreator.evenbetternether.block.ImportedTallDesertPlantBlock;
 import net.minecraft.world.item.BlockItem;
@@ -291,6 +293,10 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> SHORT_SNOW_GRASS = register("short_snow_grass", () -> new ImportedSnowPlantBlock(TALL_SNOW_GRASS, false));
     public static final RegistryObject<Block> LARGE_SNOW_FERN = register("large_snow_fern", () -> new DoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.LARGE_FERN)));
     public static final RegistryObject<Block> SNOW_FERN = register("snow_fern", () -> new ImportedSnowPlantBlock(LARGE_SNOW_FERN, true));
+
+    public static final RegistryObject<Block> CLOVER = register("clover", () -> new ImportedCloverBlock(BlockBehaviour.Properties.copy(Blocks.PINK_PETALS).replaceable().noCollission()));
+    public static final RegistryObject<Block> NETHER_CLOVER = register("nether_clover", () -> new ImportedCloverBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_WART).replaceable().noCollission()));
+    public static final RegistryObject<Block> LUMINOUS_FLOWER = register("luminous_flower", () -> new ImportedLuminousFlowerBlock(BlockBehaviour.Properties.copy(Blocks.DANDELION).lightLevel(state -> 10)));
 
     public static final RegistryObject<Block> BLUE_OBSIDIAN = solid("blue_obsidian");
     public static final RegistryObject<Block> BLUE_CRYING_OBSIDIAN = solid("blue_crying_obsidian");

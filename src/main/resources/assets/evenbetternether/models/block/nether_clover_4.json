@@ -1,0 +1,7 @@
+{
+  "parent": "evenbetternether:block/templates/nether_flowerbed_4",
+  "textures": {
+    "flowerbed": "evenbetternether:block/nether_clover",
+    "stem": "evenbetternether:block/nether_clover_stem"
+  }
+}

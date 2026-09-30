@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#evenbetternether:smb_generates/luminous_flower",
+  "features": "evenbetternether:smb_patch_luminous_flower",
+  "step": "vegetal_decoration"
+}
