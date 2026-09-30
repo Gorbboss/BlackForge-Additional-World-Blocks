@@ -313,6 +313,9 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> POLISHED_RESIN_STAIRS = register("polished_resin_stairs", () -> new StairBlock(() -> POLISHED_RESIN.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.BRICKS)));
     public static final RegistryObject<Block> POLISHED_RESIN_SLAB = register("polished_resin_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
 
+    public static final RegistryObject<Block> SNOW_BUSH = register("snow_bush", () -> new net.mcreator.evenbetternether.block.ImportedSnowBushBlock(false));
+    public static final RegistryObject<Block> SNOW_FIREFLY_BUSH = register("snow_firefly_bush", () -> new net.mcreator.evenbetternether.block.ImportedSnowBushBlock(true));
+
     public static final RegistryObject<Block> SMALL_LILY_PADS = registerWaterPlant("small_lily_pads", () -> new net.minecraft.world.level.block.WaterlilyBlock(BlockBehaviour.Properties.copy(Blocks.LILY_PAD).noCollission()));
     public static final RegistryObject<Block> BIG_LILY_PAD = registerWaterPlant("big_lily_pad", () -> new net.mcreator.evenbetternether.block.ImportedBigLilyPadBlock(BlockBehaviour.Properties.copy(Blocks.LILY_PAD)));
 

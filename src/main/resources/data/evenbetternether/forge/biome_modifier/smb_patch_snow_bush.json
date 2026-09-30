@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#evenbetternether:generates/snow_bush",
+  "features": "evenbetternether:smb_patch_snow_bush",
+  "step": "vegetal_decoration"
+}

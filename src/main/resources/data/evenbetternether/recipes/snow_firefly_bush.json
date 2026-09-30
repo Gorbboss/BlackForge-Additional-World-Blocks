@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:firefly_bush"
+    },
+    {
+      "item": "minecraft:snowball"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "evenbetternether:snow_firefly_bush"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "vanillabackport"
+    }
+  ]
+}

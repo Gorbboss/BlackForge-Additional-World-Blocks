@@ -1,0 +1,44 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "data": {
+                  "Name": "evenbetternether:snow_bush"
+                },
+                "weight": 3
+              },
+              {
+                "data": {
+                  "Name": "evenbetternether:snow_firefly_bush"
+                },
+                "weight": 1
+              }
+            ]
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "minecraft:air",
+              "minecraft:snow"
+            ]
+          }
+        }
+      ]
+    },
+    "tries": 24,
+    "xz_spread": 5,
+    "y_spread": 3
+  }
+}

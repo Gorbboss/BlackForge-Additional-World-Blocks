@@ -37,3 +37,5 @@ Cattail and reeds code, textures, models, and cattail placement data are selecti
 Small and big lily pad textures, models, placement data, and big lily pad code are adapted from Some More Blocks (MIT, Copyright 2025 Seface Studios). See licenses/SomeMoreBlocks-MIT.txt.
 
 Crimson/warped fungus colonies, pale mushroom plants, pale rose bush, and polished resin assets and generation are adapted from Some More Blocks, MIT (Copyright 2025 Seface Studios). Newer assets are from its 1.21.11 folder. See licenses/SomeMoreBlocks-MIT.txt.
+
+Snow bush and snow firefly bush textures, models, loot, recipes and generation data are adapted from Some More Blocks, MIT (Copyright 2025 Seface Studios), 1.21.11 folder. See licenses/SomeMoreBlocks-MIT.txt. Firefly particles are supplied by VanillaBackport when installed.

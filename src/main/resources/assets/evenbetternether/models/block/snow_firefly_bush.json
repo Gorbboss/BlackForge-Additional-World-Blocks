@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "evenbetternether:block/snow_firefly_bush"
+  }
+}
