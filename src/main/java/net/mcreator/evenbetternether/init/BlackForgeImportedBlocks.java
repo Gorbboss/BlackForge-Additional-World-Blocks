@@ -113,6 +113,9 @@ public final class BlackForgeImportedBlocks {
     public static final RegistryObject<Block> BONE_MUSHROOM = register("bone_mushroom", () -> new ImportedBoneMushroomBlock(EvenbetternetherModBlocks.SMOOTH_BONE_BLOCK));
     public static final RegistryObject<Block> SEPIA_BONE_GRASS = register("sepia_bone_grass", ImportedSepiaBoneGrassBlock::new);
     public static final RegistryObject<Block> NETHER_MUSHROOM_STEM = register("nether_mushroom_stem", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM)));
+    public static final RegistryObject<Block> NETHER_MUSHROOM_PLANKS = register("nether_mushroom_planks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS)));
+    public static final RegistryObject<Block> NETHER_MUSHROOM_STAIRS = register("nether_mushroom_stairs", () -> new StairBlock(() -> NETHER_MUSHROOM_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS)));
+    public static final RegistryObject<Block> NETHER_MUSHROOM_SLAB = register("nether_mushroom_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS)));
     public static final RegistryObject<Block> GIANT_MOLD = registerNoItem("giant_mold", () -> new ImportedGiantMoldBlock(NETHER_MUSHROOM_STEM));
     public static final RegistryObject<Block> GIANT_MOLD_SAPLING = register("giant_mold_sapling", () -> new ImportedGiantMoldSaplingBlock(GIANT_MOLD));
     public static final RegistryObject<Block> STALAGNATE_STEM = register("stalagnate_stem", ImportedStalagnateStemBlock::new);

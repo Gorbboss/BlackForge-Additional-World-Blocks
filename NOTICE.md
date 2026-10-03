@@ -41,3 +41,5 @@ Crimson/warped fungus colonies, pale mushroom plants, pale rose bush, and polish
 Snow bush and snow firefly bush textures, models, loot, recipes and generation data are adapted from Some More Blocks, MIT (Copyright 2025 Seface Studios), 1.21.11 folder. See licenses/SomeMoreBlocks-MIT.txt. Firefly particles are supplied by VanillaBackport when installed.
 
 Wall mushroom/fungus colony models, textures, blockstates, placement behavior, and generation are adapted from Some More Blocks (MIT, Copyright 2025 Seface Studios). See licenses/SomeMoreBlocks-MIT.txt.
+
+Nether mushroom plank texture, stair/slab models and blockstates are adapted from BetterNether (quiqueck/BetterNether), MIT license, Copyright (c) 2022 Team BetterX. See licenses/BetterNether-MIT.txt.

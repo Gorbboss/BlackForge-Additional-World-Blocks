@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "evenbetternether:nether_mushroom_stem"
+    }
+  ],
+  "result": {
+    "item": "evenbetternether:nether_mushroom_planks",
+    "count": 4
+  }
+}

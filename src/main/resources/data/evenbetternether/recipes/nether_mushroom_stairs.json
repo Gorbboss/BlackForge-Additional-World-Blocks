@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "evenbetternether:nether_mushroom_planks"
+    }
+  },
+  "result": {
+    "item": "evenbetternether:nether_mushroom_stairs",
+    "count": 4
+  }
+}

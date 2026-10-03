@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "evenbetternether:block/nether_mushroom_slab"
+    },
+    "type=double": {
+      "model": "evenbetternether:block/nether_mushroom_planks"
+    },
+    "type=top": {
+      "model": "evenbetternether:block/nether_mushroom_slab_top"
+    }
+  }
+}

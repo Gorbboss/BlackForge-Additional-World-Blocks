@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "evenbetternether:block/nether_mushroom_planks",
+    "side": "evenbetternether:block/nether_mushroom_planks",
+    "top": "evenbetternether:block/nether_mushroom_planks"
+  }
+}

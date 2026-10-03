@@ -24,6 +24,9 @@
     "evenbetternether:mushroom_stairs",
     "evenbetternether:mushroom_planks",
     "evenbetternether:mushroom_log",
-    "evenbetternether:mushroom_wood"
+    "evenbetternether:mushroom_wood",
+    "evenbetternether:nether_mushroom_planks",
+    "evenbetternether:nether_mushroom_stairs",
+    "evenbetternether:nether_mushroom_slab"
   ]
 }

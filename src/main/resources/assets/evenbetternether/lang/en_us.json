@@ -371,5 +371,8 @@
   "block.evenbetternether.red_mushroom_colony_wall": "Red Mushroom Colony",
   "block.evenbetternether.crimson_fungus_colony_wall": "Crimson Fungus Colony",
   "block.evenbetternether.warped_fungus_colony_wall": "Warped Fungus Colony",
-  "block.evenbetternether.pale_mushroom_colony_wall": "Pale Mushroom Colony"
+  "block.evenbetternether.pale_mushroom_colony_wall": "Pale Mushroom Colony",
+  "block.evenbetternether.nether_mushroom_planks": "Nether Mushroom Planks",
+  "block.evenbetternether.nether_mushroom_stairs": "Nether Mushroom Stairs",
+  "block.evenbetternether.nether_mushroom_slab": "Nether Mushroom Slab"
 }
